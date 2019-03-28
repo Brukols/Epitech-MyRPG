@@ -15,6 +15,7 @@
 #include <stdbool.h>
 
 #include "macros.h"
+#include "game.h"
 #include "scene_object.h"
 #include "my.h"
 #include "scenes.h"
