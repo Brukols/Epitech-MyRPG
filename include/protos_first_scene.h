@@ -14,11 +14,13 @@
 
 scenes_t *init_first_scene(scenes_t *);
 scene_object_t *init_scene_object_fs_scene(void);
+player_t *init_player_fs_scene(void);
 
 // DISPLAY //
 
 game_t *display_fs_scene(game_t *);
 void display_bg_fs_scene(game_t *);
+void display_player_fs_scene(game_t *);
 
 // EVENTS //
 

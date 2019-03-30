@@ -39,7 +39,13 @@ typedef struct player_s {
     //items_t *items;
     char *name;
     sfVector2f pos;
+    sfIntRect rect;
+    sfSprite *sprite;
+    sfTexture *texture;
     int direction;
+    sfClock *clock;
+    int move_x;
+    int move_y;
 } player_t;
 
 typedef struct scene_object_s {

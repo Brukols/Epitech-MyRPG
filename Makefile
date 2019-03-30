@@ -16,8 +16,10 @@ SRCS	=	src/launch_game.c			\
 		src/first_scene/display/display_fs_scene.c				\
 		src/first_scene/initialization/init_first_scene.c		\
 		src/first_scene/initialization/init_scene_object_fs_scene.c	\
+		src/first_scene/initialization/init_player_fs_scene.c		\
 		src/first_scene/events/events_fs_scene.c			\
 		src/first_scene/events/move_the_scene.c				\
+		src/first_scene/display/display_player_fs_scene.c		\
 		src/main.c
 
 OBJS	=	$(SRCS:.c=.o)
@@ -51,3 +53,9 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+debug: CFLAGS += -g
+
+debug: fclean $(OBJS)
+	$(MAKE) debug -C lib/my
+	$(CC) -o $(NAME) $(OBJS) $(LIB) $(MY) $(GRAPH)
