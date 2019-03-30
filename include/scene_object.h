@@ -11,13 +11,16 @@
 #include "my_rpg.h"
 
 enum game_object_e {
-    ...
+    PNJ
 };
 
 typedef struct background_s {
     sfTexture *texture;
     sfSprite *sprite;
     sfVector2f pos;
+    sfVector2f scale;
+    int move_x;
+    int move_y;
 } background_t;
 
 typedef struct game_object_s {
@@ -33,7 +36,7 @@ typedef struct game_object_s {
 } game_object_t;
 
 typedef struct player_s {
-    items_t *items;
+    //items_t *items;
     char *name;
     sfVector2f pos;
     int direction;

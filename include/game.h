@@ -14,3 +14,5 @@ typedef struct game_s {
     scenes_t *scenes;
     sfRenderWindow *window;
 } game_t;
+
+#endif

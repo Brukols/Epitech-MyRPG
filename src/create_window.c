@@ -5,7 +5,7 @@
 ** bootstrap
 */
 
-#include "my_defender.h"
+#include "my_rpg.h"
 
 sfRenderWindow *create_window(unsigned int width, unsigned int height,
 unsigned int fps)

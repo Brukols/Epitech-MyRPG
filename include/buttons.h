@@ -12,8 +12,7 @@
 
 enum button_e {
     PLAY_PAUSE,
-    SETTING,
-    ...
+    SETTING
 };
 
 typedef struct buttons_s {
@@ -23,7 +22,7 @@ typedef struct buttons_s {
     sfVector2f pos;
     sfVector2f size;
     sfIntRect rect;
-    struct scene_s *(*callback)(struct scene_s *);
+    game_t *(*callback)();
     struct button_s *next;
     struct button_s *prev;
 } buttons_t;

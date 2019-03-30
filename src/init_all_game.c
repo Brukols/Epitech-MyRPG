@@ -13,7 +13,7 @@ scenes_t *init_scenes(void)
 
     if (!scenes)
         return (NULL);
-    if (!(scenes = init_scene_menu()))
+    if (!(scenes = init_first_scene(scenes)))
         return (NULL);
     return (scenes);
 }

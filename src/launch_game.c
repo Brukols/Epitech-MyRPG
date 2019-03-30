@@ -7,23 +7,26 @@
 
 #include "my_rpg.h"
 
-int scene_managing(game_t *game)
+game_t *scene_managing(game_t *game)
 {
-    if (game->scene->type == MENU)
-        return (display_menu(game));
-    if (game->scene->type == GAME)
-        return (display_scene_game(game));
-    return (SUCCESS);
-} //POINTEURS SUR FONCTIONS
+    enum scene_e type[1] = {FIRST_SCENE};
+    game_t *(*display_scenes[1])() = {display_fs_scene};
+
+    for (int i = 0; i < 1; i++) {
+        if (game->scenes->scene == type[i])
+            return (game = display_scenes[i](game));
+    }
+    return (NULL);
+}
 
 int launch_game(void)
 {
-    game_t *game = init_game();
+    game_t *game = init_all_game();
 
     if (!game)
         return (FAILURE_EXIT);
     while (sfRenderWindow_isOpen(game->window)) {
-        if (scene_managing(game) == FAILURE)
+        if (!(game = scene_managing(game)))
             return (FAILURE_EXIT);
         sfRenderWindow_display(game->window);
         sfRenderWindow_clear(game->window, sfBlack);
