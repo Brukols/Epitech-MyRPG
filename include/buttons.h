@@ -11,7 +11,8 @@
 #include "my_rpg.h"
 
 enum button_e {
-    PLAY_PAUSE,
+    START,
+    START_2,
     SETTING
 };
 
@@ -22,9 +23,10 @@ typedef struct buttons_s {
     sfVector2f pos;
     sfVector2f size;
     sfIntRect rect;
+    sfClock *clock;
     game_t *(*callback)();
-    struct button_s *next;
-    struct button_s *prev;
+    struct buttons_s *next;
+    struct buttons_s *prev;
 } buttons_t;
 
 #endif

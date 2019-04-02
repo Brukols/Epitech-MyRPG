@@ -11,10 +11,14 @@ scenes_t *init_scenes(void)
 {
     scenes_t *scenes = malloc(sizeof(scenes_t));
 
-    if (!scenes)
-        return (NULL);
-    if (!(scenes = init_first_scene(scenes)))
-        return (NULL);
+    if (scenes == NULL)
+        return NULL;
+    scenes->prev = NULL;
+    if ((scenes = init_scene_menu(scenes)) == NULL)
+        return NULL;
+    scenes->next = NULL;
+    /*if (!(scenes = init_first_scene(scenes)))
+      return (NULL);*/
     return (scenes);
 }
 
@@ -25,6 +29,8 @@ game_t *init_all_game(void)
     if (!game)
         return (NULL);
     game->window = create_window(1980, 1020, 32);
+    if (!game->window)
+        return NULL;
     if (!(game->scenes = init_scenes()))
         return (NULL);
     return (game);
