@@ -33,9 +33,11 @@ buttons_t *init_buttons(void)
             break;
         if ((button->next = malloc(sizeof(buttons_t))) == NULL)
             return NULL;
+        button->next->prev = button;
         button = button->next;
     }
     button->next = NULL;
+    for (; button->prev; button = button->prev);
     return (button);
 }
 

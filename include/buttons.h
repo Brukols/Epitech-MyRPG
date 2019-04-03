@@ -13,6 +13,7 @@
 enum button_e {
     START,
     START_2,
+    START_3,
     SETTING
 };
 

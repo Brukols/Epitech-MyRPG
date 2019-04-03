@@ -13,7 +13,7 @@ sfSprite *first_play_sprite(game_t *game)
 
     for (; button->prev != NULL; button = button->prev);
     for (; button->type != START; button = button->next);
-    return(button->sprite);
+    return (button->sprite);
 }
 
 sfSprite *scnd_play_sprite(game_t *game)
@@ -22,7 +22,7 @@ sfSprite *scnd_play_sprite(game_t *game)
 
     for (; button->prev != NULL; button = button->prev);
     for (; button->type != START_2; button = button->next);
-    return(button->sprite);
+    return (button->sprite);
 }
 
 sfTexture *first_play_texture(game_t *game)
@@ -31,7 +31,7 @@ sfTexture *first_play_texture(game_t *game)
 
     for (; button->prev != NULL; button = button->prev);
     for (; button->type != START; button = button->next);
-    return(button->texture);
+    return (button->texture);
 }
 
 sfTexture *scnd_play_texture(game_t *game)
@@ -40,5 +40,5 @@ sfTexture *scnd_play_texture(game_t *game)
 
     for (; button->prev != NULL; button = button->prev);
     for (; button->type != START; button = button->next);
-    return(button->texture);
+    return (button->texture);
 }

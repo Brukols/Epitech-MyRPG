@@ -10,21 +10,17 @@
 void display_play_button(game_t *game)
 {
     buttons_t *buttons = game->scenes->buttons;
-    sfSprite *sprite;
-    sfTexture *texture;
 
     for (; buttons->prev != NULL; buttons = buttons->prev);
     if (sfClock_getElapsedTime(buttons->clock).microseconds < 600000) {
-        sprite = first_play_sprite(game);
-        texture = first_play_texture(game);
+        for (; buttons->type != START; buttons = buttons->next);
     }
     if (sfClock_getElapsedTime(buttons->clock).microseconds > 600000) {
-        sprite = scnd_play_sprite(game);
-        texture = scnd_play_texture(game);
+        if (sfClock_getElapsedTime(buttons->clock).microseconds > 1200000)
+            sfClock_restart(buttons->clock);
+        for (; buttons->type != START_2; buttons = buttons->next);
     }
-    if (sfClock_getElapsedTime(buttons->clock).microseconds > 120000)
-        sfClock_restart(buttons->clock);
-    sfSprite_setPosition(sprite, buttons->pos);
-    sfSprite_setTexture(sprite, texture, sfFalse);
-    sfRenderWindow_drawSprite(game->window, sprite, NULL);
+    sfSprite_setPosition(buttons->sprite, buttons->pos);
+    sfSprite_setTexture(buttons->sprite, buttons->texture, sfFalse);
+    sfRenderWindow_drawSprite(game->window, buttons->sprite, NULL);
 }

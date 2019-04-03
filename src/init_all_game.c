@@ -14,11 +14,11 @@ scenes_t *init_scenes(void)
     if (scenes == NULL)
         return NULL;
     scenes->prev = NULL;
-    if ((scenes = init_scene_menu(scenes)) == NULL)
-        return NULL;
-    scenes->next = NULL;
     /*if (!(scenes = init_first_scene(scenes)))
       return (NULL);*/
+    if ((scenes = init_scene_menu(scenes)) == NULL)
+      return NULL;
+    scenes->next = NULL;
     return (scenes);
 }
 
