@@ -19,17 +19,40 @@ background_t *init_background(background_t *background)
     return (background);
 }
 
+buttons_t *setting_button(buttons_t *button)
+{
+    button->type = MENU_SETTINGS;
+    button->texture = sfTexture_createFromFile(\
+    "../../ressources/sprites/menu/settings.png", NULL);
+    button->sprite = sfSprite_create();
+    button->pos.x = 1770;
+    button->pos.y = 900;
+    return (button);
+}
+
+buttons_t *exit_button(buttons_t *button)
+{
+    button->type = MENU_EXIT;
+    button->texture = sfTexture_createFromFile(\
+    "../../ressources/sprites/menu/exit.png", NULL);
+    button->sprite = sfSprite_create();
+    button->pos.x = 1650;
+    button->pos.y = 900;
+    return (button);
+}
+
 buttons_t *init_buttons(void)
 {
     buttons_t *button = malloc(sizeof(buttons_t));
-    buttons_t *(*init_each_button_menu[2])() = {button_play, button_play2};
+    buttons_t *(*init_each_button_menu[4])() = {button_play, button_play2, \
+    setting_button, exit_button};
 
     if (!button)
         return (NULL);
     button->prev = NULL;
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 4; i++) {
         button = init_each_button_menu[i](button);
-        if (i == 1)
+        if (i == 3)
             break;
         if ((button->next = malloc(sizeof(buttons_t))) == NULL)
             return NULL;

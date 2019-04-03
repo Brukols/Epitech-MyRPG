@@ -13,8 +13,8 @@
 enum button_e {
     START,
     START_2,
-    START_3,
-    SETTING
+    MENU_SETTINGS,
+    MENU_EXIT
 };
 
 typedef struct buttons_s {
