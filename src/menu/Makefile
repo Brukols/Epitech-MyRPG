@@ -7,15 +7,19 @@
 
 NAME	=	my_rpg
 
-SRCS	=	launch_game.c			\
-		../create_window.c		\
-		../init_all_game.c		\
-		../main.c			\
-		display_buttons.c		\
-		display.c			\
-		init/init_buttons_play.c	\
-		init/init.c			\
-		select/start_button.c		\
+SRCS	=	launch_game.c				\
+		../create_window.c			\
+		../init_all_game.c			\
+		../main.c				\
+		buttons_events/display_buttons.c	\
+		buttons_events/bottoms_buttons.c	\
+		buttons_events/play_buttons_event.c	\
+		display.c				\
+		init/init_buttons_play.c		\
+		init/init_bottoms_buttons.c		\
+		init/tittle_and_background.c		\
+		init/init.c				\
+		select/start_button.c			\
 
 OBJS	=	$(SRCS:.c=.o)
 

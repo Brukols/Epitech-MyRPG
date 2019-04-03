@@ -12,7 +12,8 @@
 
 enum text_e {
     SCORE,
-    MONEY
+    MONEY,
+    MENU_TITTLE
 };
 
 typedef struct texts_s {

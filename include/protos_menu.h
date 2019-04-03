@@ -10,6 +10,14 @@
 
 #include "my_rpg.h"
 
+buttons_t *setting_button(buttons_t *);
+buttons_t *exit_button(buttons_t *);
+background_t *init_background(background_t *);
+texts_t *init_title(void);
+void display_statics_buttons(game_t *);
+void idle_bottoms_buttons(sfVector2i, game_t *);
+game_t *idle_play_button(game_t *, char *, char *);
+void redirect_idle_play_button(sfVector2i, game_t *);
 buttons_t *button_play(buttons_t *);
 buttons_t *button_play2(buttons_t *);
 sfSprite *first_play_sprite(game_t *);

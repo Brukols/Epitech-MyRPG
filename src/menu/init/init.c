@@ -7,40 +7,6 @@
 
 #include "my_rpg.h"
 
-background_t *init_background(background_t *background)
-{
-    background->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/menu/background.png", NULL);
-    background->sprite = sfSprite_create();
-    background->pos.x = 0;
-    background->pos.y = 0;
-    sfSprite_setPosition(background->sprite, background->pos);
-    sfSprite_setTexture(background->sprite, background->texture, sfFalse);
-    return (background);
-}
-
-buttons_t *setting_button(buttons_t *button)
-{
-    button->type = MENU_SETTINGS;
-    button->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/menu/settings.png", NULL);
-    button->sprite = sfSprite_create();
-    button->pos.x = 1770;
-    button->pos.y = 900;
-    return (button);
-}
-
-buttons_t *exit_button(buttons_t *button)
-{
-    button->type = MENU_EXIT;
-    button->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/menu/exit.png", NULL);
-    button->sprite = sfSprite_create();
-    button->pos.x = 1650;
-    button->pos.y = 900;
-    return (button);
-}
-
 buttons_t *init_buttons(void)
 {
     buttons_t *button = malloc(sizeof(buttons_t));
@@ -83,5 +49,6 @@ scenes_t *init_scene_menu(scenes_t *scene)
     scene->buttons = init_buttons();
     if (scene->buttons == NULL)
         return NULL;
+    scene->texts = init_title();
     return (scene);
 }
