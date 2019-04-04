@@ -14,9 +14,9 @@ sfVector2f init_vec2f(float x, float y)
     return (pos);
 }
 
-sfIntRect init_intrect(int top, int left, int width, int height)
+sfIntRect init_intrect(int left, int top, int width, int height)
 {
-    sfIntRect rect = {top, left, width, height};
+    sfIntRect rect = {left, top, width, height};
 
     return (rect);
 }

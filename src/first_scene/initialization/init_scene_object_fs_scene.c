@@ -14,7 +14,7 @@ background_t *init_background_fs_scene(void)
     if (!bg)
         return (NULL);
     if (!(bg->texture = sfTexture_createFromFile(\
-        "ressources/sprites/sans_grotte.png", NULL)))
+        "ressources/sprites/fond.png", NULL)))
         return (NULL);
     if (!(bg->sprite = sfSprite_create()))
         return (NULL);
@@ -32,6 +32,10 @@ scene_object_t *init_scene_object_fs_scene(void)
     if (!(objs->background = init_background_fs_scene()))
         return (NULL);
     if (!(objs->player = init_player_fs_scene()))
+        return (NULL);
+    if (!(objs->game_object = init_game_object_fs_scene()))
+        return (NULL);
+    if (!(objs = put_chara_in_game_object(objs)))
         return (NULL);
     return (objs);
 }

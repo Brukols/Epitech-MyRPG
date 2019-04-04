@@ -14,10 +14,10 @@ scenes_t *init_scenes(void)
     if (scenes == NULL)
         return NULL;
     scenes->prev = NULL;
-    /*if (!(scenes = init_first_scene(scenes)))
-      return (NULL);*/
-    if ((scenes = init_scene_menu(scenes)) == NULL)
-      return NULL;
+    if (!(scenes = init_first_scene(scenes)))
+      return (NULL);
+    /*if ((scenes = init_scene_menu(scenes)) == NULL)
+      return NULL;*/
     scenes->next = NULL;
     return (scenes);
 }
@@ -28,7 +28,7 @@ game_t *init_all_game(void)
 
     if (!game)
         return (NULL);
-    game->window = create_window(1980, 1020, 32);
+    game->window = create_window(1980, 1020, 60);
     if (!game->window)
         return NULL;
     if (!(game->scenes = init_scenes()))
