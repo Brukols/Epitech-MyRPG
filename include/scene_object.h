@@ -12,7 +12,8 @@
 
 enum game_object_e {
     PLAYER,
-    SHAFT
+    SHAFT,
+    INTRO_FAIRIE,
 };
 
 typedef struct background_s {
@@ -54,10 +55,16 @@ typedef struct player_s {
     game_object_t *game_object;
 } player_t;
 
+typedef struct event_click_s {
+    int user_click;
+    int fairy_event;
+} event_click_t;
+
 typedef struct scene_object_s {
     background_t *background;
     game_object_t *game_object;
     player_t *player;
+    event_click_t *clicks;
 } scene_object_t;
 
 #endif

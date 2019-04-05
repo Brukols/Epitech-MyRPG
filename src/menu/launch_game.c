@@ -9,10 +9,10 @@
 
 game_t *scene_managing(game_t *game)
 {
-    enum scene_e type[2] = {MENU, FIRST_SCENE};
-    game_t *(*display_scenes[1])() = {display_menu};
+    enum scene_e type[2] = {INTRO, MENU};
+    game_t *(*display_scenes[2])() = {display_intro, display_menu};
 
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < 2; i++) {
         if (game->scenes->scene == type[i])
             return (game = display_scenes[i](game));
     }

@@ -10,6 +10,8 @@
 
 #include "my_rpg.h"
 
+scenes_t *init_intro(scenes_t *);
+game_t *display_intro(game_t *);
 buttons_t *setting_button(buttons_t *);
 buttons_t *exit_button(buttons_t *);
 background_t *init_background(background_t *);

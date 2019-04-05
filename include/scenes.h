@@ -11,6 +11,7 @@
 #include "my_rpg.h"
 
 enum scene_e {
+    INTRO,
     MENU,
     FIRST_SCENE
 };
@@ -21,8 +22,8 @@ typedef struct scenes_s {
     struct buttons_s *buttons;
     struct texts_s *texts;
     struct musics_s *musics;
-    struct scene_s *next;
-    struct scene_s *prev;
+    struct scenes_s *next;
+    struct scenes_s *prev;
 } scenes_t;
 
 #endif

@@ -15,6 +15,8 @@ SRCS	=	launch_game.c				\
 		buttons_events/bottoms_buttons.c	\
 		buttons_events/play_buttons_event.c	\
 		display.c				\
+		display_intro.c				\
+		init/init_intro.c			\
 		init/init_buttons_play.c		\
 		init/init_bottoms_buttons.c		\
 		init/tittle_and_background.c		\
