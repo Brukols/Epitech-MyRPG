@@ -19,9 +19,9 @@ background_t *init_intro_background(background_t *background)
     return (background);
 }
 
-game_object_t *init_intro_fairie(game_object_t *game_object)
+game_object_t *init_fairy(game_object_t *game_object)
 {
-    game_object->prev = NULL;
+    game_object->type = INTRO_FAIRY;
     game_object->pos.x = 950;
     game_object->pos.y = 420;
     game_object->rect.top = 0;
@@ -32,21 +32,40 @@ game_object_t *init_intro_fairie(game_object_t *game_object)
     game_object->sprite = sfSprite_create();
     game_object->texture = sfTexture_createFromFile(\
     "../../ressources/sprites/intro/fée.png", NULL);
+    return (game_object);
+}
+
+game_object_t *init_intro_sprites(game_object_t *game_object)
+{
+    game_object_t *(*init_each_sprites_intro[6])() = {init_fairy, init_skip1, init_skip2, init_bubble_1, init_bubble_2, init_bubble_3};
+
+    game_object->prev = NULL;
+    for (int i = 0; i < 6; i++) {
+        game_object = init_each_sprites_intro[i](game_object);
+        if (i == 5)
+            break;
+        if ((game_object->next = malloc(sizeof(game_object_t))) == NULL)
+            return NULL;
+        game_object->next->prev = game_object;
+        game_object = game_object->next;
+    }
     game_object->next = NULL;
+    for (; game_object->prev != NULL;  game_object = game_object->prev);
     return (game_object);
 }
 
 scene_object_t *init_intro_objects(scene_object_t *objs)
 {
-
     if ((objs = malloc(sizeof(scene_object_t))) == NULL)
         return NULL;
     if ((objs->background = malloc(sizeof(background_t))) == NULL)
         return NULL;
-    objs->background = init_intro_background(objs->background);
+    if ((objs->background = init_intro_background(objs->background)) == NULL)
+        return NULL;
     if ((objs->game_object = malloc(sizeof(game_object_t))) == NULL)
         return NULL;
-    objs->game_object = init_intro_fairie(objs->game_object);
+    if ((objs->game_object = init_intro_sprites(objs->game_object)) == NULL)
+        return NULL;
     if ((objs->clicks = malloc(sizeof(event_click_t))) == NULL)
         return NULL;
     objs->clicks->user_click = 0;

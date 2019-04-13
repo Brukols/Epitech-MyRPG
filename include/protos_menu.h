@@ -10,6 +10,19 @@
 
 #include "my_rpg.h"
 
+game_t *bubble_1(game_t *);
+game_t *bubble_2(game_t *);
+game_t *bubble_3(game_t *);
+game_t *display_fairy(game_t *);
+game_object_t *init_skip2(game_object_t *);
+game_object_t *init_skip1(game_object_t *);
+game_object_t *init_bubble_3(game_object_t *);
+game_object_t *init_bubble_2(game_object_t *);
+game_object_t *init_bubble_1(game_object_t *);
+game_t *select_fairy(game_t *);
+game_t *select_bubble_1(game_t *);
+game_t *select_bubble_2(game_t *);
+game_t *select_bubble_3(game_t *);
 scenes_t *init_intro(scenes_t *);
 game_t *display_intro(game_t *);
 buttons_t *setting_button(buttons_t *);

@@ -13,7 +13,12 @@
 enum game_object_e {
     PLAYER,
     SHAFT,
-    INTRO_FAIRIE,
+    INTRO_SKIP1,
+    INTRO_SKIP2,
+    INTRO_FAIRY,
+    INTRO_BUBBLE1,
+    INTRO_BUBBLE2,
+    INTRO_BUBBLE3
 };
 
 typedef struct background_s {

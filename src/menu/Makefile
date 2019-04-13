@@ -11,17 +11,22 @@ SRCS	=	launch_game.c				\
 		../create_window.c			\
 		../init_all_game.c			\
 		../main.c				\
-		buttons_events/display_buttons.c	\
 		buttons_events/bottoms_buttons.c	\
 		buttons_events/play_buttons_event.c	\
-		display.c				\
-		display_intro.c				\
-		init/init_intro.c			\
-		init/init_buttons_play.c		\
-		init/init_bottoms_buttons.c		\
-		init/tittle_and_background.c		\
+		display/display.c			\
+		display/intro/display_intro.c		\
+		display/intro/fairy.c			\
+		display/intro/bubbles.c			\
+		display/display_buttons.c		\
 		init/init.c				\
+		init/buttons/init_buttons_play.c	\
+		init/buttons/init_bottoms_buttons.c	\
+		init/intro/bubbles.c			\
+		init/intro/init_intro.c			\
+		init/intro/skip.c			\
+		init/tittle_and_background.c		\
 		select/start_button.c			\
+		select/bubbles.c			\
 
 OBJS	=	$(SRCS:.c=.o)
 
