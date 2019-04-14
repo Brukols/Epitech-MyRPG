@@ -25,6 +25,7 @@ typedef struct background_s {
     sfTexture *texture;
     sfSprite *sprite;
     sfVector2f pos;
+    sfClock *clock;
     sfVector2f scale;
     int move_x;
     int move_y;

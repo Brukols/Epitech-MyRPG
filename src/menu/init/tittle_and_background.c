@@ -14,6 +14,7 @@ background_t *init_background(background_t *background)
     background->sprite = sfSprite_create();
     background->pos.x = 0;
     background->pos.y = 0;
+    background->clock = sfClock_create();
     sfSprite_setPosition(background->sprite, background->pos);
     sfSprite_setTexture(background->sprite, background->texture, sfFalse);
     return (background);

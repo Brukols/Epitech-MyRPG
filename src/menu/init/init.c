@@ -36,14 +36,16 @@ scene_object_t *init_menu_objects(scene_object_t *objs)
         return NULL;
     if ((objs->background = malloc(sizeof(background_t))) == NULL)
         return NULL;
-    objs->background = init_background(objs->background);
+    if ((objs->background = init_background(objs->background)) == NULL)
+        return NULL;
     return (objs);
 }
 
 scenes_t *init_scene_menu(scenes_t *scene)
 {
     scene->scene = MENU;
-    scene->objs = init_menu_objects(scene->objs);
+    if ((scene->objs = init_menu_objects(scene->objs)) == NULL)
+        return NULL;
     if (scene->objs == NULL)
         return NULL;
     scene->buttons = init_buttons();

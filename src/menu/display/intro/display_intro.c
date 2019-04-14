@@ -19,7 +19,7 @@ void event_intro(game_t *game)
         if (mouse_pos.x >= 1700 && mouse_pos.x <= 1850 && \
             mouse_pos.y >= 820 && mouse_pos.y <= 970 && \
             event.mouseButton.type == sfEvtMouseButtonPressed && \
-            game->scenes->objs->clicks->user_click < 2)
+            game->scenes->objs->clicks->user_click < 3)
             game->scenes->objs->clicks->user_click++;
     }
 }
@@ -42,16 +42,33 @@ void display_skip_button(game_t *game)
     sfRenderWindow_drawSprite(game->window, skip->sprite, NULL);
 }
 
-game_t *display_intro(game_t *game)
+game_t *earthquake(game_t *game)
 {
     background_t *background = game->scenes->objs->background;
-    game_t *(*fairy_discution[3])() = {bubble_1, bubble_2, bubble_3};
+
+    if (sfClock_getElapsedTime( \
+        background->clock).microseconds < 600000) {
+        background->pos.x -= 20;
+    }
+    if (sfClock_getElapsedTime(background->clock).microseconds > 600000) {
+        if (sfClock_getElapsedTime(background->clock).microseconds > 1200000)
+            sfClock_restart(background->clock);
+        background->pos.x += 20;
+    }
+    sfSprite_setPosition(background->sprite, background->pos);
+    sfSprite_setTexture(background->sprite, background->texture, sfFalse);
+    sfRenderWindow_drawSprite(game->window, background->sprite, NULL);
+    return (game);
+}
+
+game_t *display_intro(game_t *game)
+{
+    game_t *(*fairy_discution[4])() = {bubble_1, bubble_2, bubble_3, earthquake};
 
     event_intro(game);
-    sfRenderWindow_drawSprite(game->window, background->sprite, NULL);
-    game = display_fairy(game);
-    display_skip_button(game);
     my_put_nbr(game->scenes->objs->clicks->user_click);
     game = fairy_discution[game->scenes->objs->clicks->user_click](game);
+    game = display_fairy(game);
+    display_skip_button(game);
     return (game);
 }
