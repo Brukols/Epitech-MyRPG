@@ -19,7 +19,7 @@ void event_intro(game_t *game)
         if (mouse_pos.x >= 1700 && mouse_pos.x <= 1850 && \
             mouse_pos.y >= 820 && mouse_pos.y <= 970 && \
             event.mouseButton.type == sfEvtMouseButtonPressed && \
-            game->scenes->objs->clicks->user_click < 3)
+            game->scenes->objs->clicks->user_click < 4)
             game->scenes->objs->clicks->user_click++;
     }
 }
@@ -42,28 +42,58 @@ void display_skip_button(game_t *game)
     sfRenderWindow_drawSprite(game->window, skip->sprite, NULL);
 }
 
+void interrogation(game_t *game)
+{
+    game_object_t *interrogation = NULL;
+
+    if (game->scenes->objs->clicks->user_click != 3)
+        return;
+    game = select_interrogation(game);
+    interrogation = game->scenes->objs->game_object;
+    if (sfClock_getElapsedTime(interrogation->clock).microseconds > 3009000) {
+        sfSprite_setPosition(interrogation->sprite, interrogation->pos);
+        sfSprite_setTexture(interrogation->sprite, interrogation->texture, sfFalse);
+        sfRenderWindow_drawSprite(game->window, interrogation->sprite, NULL);
+    }
+}
+
+void red_bubble(game_t *game)
+{
+    game_object_t *bubble = NULL;
+
+    if (game->scenes->objs->clicks->user_click != 4)
+        return;
+    game = select_red_bubble(game);
+    bubble = game->scenes->objs->game_object;
+    sfSprite_setPosition(bubble->sprite, bubble->pos);
+        sfSprite_setTexture(bubble->sprite, bubble->texture, sfFalse);
+        sfRenderWindow_drawSprite(game->window, bubble->sprite, NULL);
+}
+
 game_t *earthquake(game_t *game)
 {
     background_t *background = game->scenes->objs->background;
 
     if (sfClock_getElapsedTime( \
-        background->clock).microseconds < 600000) {
-        background->pos.x -= 20;
+        background->clock).microseconds < 100000) {
+        background->pos.y -= 2.3;
     }
-    if (sfClock_getElapsedTime(background->clock).microseconds > 600000) {
-        if (sfClock_getElapsedTime(background->clock).microseconds > 1200000)
+    if (sfClock_getElapsedTime(background->clock).microseconds > 100000) {
+        if (sfClock_getElapsedTime(background->clock).microseconds > 200000)
             sfClock_restart(background->clock);
-        background->pos.x += 20;
+        background->pos.y += 1.5;
     }
     sfSprite_setPosition(background->sprite, background->pos);
     sfSprite_setTexture(background->sprite, background->texture, sfFalse);
     sfRenderWindow_drawSprite(game->window, background->sprite, NULL);
+    interrogation(game);
+    red_bubble(game);
     return (game);
 }
 
 game_t *display_intro(game_t *game)
 {
-    game_t *(*fairy_discution[4])() = {bubble_1, bubble_2, bubble_3, earthquake};
+    game_t *(*fairy_discution[5])() = {bubble_1, bubble_2, bubble_3, earthquake, earthquake};
 
     event_intro(game);
     my_put_nbr(game->scenes->objs->clicks->user_click);

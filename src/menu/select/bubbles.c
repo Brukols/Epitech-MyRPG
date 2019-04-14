@@ -40,12 +40,34 @@ game_t *select_bubble_2(game_t *game)
     return (game);
 }
 
+game_t *select_interrogation(game_t *game)
+{
+    for (; game->scenes->objs->game_object->prev != NULL; \
+         game->scenes->objs->game_object = \
+         game->scenes->objs->game_object->prev);
+    for (;game->scenes->objs->game_object->type != INTRO_INTERROGATION; \
+         game->scenes->objs->game_object = \
+         game->scenes->objs->game_object->next);
+    return (game);
+}
+
 game_t *select_bubble_3(game_t *game)
 {
     for (; game->scenes->objs->game_object->prev != NULL; \
          game->scenes->objs->game_object = \
          game->scenes->objs->game_object->prev);
     for (;game->scenes->objs->game_object->type != INTRO_BUBBLE3; \
+         game->scenes->objs->game_object = \
+         game->scenes->objs->game_object->next);
+    return (game);
+}
+
+game_t *select_red_bubble(game_t *game)
+{
+    for (; game->scenes->objs->game_object->prev != NULL; \
+         game->scenes->objs->game_object = \
+         game->scenes->objs->game_object->prev);
+    for (;game->scenes->objs->game_object->type != INTRO_BUBBLE_RED; \
          game->scenes->objs->game_object = \
          game->scenes->objs->game_object->next);
     return (game);
