@@ -33,8 +33,11 @@ game_t *idle_events(game_t *game)
 
 game_t *display_menu(game_t *game)
 {
-    background_t *background = game->scenes->objs->background;
+    background_t *background = NULL;
 
+    for (; game->scenes->prev != NULL; game->scenes = game->scenes->prev);
+    for (; game->scenes->scene != MENU; game->scenes = game->scenes->next);
+    background = game->scenes->objs->background;
     game = idle_events(game);
     event_pressed(game);
     sfRenderWindow_drawSprite(game->window, background->sprite, NULL);

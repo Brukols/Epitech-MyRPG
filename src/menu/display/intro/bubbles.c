@@ -48,3 +48,28 @@ game_t *bubble_3(game_t *game)
     sfRenderWindow_drawSprite(game->window, bubble->sprite, NULL);
     return (game);
 }
+
+game_t *bubble_4(game_t *game)
+{
+    game_object_t *bubble = NULL;
+    background_t *background = game->scenes->objs->background;
+
+    game = select_bubble_4(game);
+    bubble = game->scenes->objs->game_object;
+    sfSprite_setPosition(bubble->sprite, bubble->pos);
+    sfSprite_setTexture(bubble->sprite, bubble->texture, sfFalse);
+    sfRenderWindow_drawSprite(game->window, bubble->sprite, NULL);
+    return (game);
+}
+
+game_t *bubble_5(game_t *game)
+{
+    game_object_t *bubble = NULL;
+
+    game = select_bubble_5(game);
+    bubble = game->scenes->objs->game_object;
+    sfSprite_setPosition(bubble->sprite, bubble->pos);
+    sfSprite_setTexture(bubble->sprite, bubble->texture, sfFalse);
+    sfRenderWindow_drawSprite(game->window, bubble->sprite, NULL);
+    return (game);
+}

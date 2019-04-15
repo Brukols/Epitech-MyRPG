@@ -19,8 +19,10 @@ void event_intro(game_t *game)
         if (mouse_pos.x >= 1700 && mouse_pos.x <= 1850 && \
             mouse_pos.y >= 820 && mouse_pos.y <= 970 && \
             event.mouseButton.type == sfEvtMouseButtonPressed && \
-            game->scenes->objs->clicks->user_click < 4)
+            game->scenes->objs->clicks->user_click < 8)
             game->scenes->objs->clicks->user_click++;
+        if (game->scenes->objs->clicks->user_click == 7)
+            game->scenes->scene = MENU;
     }
 }
 
@@ -91,12 +93,102 @@ game_t *earthquake(game_t *game)
     return (game);
 }
 
+game_t *move_king(game_t *game, int *stop_king)
+{
+    game_object_t *king = game->scenes->objs->game_object;
+
+    if (king->rect.left >= 280) {
+        king->rect.left = 70;
+        game->scenes->objs->clicks->fairy_event = 1;
+    }
+    if (king->rect.left <= 70)
+        game->scenes->objs->clicks->fairy_event = 0;
+    if (king->pos.x >= 710) {
+        king->pos.x = 800;
+        (*stop_king) = 1;
+    }
+    else
+        king->pos.x += 10;
+    return (game);
+}
+
+game_t *king_walk(game_t *game)
+{
+    game_object_t *king = NULL;
+    int king_event = 0;
+    background_t *background = game->scenes->objs->background;
+    int stop_king = 0;
+
+    sfRenderWindow_drawSprite(game->window, background->sprite, NULL);
+    game = select_king_walk(game);
+    king = game->scenes->objs->game_object;
+    king_event = game->scenes->objs->clicks->fairy_event;
+    game = move_king(game, &stop_king);
+    if (sfClock_getElapsedTime(king->clock).microseconds > 200000 && \
+        stop_king != 1) {
+        if (king_event == 0)
+            king->rect.left += 70;
+        else
+            king->rect.left -= 70;
+        sfClock_restart(king->clock);
+    }
+    king = game->scenes->objs->game_object;
+    sfSprite_setPosition(king->sprite, king->pos);
+    sfSprite_setTextureRect(king->sprite, king->rect);
+    sfSprite_setTexture(king->sprite, king->texture, sfFalse);
+    sfRenderWindow_drawSprite(game->window, king->sprite, NULL);
+    return (game);
+}
+
+game_t *move_king_surprise(game_t *game)
+{
+    game_object_t *king = game->scenes->objs->game_object;
+
+    if (king->rect.left >= 580) {
+        king->rect.left = 280;
+        game->scenes->objs->clicks->fairy_event = 1;
+    }
+    if (king->rect.left <= 280)
+        game->scenes->objs->clicks->fairy_event = 0;
+    return (game);
+}
+
+game_t *king_surprise(game_t *game)
+{
+    game_object_t *king = NULL;
+    int king_event = 0;
+    background_t *background = game->scenes->objs->background;
+
+    sfRenderWindow_drawSprite(game->window, background->sprite, NULL);
+    game = select_king_surprise(game);
+    king = game->scenes->objs->game_object;
+    king_event = game->scenes->objs->clicks->fairy_event;
+    game = move_king_surprise(game);
+    if (sfClock_getElapsedTime(king->clock).microseconds > 200000) {
+        if (king_event == 0) {
+            king->rect.left += 80;
+            king->pos.x += 8;
+        }
+        if (king->pos.x == 840)
+            king->pos.x = 800;
+        else if (king_event == 1)
+            king->rect.left -= 80;
+        sfClock_restart(king->clock);
+    }
+    king = game->scenes->objs->game_object;
+    sfSprite_setPosition(king->sprite, king->pos);
+    sfSprite_setTextureRect(king->sprite, king->rect);
+    sfSprite_setTexture(king->sprite, king->texture, sfFalse);
+    sfRenderWindow_drawSprite(game->window, king->sprite, NULL);
+    game = bubble_4(game);
+    return (game);
+}
+
 game_t *display_intro(game_t *game)
 {
-    game_t *(*fairy_discution[5])() = {bubble_1, bubble_2, bubble_3, earthquake, earthquake};
+    game_t *(*fairy_discution[9])() = {bubble_1, bubble_2, bubble_3, earthquake, earthquake, king_walk, king_surprise, bubble_5};
 
     event_intro(game);
-    my_put_nbr(game->scenes->objs->clicks->user_click);
     game = fairy_discution[game->scenes->objs->clicks->user_click](game);
     game = display_fairy(game);
     display_skip_button(game);

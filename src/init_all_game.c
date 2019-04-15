@@ -20,6 +20,7 @@ scenes_t *init_scenes(void)
       return NULL;
     if ((scenes->next = malloc(sizeof(scenes_t))) == NULL)
         return NULL;
+    scenes->next->prev = scenes;
     scenes = scenes->next;
     if ((scenes = init_intro(scenes)) == NULL)
         return NULL;

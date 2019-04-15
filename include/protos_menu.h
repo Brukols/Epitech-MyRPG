@@ -10,6 +10,15 @@
 
 #include "my_rpg.h"
 
+game_t *bubble_5(game_t *);
+game_object_t *init_bubble_5(game_object_t *);
+game_t *select_bubble_5(game_t *);
+game_t *select_bubble_4(game_t *);
+game_object_t *init_bubble_4(game_object_t *);
+game_t *bubble_4(game_t *);
+game_t *select_king_surprise(game_t *);
+game_t *select_king_walk(game_t *);
+game_object_t *init_polipoppy_walk(game_object_t *);
 game_t *select_red_bubble(game_t *);
 game_object_t *init_bubble_red(game_object_t *);
 game_t *select_interrogation(game_t *);
