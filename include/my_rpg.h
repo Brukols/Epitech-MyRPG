@@ -36,5 +36,8 @@ sfIntRect init_intrect(int top, int left, int width, int height);
 int launch_game(void);
 char **str_to_word_array_for_map(char *);
 game_object_t *sort_game_object(game_object_t *);
+bool will_touch_the_border(background_t *, game_object_t *, sfVector2f);
+bool will_touch_up_and_down(background_t *, game_object_t *, sfVector2f);
+bool will_touch_side(background_t *, game_object_t *, sfVector2f);
 
 #endif

@@ -26,7 +26,9 @@ SRCS	=	src/launch_game.c						\
 		src/first_scene/events/move_the_scene.c				\
 		src/first_scene/display/display_player_fs_scene.c		\
 		src/first_scene/display/display_game_object_fs_scene.c		\
-		src/move_all_the_scene.c			\
+		src/first_scene/display/player_touch_smth.c			\
+		src/first_scene/display/will_touch_smth.c			\
+		src/move_all_the_scene.c					\
 		src/main.c
 
 OBJS	=	$(SRCS:.c=.o)
