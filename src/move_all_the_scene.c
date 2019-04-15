@@ -69,6 +69,8 @@ void move_all_the_scene(game_t *game)
     sfVector2f pos_pla = init_vec2f(player->pos.x, player->pos.y);
     sfVector2f pos_bg = init_vec2f(bg->pos.x, bg->pos.y);
 
+    if (player_touch_smth(game) == true)
+        return;
     for (; go; go = go->next) {
         if (go->type != PLAYER)
             move_game_object(go, bg, player);
