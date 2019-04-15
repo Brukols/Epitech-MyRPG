@@ -10,6 +10,9 @@
 
 #include "my_rpg.h"
 
+game_t *select_red_bubble(game_t *);
+game_object_t *init_bubble_red(game_object_t *);
+game_t *select_interrogation(game_t *);
 game_t *bubble_1(game_t *);
 game_t *bubble_2(game_t *);
 game_t *bubble_3(game_t *);

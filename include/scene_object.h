@@ -18,7 +18,9 @@ enum game_object_e {
     INTRO_FAIRY,
     INTRO_BUBBLE1,
     INTRO_BUBBLE2,
-    INTRO_BUBBLE3
+    INTRO_BUBBLE3,
+    INTRO_INTERROGATION,
+    INTRO_BUBBLE_RED,
 };
 
 typedef struct background_s {

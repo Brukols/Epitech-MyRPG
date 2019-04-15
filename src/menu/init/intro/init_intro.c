@@ -14,6 +14,7 @@ background_t *init_intro_background(background_t *background)
     background->sprite = sfSprite_create();
     background->pos.x = 0;
     background->pos.y = 0;
+    background->clock = sfClock_create();
     sfSprite_setPosition(background->sprite, background->pos);
     sfSprite_setTexture(background->sprite, background->texture, sfFalse);
     return (background);
@@ -35,14 +36,26 @@ game_object_t *init_fairy(game_object_t *game_object)
     return (game_object);
 }
 
+game_object_t *init_interrogation(game_object_t *game_object)
+{
+    game_object->type = INTRO_INTERROGATION;
+    game_object->pos.x = 990;
+    game_object->pos.y = 350;
+    game_object->clock = sfClock_create();
+    game_object->sprite = sfSprite_create();
+    game_object->texture = sfTexture_createFromFile(\
+    "../../ressources/sprites/intro/?.png", NULL);
+    return (game_object);
+}
+
 game_object_t *init_intro_sprites(game_object_t *game_object)
 {
-    game_object_t *(*init_each_sprites_intro[6])() = {init_fairy, init_skip1, init_skip2, init_bubble_1, init_bubble_2, init_bubble_3};
+    game_object_t *(*init_each_sprites_intro[8])() = {init_fairy, init_skip1, init_skip2, init_bubble_1, init_bubble_2, init_bubble_3, init_interrogation, init_bubble_red};
 
     game_object->prev = NULL;
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 8; i++) {
         game_object = init_each_sprites_intro[i](game_object);
-        if (i == 5)
+        if (i == 7)
             break;
         if ((game_object->next = malloc(sizeof(game_object_t))) == NULL)
             return NULL;
