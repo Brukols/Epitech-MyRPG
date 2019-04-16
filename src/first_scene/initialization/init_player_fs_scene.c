@@ -23,5 +23,9 @@ player_t *init_player_fs_scene(void)
     player->move_x = 0;
     player->move_y = 0;
     player->clock = sfClock_create();
+    player->up = 324;
+    player->down = 0;
+    player->left = 108;
+    player->right = 216;
     return (player);
 }

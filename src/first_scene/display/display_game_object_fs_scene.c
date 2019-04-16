@@ -10,8 +10,6 @@
 void display_game_object_fs_scene(game_t *game)
 {
     game_object_t *go = game->scenes->objs->game_object;
-    background_t *bg = game->scenes->objs->background;
-    player_t *player = game->scenes->objs->player;
 
     for (; go; go = go->next) {
         sfSprite_setPosition(go->sprite, go->pos);

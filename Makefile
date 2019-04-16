@@ -7,29 +7,50 @@
 
 NAME	=	my_rpg
 
-SRCS	=	src/launch_game.c						\
-		src/create_window.c						\
-		src/init_all_game.c						\
-		src/init_color.c						\
-		src/init_vec2f.c						\
-		src/str_to_word_array_for_map.c					\
-		src/sort_game_object.c						\
-		src/first_scene/display/display_bg_fs_scene.c			\
-		src/first_scene/display/display_fs_scene.c			\
-		src/first_scene/initialization/init_first_scene.c		\
-		src/first_scene/initialization/init_scene_object_fs_scene.c	\
-		src/first_scene/initialization/init_player_fs_scene.c		\
-		src/first_scene/initialization/init_game_object_fs_scene.c	\
-		src/first_scene/initialization/init_shaft.c			\
-		src/first_scene/initialization/put_chara_in_game_object.c	\
-		src/first_scene/events/events_fs_scene.c			\
-		src/first_scene/events/move_the_scene.c				\
-		src/first_scene/display/display_player_fs_scene.c		\
-		src/first_scene/display/display_game_object_fs_scene.c		\
-		src/first_scene/display/player_touch_smth.c			\
-		src/first_scene/display/will_touch_smth.c			\
-		src/move_all_the_scene.c					\
-		src/main.c
+SRC	=	src
+
+GENERAL	=	src/general
+
+GENERAL_DISPLAY	=	src/general/display
+
+GENERAL_EVENTS	=	src/general/events
+
+GENERAL_INIT	=	src/general/initialization
+
+FS_SCENE	=	src/first_scene
+
+FS_SCENE_INIT	=	src/first_scene/initialization
+
+FS_SCENE_DISPLAY	=	src/first_scene/display
+
+FS_SCENE_EVENTS	=	src/first_scene/events
+
+SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
+		$(GENERAL_DISPLAY)/display_player.c				\
+		$(GENERAL_DISPLAY)/move_all_the_scene.c				\
+		$(GENERAL_DISPLAY)/move_the_scene.c				\
+		$(GENERAL_DISPLAY)/sort_game_object.c				\
+		$(GENERAL_EVENTS)/player_touch_smth.c				\
+		$(GENERAL_EVENTS)/will_touch_smth.c				\
+		$(GENERAL_INIT)/init_color.c					\
+		$(GENERAL_INIT)/init_house.c					\
+		$(GENERAL_INIT)/init_map.c					\
+		$(GENERAL_INIT)/init_object_for_map.c				\
+		$(GENERAL_INIT)/init_shaft.c					\
+		$(GENERAL_INIT)/init_vec2f.c					\
+		$(GENERAL_INIT)/str_to_word_array_for_map.c			\
+		$(FS_SCENE_DISPLAY)/display_fs_scene.c				\
+		$(FS_SCENE_DISPLAY)/display_game_object_fs_scene.c		\
+		$(FS_SCENE_EVENTS)/events_fs_scene.c				\
+		$(FS_SCENE_INIT)/init_first_scene.c				\
+		$(FS_SCENE_INIT)/init_game_object_fs_scene.c			\
+		$(FS_SCENE_INIT)/init_player_fs_scene.c				\
+		$(FS_SCENE_INIT)/init_scene_object_fs_scene.c			\
+		$(FS_SCENE_INIT)/put_chara_in_game_object.c			\
+		$(SRC)/init_all_game.c						\
+		$(SRC)/launch_game.c						\
+		$(SRC)/create_window.c						\
+		$(SRC)/main.c
 
 OBJS	=	$(SRCS:.c=.o)
 

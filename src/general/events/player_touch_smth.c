@@ -15,7 +15,7 @@ bool will_touch(background_t *bg, player_t *player, game_object_t *go)
         return (true);
     if (will_touch_up_and_down(bg, go, pos_player) == true)
         return (true);
-    if (will_touch_the_border(bg, go, pos_player) == true)
+    if (will_touch_the_border(bg, pos_player) == true)
         return (true);
     return (false);
 }

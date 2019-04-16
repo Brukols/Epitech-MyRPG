@@ -1,16 +1,15 @@
 /*
 ** EPITECH PROJECT, 2019
-** display_bg_fs_scene
+** display_bg
 ** File description:
 ** mt_rpg
 */
 
 #include "my_rpg.h"
 
-void display_bg_fs_scene(game_t *game)
+void display_bg(game_t *game)
 {
     background_t *bg = game->scenes->objs->background;
-    player_t *player = game->scenes->objs->player;
 
     sfSprite_setPosition(bg->sprite, bg->pos);
     sfSprite_setTexture(bg->sprite, bg->texture, sfFalse);

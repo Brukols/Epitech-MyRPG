@@ -7,36 +7,35 @@
 
 #include "my_rpg.h"
 
-void change_position_scene(game_object_t *player, background_t *bg, sfKeyCode code,
+void change_position_scene(player_t *player, background_t *bg, sfKeyCode code,
 bool move)
 {
     if (code == sfKeyRight) {
         bg->move_x = (move ? 1 : 0);
-        player->move_x = (move ? 1 : 0);
-        player->rect.top = 216;
+        player->game_object->move_x = (move ? 1 : 0);
+        player->game_object->rect.top = player->right;
     }
     if (code == sfKeyLeft) {
         bg->move_x = (move ? -1 : 0);
-        player->move_x = (move ? -1 : 0);
-        player->rect.top = 108;
+        player->game_object->move_x = (move ? -1 : 0);
+        player->game_object->rect.top = player->left;
     }
     if (code == sfKeyDown) {
         bg->move_y = (move ? 1 : 0);
-        player->move_y = (move ? 1 : 0);
-        player->rect.top = 0;
+        player->game_object->move_y = (move ? 1 : 0);
+        player->game_object->rect.top = player->down;
     }
     if (code == sfKeyUp) {
         bg->move_y = (move ? -1 : 0);
-        player->move_y = (move ? -1 : 0);
-        player->rect.top = 324;
+        player->game_object->move_y = (move ? -1 : 0);
+        player->game_object->rect.top = player->up;
     }
 }
 
 void move_the_scene(game_t *game, sfKeyCode code, bool move)
 {
     background_t *bg = game->scenes->objs->background;
-    //player_t *player = game->scenes->objs->player;
-    game_object_t *player = game->scenes->objs->player->game_object;
+    player_t *player = game->scenes->objs->player;
 
     if (code == sfKeyEscape)
         sfRenderWindow_close(game->window);

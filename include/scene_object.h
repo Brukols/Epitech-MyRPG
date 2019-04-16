@@ -13,6 +13,7 @@
 enum game_object_e {
     PLAYER,
     SHAFT,
+    HOUSE,
     INTRO_SKIP1,
     INTRO_SKIP2,
     INTRO_FAIRY,
@@ -64,6 +65,10 @@ typedef struct player_s {
     sfClock *clock;
     int move_x;
     int move_y;
+    int up;
+    int down;
+    int right;
+    int left;
     game_object_t *game_object;
 } player_t;
 
@@ -71,6 +76,15 @@ typedef struct event_click_s {
     int user_click;
     int fairy_event;
 } event_click_t;
+
+typedef struct pnj_s {
+    char *name;
+    char **discuss;
+    int next_dialog;
+    game_object_t *game_object;
+    struct pnj_s *next;
+    struct pnj_s *prev;
+} pnj_t;
 
 typedef struct scene_object_s {
     background_t *background;

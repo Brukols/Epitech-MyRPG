@@ -39,6 +39,7 @@ SRC	=	my_compute_power_rec.c		\
 		my_arraydup.c			\
 		my_arraylen.c			\
 		my_arraycpy.c			\
+		my_realloc_array.c		\
 		my_strdupcat.c			\
 		my_swap.c
 

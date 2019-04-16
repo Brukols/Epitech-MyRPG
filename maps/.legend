@@ -1,3 +1,2 @@
-nom_du_sprite:
-position_x:
-position_y:
+nom_du_sprite:position_x:position_y
+nom_du_pnj:pos_x:pos_y:["discussion",...]

@@ -7,8 +7,7 @@
 
 #include "my_rpg.h"
 
-void move_bg(background_t *bg, game_object_t *player, sfVector2f pos_play,
-sfVector2f pos_bg)
+void move_bg(background_t *bg, sfVector2f pos_play, sfVector2f pos_bg)
 {
     if (bg->move_x > 0 && pos_bg.x > -2470 && pos_play.x >= 900) {
         bg->pos.x -= 5;
@@ -24,8 +23,8 @@ sfVector2f pos_bg)
     }
 }
 
-void move_player_fs_scene(game_object_t *player, background_t *bg,
-sfVector2f pos_play, sfVector2f pos_bg)
+void move_player_fs_scene(game_object_t *player, sfVector2f pos_play, \
+sfVector2f pos_bg)
 {
     if ((pos_bg.x <= -2470 || pos_play.x < 900) && player->move_x > 0) {
         player->pos.x += 5;
@@ -75,6 +74,6 @@ void move_all_the_scene(game_t *game)
         if (go->type != PLAYER)
             move_game_object(go, bg, player);
     }
-    move_player_fs_scene(player, bg, pos_pla, pos_bg);
-    move_bg(bg, player, pos_pla, pos_bg);
+    move_player_fs_scene(player, pos_pla, pos_bg);
+    move_bg(bg, pos_pla, pos_bg);
 }
