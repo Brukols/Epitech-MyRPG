@@ -14,8 +14,10 @@ game_t *events_fs_scene(game_t *game)
     while (sfRenderWindow_pollEvent(game->window, &event)) {
         if (event.type == sfEvtClosed)
             sfRenderWindow_close(game->window);
-        if (event.type == sfEvtKeyPressed)
+        if (event.type == sfEvtKeyPressed) {
             move_the_scene(game, event.key.code, true);
+            interactions(game, event.key.code);
+        }
         if (event.type == sfEvtKeyReleased)
             move_the_scene(game, event.key.code, false);
     }

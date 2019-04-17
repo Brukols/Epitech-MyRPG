@@ -35,6 +35,8 @@ scene_object_t *init_scene_object_fs_scene(void)
         return (NULL);
     if (!(objs->game_object = init_game_object_fs_scene()))
         return (NULL);
+    if (!(objs = init_pnj(objs, "maps/pnj")))
+        return (NULL);
     if (!(objs = put_chara_in_game_object(objs)))
         return (NULL);
     return (objs);

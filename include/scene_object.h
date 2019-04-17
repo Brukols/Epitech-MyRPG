@@ -14,6 +14,7 @@ enum game_object_e {
     PLAYER,
     SHAFT,
     HOUSE,
+    PNJ,
     INTRO_SKIP1,
     INTRO_SKIP2,
     INTRO_FAIRY,
@@ -78,6 +79,7 @@ typedef struct event_click_s {
 } event_click_t;
 
 typedef struct pnj_s {
+    bool speak;
     char *name;
     char **discuss;
     int next_dialog;
@@ -91,6 +93,7 @@ typedef struct scene_object_s {
     game_object_t *game_object;
     player_t *player;
     event_click_t *clicks;
+    pnj_t *pnj;
 } scene_object_t;
 
 #endif

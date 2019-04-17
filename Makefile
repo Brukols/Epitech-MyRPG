@@ -30,8 +30,12 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/move_all_the_scene.c				\
 		$(GENERAL_DISPLAY)/move_the_scene.c				\
 		$(GENERAL_DISPLAY)/sort_game_object.c				\
+		$(GENERAL_DISPLAY)/display_buttons.c				\
+		$(GENERAL_DISPLAY)/display_dialog.c				\
 		$(GENERAL_EVENTS)/player_touch_smth.c				\
 		$(GENERAL_EVENTS)/will_touch_smth.c				\
+		$(GENERAL_EVENTS)/change_dialog.c				\
+		$(GENERAL_EVENTS)/interactions.c				\
 		$(GENERAL_INIT)/init_color.c					\
 		$(GENERAL_INIT)/init_house.c					\
 		$(GENERAL_INIT)/init_map.c					\
@@ -39,14 +43,22 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/init_shaft.c					\
 		$(GENERAL_INIT)/init_vec2f.c					\
 		$(GENERAL_INIT)/str_to_word_array_for_map.c			\
+		$(GENERAL_INIT)/init_pnj.c					\
+		$(GENERAL_INIT)/init_different_pnj.c				\
+		$(GENERAL_INIT)/init_discuss.c					\
+		$(GENERAL_INIT)/init_box_dialog.c				\
+		$(GENERAL_INIT)/init_text_box.c					\
 		$(FS_SCENE_DISPLAY)/display_fs_scene.c				\
 		$(FS_SCENE_DISPLAY)/display_game_object_fs_scene.c		\
+		$(FS_SCENE_DISPLAY)/display_texts_fs_scene.c			\
 		$(FS_SCENE_EVENTS)/events_fs_scene.c				\
 		$(FS_SCENE_INIT)/init_first_scene.c				\
 		$(FS_SCENE_INIT)/init_game_object_fs_scene.c			\
 		$(FS_SCENE_INIT)/init_player_fs_scene.c				\
 		$(FS_SCENE_INIT)/init_scene_object_fs_scene.c			\
 		$(FS_SCENE_INIT)/put_chara_in_game_object.c			\
+		$(FS_SCENE_INIT)/init_texts_fs_scene.c				\
+		$(FS_SCENE_INIT)/init_buttons_fs_scene.c			\
 		$(SRC)/init_all_game.c						\
 		$(SRC)/launch_game.c						\
 		$(SRC)/create_window.c						\
@@ -71,15 +83,15 @@ CFLAGS	=	-I./include -W -Wall -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(MAKE) -C lib/my
+	$(MAKE) -C lib/my --no-print-directory
 	$(CC) -o $(NAME) $(OBJS) $(LIB) $(MY) $(GRAPH)
 
 clean:
-	$(MAKE) clean -C lib/my
+	$(MAKE) clean -C lib/my --no-print-directory
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(MAKE) fclean -C lib/my
+	$(MAKE) fclean -C lib/my --no-print-directory
 	$(RM) $(NAME)
 
 re: fclean all

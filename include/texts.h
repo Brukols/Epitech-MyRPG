@@ -13,7 +13,9 @@
 enum text_e {
     SCORE,
     MONEY,
-    MENU_TITTLE
+    MENU_TITTLE,
+    TEXT_BOX,
+    NAME_BOX
 };
 
 typedef struct texts_s {
@@ -22,7 +24,6 @@ typedef struct texts_s {
     sfText *text;
     sfFont *font;
     sfVector2f pos;
-    sfIntRect rect;
     struct texts_s *next;
     struct texts_s *prev;
 } texts_t;

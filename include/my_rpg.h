@@ -37,6 +37,9 @@ void display_player(game_t *);
 void move_all_the_scene(game_t *);
 void move_the_scene(game_t *, sfKeyCode, bool);
 game_object_t *sort_game_object(game_object_t *);
+void display_buttons(game_t *);
+void display_pnj_dialog(game_t *, texts_t *, pnj_t *);
+void display_pnj_name(game_t *, texts_t *, pnj_t *);
 
 // GENERAL_EVENTS //
 
@@ -44,6 +47,8 @@ bool player_touch_smth(game_t *);
 bool will_touch_the_border(background_t *, sfVector2f);
 bool will_touch_up_and_down(background_t *, game_object_t *, sfVector2f);
 bool will_touch_side(background_t *, game_object_t *, sfVector2f);
+bool change_dialog(game_t *);
+void interactions(game_t *game, sfKeyCode);
 
 // GENERAL INIT //
 
@@ -55,6 +60,11 @@ sfColor init_color(int r, int g, int b, int a);
 game_object_t *init_house_player(game_object_t *, int x, int y);
 game_object_t *init_object(game_object_t *, char *);
 game_object_t *init_shaft(game_object_t *, int x, int y);
+scene_object_t *init_pnj(scene_object_t *, char *);
+game_object_t *freddy(game_object_t *, int, int);
+char **init_discuss(char *, int *);
+texts_t *init_box_text(texts_t *);
+buttons_t *init_box_dialog(buttons_t *);
 
 game_t *init_all_game(void);
 sfRenderWindow *create_window(unsigned int, unsigned int, unsigned int);
