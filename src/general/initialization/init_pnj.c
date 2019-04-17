@@ -23,10 +23,10 @@ char *next_for_pnj(char *str, int *i)
 
 game_object_t *fill_go_pnj(game_object_t *go, char *name, int x, int y)
 {
-    char *arr[1] = {"freddy"};
-    game_object_t *(*fill_pnj[1])() = {freddy};
+    char *arr[2] = {"Freddy", "Dobby"};
+    game_object_t *(*fill_pnj[2])() = {freddy, dobby};
 
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < 2; i++) {
         if (my_strcmp(arr[i], name) == 0)
             return (fill_pnj[i](go, x, y));
     }

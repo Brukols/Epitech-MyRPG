@@ -16,10 +16,11 @@ game_t *events_fs_scene(game_t *game)
             sfRenderWindow_close(game->window);
         if (event.type == sfEvtKeyPressed) {
             move_the_scene(game, event.key.code, true);
+        }
+        if (event.type == sfEvtKeyReleased) {
+            move_the_scene(game, event.key.code, false);
             interactions(game, event.key.code);
         }
-        if (event.type == sfEvtKeyReleased)
-            move_the_scene(game, event.key.code, false);
     }
     return (game);
 }

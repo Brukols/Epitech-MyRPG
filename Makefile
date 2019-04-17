@@ -48,6 +48,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/init_discuss.c					\
 		$(GENERAL_INIT)/init_box_dialog.c				\
 		$(GENERAL_INIT)/init_text_box.c					\
+		$(GENERAL_INIT)/init_rocks.c					\
 		$(FS_SCENE_DISPLAY)/display_fs_scene.c				\
 		$(FS_SCENE_DISPLAY)/display_game_object_fs_scene.c		\
 		$(FS_SCENE_DISPLAY)/display_texts_fs_scene.c			\

@@ -28,12 +28,13 @@ game_object_t *init_object(game_object_t *go, char *str)
     char *tmp = next_data(str, &i);
     char *x = next_data(str, &i);
     char *y = next_data(str, &i);
-    char *name[2] = {"shaft", "house"};
-    game_object_t *(*init_every_object[2])() = {init_shaft, init_house_player};
+    char *name[4] = {"shaft", "house_player", "brown_house", "rock"};
+    game_object_t *(*init_every_object[4])() = {init_shaft, init_house_player,\
+    init_brown_house, init_rock};
 
     if (!tmp || !x || !y)
         return (NULL);
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 4; i++) {
         if (!my_strcmp(tmp, name[i]))
             return (init_every_object[i](go, my_getnbr(x), my_getnbr(y)));
     }

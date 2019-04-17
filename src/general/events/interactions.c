@@ -10,8 +10,8 @@
 bool is_ready_to_talk(game_object_t *go, sfVector2f pos_player)
 {
     if (pos_player.x + 35 > go->pos.x && pos_player.x + 35 < \
-        go->pos.x + go->hitbox_size.x && pos_player.y - 35 > go->pos.y && \
-        pos_player.y - 35 < go->pos.y + go->hitbox_size.y)
+        go->pos.x + go->hitbox_size.x && pos_player.y - 10 > go->pos.y && \
+        pos_player.y - 10 < go->pos.y + go->hitbox_size.y)
         return (true);
     return (false);
 }

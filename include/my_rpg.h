@@ -65,6 +65,9 @@ game_object_t *freddy(game_object_t *, int, int);
 char **init_discuss(char *, int *);
 texts_t *init_box_text(texts_t *);
 buttons_t *init_box_dialog(buttons_t *);
+game_object_t *dobby(game_object_t *, int, int);
+game_object_t *init_brown_house(game_object_t *, int, int);
+game_object_t *init_rock(game_object_t *, int, int);
 
 game_t *init_all_game(void);
 sfRenderWindow *create_window(unsigned int, unsigned int, unsigned int);
