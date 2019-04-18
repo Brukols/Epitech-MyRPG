@@ -27,6 +27,11 @@ SRCS	=	launch_game.c				\
 		init/tittle_and_background.c		\
 		select/start_button.c			\
 		select/bubbles.c			\
+		init/intro/polypoppy.c			\
+		init/intro/fairy_events.c		\
+		display/intro/king.c			\
+		display/intro/earthquake.c		\
+		display/intro/king_surprise.c		\
 
 OBJS	=	$(SRCS:.c=.o)
 

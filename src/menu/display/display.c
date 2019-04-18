@@ -16,9 +16,9 @@ void event_pressed(game_t *game)
         if (event.type == sfEvtClosed)
             sfRenderWindow_close(game->window);
         if (mouse_pos.x >= 1820 && mouse_pos.x <= 1920 &&   \
-        mouse_pos.y >= 900 && mouse_pos.y <= 1000 && \
-        event.mouseButton.type == sfEvtMouseButtonPressed)
-        sfRenderWindow_close(game->window);
+            mouse_pos.y >= 900 && mouse_pos.y <= 1000 &&    \
+            event.mouseButton.type == sfEvtMouseButtonPressed)
+            sfRenderWindow_close(game->window);
     }
 }
 

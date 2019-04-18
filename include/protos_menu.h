@@ -10,6 +10,13 @@
 
 #include "my_rpg.h"
 
+game_t *move_king_surprise(game_t *);
+game_object_t *init_polipoppy_surprise(game_object_t *);
+game_object_t *init_fairy(game_object_t *);
+game_object_t *init_interrogation(game_object_t *);
+game_t *king_surprise(game_t *);
+game_t *king_walk(game_t *);
+game_t *earthquake(game_t *);
 game_t *bubble_5(game_t *);
 game_object_t *init_bubble_5(game_object_t *);
 game_t *select_bubble_5(game_t *);
