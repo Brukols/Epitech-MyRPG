@@ -19,7 +19,7 @@ game_object_t *init_fairy(game_object_t *game_object)
     game_object->clock = sfClock_create();
     game_object->sprite = sfSprite_create();
     game_object->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/intro/fée.png", NULL);
+    "ressources/sprites/intro/fée.png", NULL);
     return (game_object);
 }
 
@@ -31,6 +31,6 @@ game_object_t *init_interrogation(game_object_t *game_object)
     game_object->clock = sfClock_create();
     game_object->sprite = sfSprite_create();
     game_object->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/intro/?.png", NULL);
+    "ressources/sprites/intro/?.png", NULL);
     return (game_object);
 }

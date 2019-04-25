@@ -58,7 +58,6 @@ typedef struct game_object_s {
 } game_object_t;
 
 typedef struct player_s {
-    //items_t *items;
     char *name;
     sfVector2f pos;
     sfIntRect rect;
@@ -72,6 +71,7 @@ typedef struct player_s {
     int down;
     int right;
     int left;
+    inventory_t *inventory;
     game_object_t *game_object;
 } player_t;
 

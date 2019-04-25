@@ -15,7 +15,7 @@ game_object_t *init_bubble_1(game_object_t *game_object)
     game_object->clock = sfClock_create();
     game_object->sprite = sfSprite_create();
     game_object->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/intro/bulle1.png", NULL);
+    "ressources/sprites/intro/bulle1.png", NULL);
     return (game_object);
 }
 
@@ -27,7 +27,7 @@ game_object_t *init_bubble_2(game_object_t *game_object)
     game_object->clock = sfClock_create();
     game_object->sprite = sfSprite_create();
     game_object->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/intro/bulle2.png", NULL);
+    "ressources/sprites/intro/bulle2.png", NULL);
     return (game_object);
 }
 
@@ -39,7 +39,7 @@ game_object_t *init_bubble_3(game_object_t *game_object)
     game_object->clock = sfClock_create();
     game_object->sprite = sfSprite_create();
     game_object->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/intro/bulle3.png", NULL);
+    "ressources/sprites/intro/bulle3.png", NULL);
     return (game_object);
 }
 
@@ -51,7 +51,7 @@ game_object_t *init_bubble_4(game_object_t *game_object)
     game_object->clock = sfClock_create();
     game_object->sprite = sfSprite_create();
     game_object->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/intro/bulle5.png", NULL);
+    "ressources/sprites/intro/bulle5.png", NULL);
     return (game_object);
 }
 
@@ -63,7 +63,7 @@ game_object_t *init_bubble_5(game_object_t *game_object)
     game_object->clock = sfClock_create();
     game_object->sprite = sfSprite_create();
     game_object->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/intro/bulle6.png", NULL);
+    "ressources/sprites/intro/bulle6.png", NULL);
     return (game_object);
 }
 
@@ -75,6 +75,6 @@ game_object_t *init_bubble_red(game_object_t *game_object)
     game_object->clock = sfClock_create();
     game_object->sprite = sfSprite_create();
     game_object->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/intro/bulle4.png", NULL);
+    "ressources/sprites/intro/bulle4.png", NULL);
     return (game_object);
 }

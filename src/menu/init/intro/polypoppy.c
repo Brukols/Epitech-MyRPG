@@ -19,7 +19,7 @@ game_object_t *init_polipoppy_walk(game_object_t *game_object)
     game_object->clock = sfClock_create();
     game_object->sprite = sfSprite_create();
     game_object->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/intro/walkandsurprise.png", NULL);
+    "ressources/sprites/intro/walkandsurprise.png", NULL);
     return (game_object);
 }
 
@@ -35,6 +35,6 @@ game_object_t *init_polipoppy_surprise(game_object_t *game_object)
     game_object->clock = sfClock_create();
     game_object->sprite = sfSprite_create();
     game_object->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/intro/walkandsurprise.png", NULL);
+    "ressources/sprites/intro/walkandsurprise.png", NULL);
     return (game_object);
 }

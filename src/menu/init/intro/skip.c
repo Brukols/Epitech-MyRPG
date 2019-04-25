@@ -15,7 +15,7 @@ game_object_t *init_skip1(game_object_t *game_object)
     game_object->clock = sfClock_create();
     game_object->sprite = sfSprite_create();
     game_object->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/intro/skip1.png", NULL);
+    "ressources/sprites/intro/skip1.png", NULL);
     return (game_object);
 }
 
@@ -27,6 +27,6 @@ game_object_t *init_skip2(game_object_t *game_object)
     game_object->clock = sfClock_create();
     game_object->sprite = sfSprite_create();
     game_object->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/intro/skip2.png", NULL);
+    "ressources/sprites/intro/skip2.png", NULL);
     return (game_object);
 }

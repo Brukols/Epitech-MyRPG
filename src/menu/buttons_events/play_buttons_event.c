@@ -35,10 +35,10 @@ void redirect_idle_play_button(sfVector2i mouse_pos, game_t *game)
     if (mouse_pos.x >= 830 && mouse_pos.x <= 1380 &&    \
         mouse_pos.y >= 500 && mouse_pos.y <= 650)
         idle_play_button(game,                       \
-        "../../ressources/sprites/menu/danseur.png", \
-        "../../ressources/sprites/menu/danseur.png");
+        "ressources/sprites/menu/danseur.png", \
+        "ressources/sprites/menu/danseur.png");
     else
         idle_play_button(game,                           \
-        "../../ressources/sprites/menu/buttonplay1.png", \
-        "../../ressources/sprites/menu/buttonplay2.png");
+        "ressources/sprites/menu/buttonplay1.png", \
+        "ressources/sprites/menu/buttonplay2.png");
 }

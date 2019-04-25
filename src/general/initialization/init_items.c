@@ -5,7 +5,7 @@
 ** init_items
 */
 
-#include "inventory.h"
+#include "my_rpg.h"
 
 void *create_item_with_id(int number)
 {

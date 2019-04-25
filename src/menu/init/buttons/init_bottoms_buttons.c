@@ -11,7 +11,7 @@ buttons_t *setting_button(buttons_t *button)
 {
     button->type = MENU_SETTINGS;
     button->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/menu/settings.png", NULL);
+    "ressources/sprites/menu/settings.png", NULL);
     button->sprite = sfSprite_create();
     button->pos.x = 1770;
     button->pos.y = 900;
@@ -22,7 +22,7 @@ buttons_t *exit_button(buttons_t *button)
 {
     button->type = MENU_EXIT;
     button->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/menu/exit.png", NULL);
+    "ressources/sprites/menu/exit.png", NULL);
     button->sprite = sfSprite_create();
     button->pos.x = 1650;
     button->pos.y = 900;

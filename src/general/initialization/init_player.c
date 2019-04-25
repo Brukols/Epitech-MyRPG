@@ -18,6 +18,8 @@ player_t *init_player(int x, int y)
         return (NULL);
     if (!(player->sprite = sfSprite_create()))
         return (NULL);
+    if (!(player->inventory = init_inventory()))
+        return (NULL);
     player->pos = init_vec2f(x, y);
     player->rect = init_intrect(78, 0, 78, 108);
     player->move_x = 0;

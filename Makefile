@@ -25,6 +25,22 @@ FS_SCENE_DISPLAY	=	src/first_scene/display
 
 FS_SCENE_EVENTS	=	src/first_scene/events
 
+MENU	=	src/menu
+
+MENU_SELECT	=	src/menu/select
+
+MENU_EVENTS	=	src/menu/buttons_events
+
+MENU_DISPLAY	=	src/menu/display
+
+MENU_DISPLAY_INTRO	=	src/menu/display/intro
+
+MENU_INIT	=	src/menu/init
+
+MENU_INIT_BUTTONS	=	src/menu/init/buttons
+
+MENU_INIT_INTRO	=	src/menu/init/intro
+
 SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/display_player.c				\
 		$(GENERAL_DISPLAY)/move_all_the_scene.c				\
@@ -32,10 +48,13 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/sort_game_object.c				\
 		$(GENERAL_DISPLAY)/display_buttons.c				\
 		$(GENERAL_DISPLAY)/display_dialog.c				\
+		$(GENERAL_DISPLAY)/display_inventory.c				\
 		$(GENERAL_EVENTS)/player_touch_smth.c				\
 		$(GENERAL_EVENTS)/will_touch_smth.c				\
 		$(GENERAL_EVENTS)/change_dialog.c				\
 		$(GENERAL_EVENTS)/interactions.c				\
+		$(GENERAL_EVENTS)/button_is_clicked.c				\
+		$(GENERAL_EVENTS)/manage_mouse_button_event.c			\
 		$(GENERAL_INIT)/init_color.c					\
 		$(GENERAL_INIT)/init_house.c					\
 		$(GENERAL_INIT)/init_map.c					\
@@ -53,6 +72,31 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/put_chara_in_game_object.c			\
 		$(GENERAL_INIT)/init_player.c					\
 		$(GENERAL_INIT)/init_game_object_scene.c			\
+		$(GENERAL_INIT)/init_inventory.c				\
+		$(GENERAL_INIT)/init_items.c					\
+		$(GENERAL_INIT)/create_sword.c					\
+		$(GENERAL_INIT)/create_ring.c					\
+		$(MENU_EVENTS)/bottoms_buttons.c	\
+		$(MENU_EVENTS)/play_buttons_event.c	\
+		$(MENU_DISPLAY)/display.c			\
+		$(MENU_DISPLAY)/display_buttons.c		\
+		$(MENU_DISPLAY_INTRO)/display_intro.c		\
+		$(MENU_DISPLAY_INTRO)/fairy.c			\
+		$(MENU_DISPLAY_INTRO)/bubbles.c			\
+		$(MENU_DISPLAY_INTRO)/king.c			\
+		$(MENU_DISPLAY_INTRO)/earthquake.c		\
+		$(MENU_DISPLAY_INTRO)/king_surprise.c		\
+		$(MENU_INIT)/init.c				\
+		$(MENU_INIT)/tittle_and_background.c		\
+		$(MENU_INIT_BUTTONS)/init_buttons_play.c	\
+		$(MENU_INIT_BUTTONS)/init_bottoms_buttons.c	\
+		$(MENU_INIT_INTRO)/bubbles.c			\
+		$(MENU_INIT_INTRO)/init_intro.c			\
+		$(MENU_INIT_INTRO)/skip.c			\
+		$(MENU_INIT_INTRO)/polypoppy.c			\
+		$(MENU_INIT_INTRO)/fairy_events.c		\
+		$(MENU_SELECT)/start_button.c			\
+		$(MENU_SELECT)/bubbles.c			\
 		$(FS_SCENE_DISPLAY)/display_fs_scene.c				\
 		$(FS_SCENE_DISPLAY)/display_game_object_fs_scene.c		\
 		$(FS_SCENE_DISPLAY)/display_texts_fs_scene.c			\

@@ -27,6 +27,8 @@ typedef struct s_slot
     int number;
     bool select;
     item_t *item;
+    sfVector2f pos;
+    sfVector2f size;
     struct s_slot *next;
 } slot_t;
 
@@ -37,6 +39,7 @@ typedef struct s_inventory
     int nb_slots;
     int nb_items;
     slot_t *slots;
+    item_t **items;
 } inventory_t;
 
 item_t **init_items(void);

@@ -10,7 +10,7 @@
 background_t *init_background(background_t *background)
 {
     background->texture = sfTexture_createFromFile(\
-    "../../ressources/sprites/menu/tittle.png", NULL);
+    "ressources/sprites/menu/tittle.png", NULL);
     background->sprite = sfSprite_create();
     background->pos.x = 0;
     background->pos.y = 0;
@@ -27,7 +27,7 @@ texts_t *init_title(void)
     if (tittle == NULL)
         return NULL;
     tittle->font = sfFont_createFromFile(\
-    "../../ressources/font/tittle.ttf");
+    "ressources/font/tittle.ttf");
     tittle->text = sfText_create();
     tittle->pos.x = 460;
     tittle->pos.y = 170;
