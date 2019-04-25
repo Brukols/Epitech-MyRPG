@@ -19,7 +19,8 @@ game_object_t *fill_go_of_player(game_object_t *go, player_t *player)
         return (NULL);
     if (!(go->sprite = sfSprite_create()))
         return (NULL);
-    go->pos = init_vec2f(900, 480);
+    go->pos = init_vec2f(player->pos.x, player->pos.y);
+    go->comparison = player->pos.y;
     go->rect = init_intrect(78, 0, 78, 108);
     go->clock = sfClock_create();
     go->type = PLAYER;

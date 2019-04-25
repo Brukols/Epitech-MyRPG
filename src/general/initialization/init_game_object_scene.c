@@ -7,10 +7,10 @@
 
 #include "my_rpg.h"
 
-game_object_t *init_game_object_fs_scene(void)
+game_object_t *init_game_object_scene(char *str)
 {
     game_object_t *go = malloc(sizeof(game_object_t));
-    char **map = init_map("maps/map");
+    char **map = init_map(str);
 
     if (!map || !go)
         return (NULL);

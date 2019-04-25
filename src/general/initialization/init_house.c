@@ -15,6 +15,7 @@ game_object_t *init_house_player(game_object_t *go, int x, int y)
     if (!(go->sprite = sfSprite_create()))
         return (NULL);
     go->pos = init_vec2f(x * 2.3, y * 2.3);
+    go->comparison = y * 2.3;
     go->rect = init_intrect(0, 96, 128, 160);
     go->hitbox_pos = init_vec2f(x * 2.3, (y + 40) * 2.3);
     go->hitbox_size = init_vec2f(128 * 2.3, 120 * 2.3);
@@ -31,6 +32,7 @@ game_object_t *init_brown_house(game_object_t *go, int x, int y)
     if (!(go->sprite = sfSprite_create()))
         return (NULL);
     go->pos = init_vec2f(x * 2.3, y * 2.3);
+    go->comparison = y * 2.3;
     go->rect = init_intrect(672, 65, 96, 94);
     go->hitbox_pos = init_vec2f(x * 2.3, (y + 11) * 2.3);
     go->hitbox_size = init_vec2f(96 * 2.3, 83 * 2.3);

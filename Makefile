@@ -49,15 +49,16 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/init_box_dialog.c				\
 		$(GENERAL_INIT)/init_text_box.c					\
 		$(GENERAL_INIT)/init_rocks.c					\
+		$(GENERAL_INIT)/init_chests.c					\
+		$(GENERAL_INIT)/put_chara_in_game_object.c			\
+		$(GENERAL_INIT)/init_player.c					\
+		$(GENERAL_INIT)/init_game_object_scene.c			\
 		$(FS_SCENE_DISPLAY)/display_fs_scene.c				\
 		$(FS_SCENE_DISPLAY)/display_game_object_fs_scene.c		\
 		$(FS_SCENE_DISPLAY)/display_texts_fs_scene.c			\
 		$(FS_SCENE_EVENTS)/events_fs_scene.c				\
 		$(FS_SCENE_INIT)/init_first_scene.c				\
-		$(FS_SCENE_INIT)/init_game_object_fs_scene.c			\
-		$(FS_SCENE_INIT)/init_player_fs_scene.c				\
 		$(FS_SCENE_INIT)/init_scene_object_fs_scene.c			\
-		$(FS_SCENE_INIT)/put_chara_in_game_object.c			\
 		$(FS_SCENE_INIT)/init_texts_fs_scene.c				\
 		$(FS_SCENE_INIT)/init_buttons_fs_scene.c			\
 		$(SRC)/init_all_game.c						\

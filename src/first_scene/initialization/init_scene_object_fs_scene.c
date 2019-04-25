@@ -31,9 +31,9 @@ scene_object_t *init_scene_object_fs_scene(void)
 
     if (!(objs->background = init_background_fs_scene()))
         return (NULL);
-    if (!(objs->player = init_player_fs_scene()))
+    if (!(objs->player = init_player(900, 480)))
         return (NULL);
-    if (!(objs->game_object = init_game_object_fs_scene()))
+    if (!(objs->game_object = init_game_object_scene("maps/map")))
         return (NULL);
     if (!(objs = init_pnj(objs, "maps/pnj")))
         return (NULL);

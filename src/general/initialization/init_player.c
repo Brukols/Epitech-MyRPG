@@ -7,7 +7,7 @@
 
 #include "my_rpg.h"
 
-player_t *init_player_fs_scene(void)
+player_t *init_player(int x, int y)
 {
     player_t *player = malloc(sizeof(player_t));
 
@@ -18,7 +18,7 @@ player_t *init_player_fs_scene(void)
         return (NULL);
     if (!(player->sprite = sfSprite_create()))
         return (NULL);
-    player->pos = init_vec2f(900, 480);
+    player->pos = init_vec2f(x, y);
     player->rect = init_intrect(78, 0, 78, 108);
     player->move_x = 0;
     player->move_y = 0;

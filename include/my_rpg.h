@@ -68,6 +68,10 @@ buttons_t *init_box_dialog(buttons_t *);
 game_object_t *dobby(game_object_t *, int, int);
 game_object_t *init_brown_house(game_object_t *, int, int);
 game_object_t *init_rock(game_object_t *, int, int);
+game_object_t *init_first_chest(game_object_t *, int, int);
+scene_object_t *put_chara_in_game_object(scene_object_t *);
+player_t *init_player(int, int);
+game_object_t *init_game_object_scene(char *);
 
 game_t *init_all_game(void);
 sfRenderWindow *create_window(unsigned int, unsigned int, unsigned int);

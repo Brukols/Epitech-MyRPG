@@ -15,6 +15,7 @@ enum game_object_e {
     SHAFT,
     HOUSE,
     PNJ,
+    CHEST,
     INTRO_SKIP1,
     INTRO_SKIP2,
     INTRO_FAIRY,
@@ -43,6 +44,7 @@ typedef struct game_object_s {
     enum game_object_e type;
     int move_x;
     int move_y;
+    int comparison;
     sfClock *clock;
     sfTexture *texture;
     sfSprite *sprite;

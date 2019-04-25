@@ -23,12 +23,12 @@ int more_position(game_object_t *game_object)
 {
     int i = 0;
     int final = 0;
-    int tmp_y = game_object->pos.y;
+    int tmp_y = game_object->comparison;
 
     for (; game_object; game_object = game_object->next) {
-        if (game_object->pos.y < tmp_y) {
+        if (game_object->comparison < tmp_y) {
             final = i;
-            tmp_y = game_object->pos.y;
+            tmp_y = game_object->comparison;
         }
         i++;
     }

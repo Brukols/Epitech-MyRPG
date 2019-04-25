@@ -10,6 +10,7 @@
 game_object_t *freddy(game_object_t *go, int x, int y)
 {
     go->pos = init_vec2f(x, y);
+    go->comparison = y;
     go->type = PNJ;
     go->move_x = 0;
     go->move_y = 0;
@@ -28,6 +29,7 @@ game_object_t *freddy(game_object_t *go, int x, int y)
 game_object_t *dobby(game_object_t *go, int x, int y)
 {
     go->pos = init_vec2f(x, y);
+    go->comparison = y;
     go->type = PNJ;
     go->move_x = 0;
     go->move_y = 0;
