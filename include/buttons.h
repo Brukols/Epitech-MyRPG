@@ -26,6 +26,8 @@ typedef struct buttons_s {
     sfVector2f size;
     sfIntRect rect;
     sfClock *clock;
+    sfVector2f hitbox_pos;
+    sfVector2f hitbox_size;
     game_t *(*callback)();
     struct buttons_s *next;
     struct buttons_s *prev;

@@ -34,9 +34,11 @@ sfVector2f pos_bg)
     }
     if ((pos_bg.y <= -1450 || pos_play.y < 480) && player->move_y > 0) {
         player->pos.y += 5;
+        player->comparison += 5;
     }
     if ((pos_bg.y >= -5 || pos_play.y > 480) && player->move_y < 0) {
         player->pos.y -= 5;
+        player->comparison -= 5;
     }
 }
 
@@ -53,10 +55,12 @@ void move_game_object(game_object_t *go, background_t *bg, game_object_t *player
     if (bg->move_y > 0 && bg->pos.y > -1450 && player->pos.y >= 480) {
         go->pos.y -= 5;
         go->hitbox_pos.y -= 5;
+        go->comparison -= 5;
     }
     if (bg->move_y < 0 && bg->pos.y < -5 && player->pos.y <= 480) {
         go->pos.y += 5;
         go->hitbox_pos.y += 5;
+        go->comparison += 5;
     }
 }
 

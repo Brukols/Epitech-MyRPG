@@ -21,7 +21,68 @@ char *next_for_pnj(char *str, int *i)
     return (tmp);
 }
 
-game_object_t *fill_go_pnj(game_object_t *go, char *name, int x, int y)
+char **init_all(char *str, int *i)
+{
+    char **all = malloc(sizeof(char *) * 9);
+
+    if (!all)
+        return (NULL);
+    all[8] = NULL;
+    for (int a = 0; a < 7; a++) {
+        all[a] = next_for_pnj(str, i);
+        if (!all[a])
+            return (NULL);
+    }
+    all[7] = init_what_texture(str, i);
+    if (!all[7])
+        return (NULL);
+    return (all);
+}
+
+game_object_t *fill_game_object_pnj(game_object_t *go, char **all)
+{
+    if (!(go->next = malloc(sizeof(game_object_t))))
+        return (NULL);
+    go->next->prev = go;
+    go = go->next;
+    go->next = NULL;
+    go->pos = init_vec2f(my_getnbr(all[1]), my_getnbr(all[2]));
+    go->comparison = my_getnbr(all[2]);
+    go->type = PNJ;
+    go->move_x = 0;
+    go->move_y = 0;
+    if (!(go->texture = sfTexture_createFromFile(all[7], NULL)))
+        return (NULL);
+    if (!(go->sprite = sfSprite_create()))
+        return (NULL);
+    go->scale = init_vec2f(1, 1);
+    go->rect = init_intrect(my_getnbr(all[3]), my_getnbr(all[4]), \
+    my_getnbr(all[5]), my_getnbr(all[6]));
+    go->hitbox_pos = init_vec2f(my_getnbr(all[1]) + 12, my_getnbr(all[2]) + 54);
+    go->hitbox_size = init_vec2f(51, 54);
+    return (go);
+}
+
+pnj_t *fill_a_pnj(pnj_t *pnj, game_object_t *go, char *str)
+{
+    int i = 0;
+    char **all = init_all(str, &i);
+
+    if (!all)
+        return (NULL);
+    for (; go->next; go = go->next);
+    pnj->game_object = fill_game_object_pnj(go, all);
+    if (!(pnj->name = my_strdup(all[0])))
+        return (NULL);
+    if (!(pnj->discuss = init_discuss(str, &i)))
+        return (NULL);
+    pnj->next_dialog = 0;
+    pnj->speak = false;
+    free_array(all);
+    return (pnj);
+}
+
+/*game_object_t *fill_go_pnj(game_object_t *go, char *name, int x, int y)
 {
     char *arr[2] = {"Freddy", "Dobby"};
     game_object_t *(*fill_pnj[2])() = {freddy, dobby};
@@ -31,9 +92,9 @@ game_object_t *fill_go_pnj(game_object_t *go, char *name, int x, int y)
             return (fill_pnj[i](go, x, y));
     }
     return (NULL);
-}
+}*/
 
-pnj_t *fill_pnj(pnj_t *pnj, game_object_t *go, char *str)
+/*pnj_t *fill_pnj(pnj_t *pnj, game_object_t *go, char *str)
 {
     int i = 0;
     char *x;
@@ -56,7 +117,7 @@ pnj_t *fill_pnj(pnj_t *pnj, game_object_t *go, char *str)
         my_getnbr(y))))
         return (NULL);
     return (pnj);
-}
+}*/
 
 scene_object_t *init_pnj(scene_object_t *so, char *path)
 {
@@ -67,9 +128,8 @@ scene_object_t *init_pnj(scene_object_t *so, char *path)
         return (NULL);
     pnj->prev = NULL;
     for (int i = 0; map[i]; i++) {
-        if (!(pnj = fill_pnj(pnj, so->game_object, map[i])))
+        if (!(pnj = fill_a_pnj(pnj, so->game_object, map[i])))
             return (NULL);
-        pnj->speak = false;
         if (!map[i + 1])
             break;
         if (!(pnj->next = malloc(sizeof(pnj_t))))

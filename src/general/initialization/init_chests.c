@@ -15,7 +15,7 @@ game_object_t *init_first_chest(game_object_t *go, int x, int y)
     if (!(go->sprite = sfSprite_create()))
         return (NULL);
     go->pos = init_vec2f(x * 2.3, y * 2.3);
-    go->comparison = y * 2.3;
+    go->comparison = y * 2.3 - 42;
     go->rect = init_intrect(389, 18, 19, 18);
     go->hitbox_pos = init_vec2f(x * 2.3, (y + 5) * 2.3);
     go->hitbox_size = init_vec2f(19 * 2.3, 13 * 2.3);

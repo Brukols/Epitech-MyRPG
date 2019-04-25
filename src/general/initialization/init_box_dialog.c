@@ -23,6 +23,7 @@ buttons_t *init_box_dialog(buttons_t *button)
     button->pos = init_vec2f(380, 700);
     button->size = init_vec2f(1136, 300);
     button->rect = init_intrect(0, 0, 1136, 300);
+    button->hitbox_pos = init_vec2f(380, 700);
     button->callback = &nothing;
     button->next = NULL;
     return (button);

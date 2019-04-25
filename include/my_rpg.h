@@ -77,6 +77,8 @@ game_object_t *init_first_chest(game_object_t *, int, int);
 scene_object_t *put_chara_in_game_object(scene_object_t *);
 player_t *init_player(int, int);
 game_object_t *init_game_object_scene(char *);
+char *init_what_texture(char *, int *);
+char *next_for_pnj(char *, int *);
 
 game_t *init_all_game(void);
 sfRenderWindow *create_window(unsigned int, unsigned int, unsigned int);

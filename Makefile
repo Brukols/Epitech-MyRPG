@@ -76,6 +76,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/init_items.c					\
 		$(GENERAL_INIT)/create_sword.c					\
 		$(GENERAL_INIT)/create_ring.c					\
+		$(GENERAL_INIT)/init_what_texture.c				\
 		$(MENU_EVENTS)/bottoms_buttons.c	\
 		$(MENU_EVENTS)/play_buttons_event.c	\
 		$(MENU_DISPLAY)/display.c			\

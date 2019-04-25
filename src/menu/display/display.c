@@ -7,6 +7,14 @@
 
 #include "my_rpg.h"
 
+void manage_buttons_menu(game_t *game)
+{
+    sfVector2i tmp_mouse = sfMouse_getPositionRenderWindow(game->window);
+    sfVector2f mouse = init_vec2f(tmp_mouse.x, tmp_mouse.y);
+
+    touch_a_button(game, mouse);
+}
+
 void event_pressed(game_t *game)
 {
     sfEvent event;
@@ -19,6 +27,8 @@ void event_pressed(game_t *game)
             mouse_pos.y >= 900 && mouse_pos.y <= 1000 &&    \
             event.mouseButton.type == sfEvtMouseButtonPressed)
             sfRenderWindow_close(game->window);
+        if (event.type == sfEvtMouseButtonPressed)
+            manage_buttons_menu(game);
     }
 }
 
@@ -39,10 +49,10 @@ game_t *display_menu(game_t *game)
     for (; game->scenes->scene != MENU; game->scenes = game->scenes->next);
     background = game->scenes->objs->background;
     game = idle_events(game);
-    event_pressed(game);
     sfRenderWindow_drawSprite(game->window, background->sprite, NULL);
     display_play_button(game);
     display_statics_buttons(game);
     sfRenderWindow_drawText(game->window, game->scenes->texts->text, NULL);
+    event_pressed(game);
     return (game);
 }
