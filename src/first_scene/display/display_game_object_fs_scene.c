@@ -12,6 +12,8 @@ void display_game_object_fs_scene(game_t *game)
     game_object_t *go = game->scenes->objs->game_object;
 
     for (; go; go = go->next) {
+        if (go->display == false)
+            continue;
         sfSprite_setPosition(go->sprite, go->pos);
         sfSprite_setTexture(go->sprite, go->texture, sfFalse);
         sfSprite_setTextureRect(go->sprite, go->rect);

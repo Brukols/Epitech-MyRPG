@@ -24,5 +24,6 @@ game_t *events_fs_scene(game_t *game)
             interactions(game, event.key.code);
         }
     }
+    unlock_smth_fs_scene(game);
     return (game);
 }

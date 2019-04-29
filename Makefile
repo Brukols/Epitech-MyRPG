@@ -49,6 +49,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/display_buttons.c				\
 		$(GENERAL_DISPLAY)/display_dialog.c				\
 		$(GENERAL_DISPLAY)/display_inventory.c				\
+		$(GENERAL_DISPLAY)/display_quests.c				\
 		$(GENERAL_EVENTS)/player_touch_smth.c				\
 		$(GENERAL_EVENTS)/will_touch_smth.c				\
 		$(GENERAL_EVENTS)/change_dialog.c				\
@@ -63,7 +64,6 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/init_vec2f.c					\
 		$(GENERAL_INIT)/str_to_word_array_for_map.c			\
 		$(GENERAL_INIT)/init_pnj.c					\
-		$(GENERAL_INIT)/init_different_pnj.c				\
 		$(GENERAL_INIT)/init_discuss.c					\
 		$(GENERAL_INIT)/init_box_dialog.c				\
 		$(GENERAL_INIT)/init_text_box.c					\
@@ -77,6 +77,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/create_sword.c					\
 		$(GENERAL_INIT)/create_ring.c					\
 		$(GENERAL_INIT)/init_what_texture.c				\
+		$(GENERAL_INIT)/init_quests.c					\
 		$(MENU_EVENTS)/bottoms_buttons.c	\
 		$(MENU_EVENTS)/play_buttons_event.c	\
 		$(MENU_DISPLAY)/display.c			\
@@ -102,6 +103,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FS_SCENE_DISPLAY)/display_game_object_fs_scene.c		\
 		$(FS_SCENE_DISPLAY)/display_texts_fs_scene.c			\
 		$(FS_SCENE_EVENTS)/events_fs_scene.c				\
+		$(FS_SCENE_EVENTS)/unlock_smth_fs_scene.c			\
 		$(FS_SCENE_INIT)/init_first_scene.c				\
 		$(FS_SCENE_INIT)/init_scene_object_fs_scene.c			\
 		$(FS_SCENE_INIT)/init_texts_fs_scene.c				\

@@ -38,6 +38,7 @@ scene_object_t *put_chara_in_game_object(scene_object_t *so)
 
     if (!(go = fill_go_of_player(go, player)))
         return (NULL);
+    go->display = true;
     for (; go->prev; go = go->prev);
     go = sort_game_object(go);
     so->game_object = go;

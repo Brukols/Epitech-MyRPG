@@ -15,7 +15,7 @@ enum game_object_e {
     SHAFT,
     HOUSE,
     PNJ,
-    CHEST,
+    FIRST_CHEST,
     INTRO_SKIP1,
     INTRO_SKIP2,
     INTRO_FAIRY,
@@ -45,6 +45,7 @@ typedef struct game_object_s {
     int move_x;
     int move_y;
     int comparison;
+    bool display;
     sfClock *clock;
     sfTexture *texture;
     sfSprite *sprite;
@@ -82,6 +83,7 @@ typedef struct event_click_s {
 
 typedef struct pnj_s {
     bool speak;
+    bool has_talk_with;
     char *name;
     char **discuss;
     int next_dialog;

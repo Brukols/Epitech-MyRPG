@@ -42,6 +42,9 @@ game_t *init_all_game(void)
     game->window = create_window(1980, 1020, 60);
     if (!game->window)
         return NULL;
+    game->quests = init_quests();
+    if (!game->quests)
+        return (NULL);
     if (!(game->scenes = init_scenes()))
         return (NULL);
     return (game);

@@ -20,6 +20,7 @@ game_object_t *init_first_chest(game_object_t *go, int x, int y)
     go->hitbox_pos = init_vec2f(x * 2.3, (y + 5) * 2.3);
     go->hitbox_size = init_vec2f(19 * 2.3, 13 * 2.3);
     go->scale = init_vec2f(2.3, 2.3);
-    go->type = CHEST;
+    go->display = false;
+    go->type = FIRST_CHEST;
     return (go);
 }

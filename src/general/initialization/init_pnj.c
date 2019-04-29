@@ -78,46 +78,10 @@ pnj_t *fill_a_pnj(pnj_t *pnj, game_object_t *go, char *str)
         return (NULL);
     pnj->next_dialog = 0;
     pnj->speak = false;
+    pnj->game_object->display = true;
     free_array(all);
     return (pnj);
 }
-
-/*game_object_t *fill_go_pnj(game_object_t *go, char *name, int x, int y)
-{
-    char *arr[2] = {"Freddy", "Dobby"};
-    game_object_t *(*fill_pnj[2])() = {freddy, dobby};
-
-    for (int i = 0; i < 2; i++) {
-        if (my_strcmp(arr[i], name) == 0)
-            return (fill_pnj[i](go, x, y));
-    }
-    return (NULL);
-}*/
-
-/*pnj_t *fill_pnj(pnj_t *pnj, game_object_t *go, char *str)
-{
-    int i = 0;
-    char *x;
-    char *y;
-
-    for (; go->next; go = go->next);
-    if (!(go->next = malloc(sizeof(game_object_t))))
-        return (NULL);
-    go->next->prev = go;
-    go = go->next;
-    go->next = NULL;
-    if (!(pnj->name = next_for_pnj(str, &i)))
-        return (NULL);
-    if (!(x = next_for_pnj(str, &i)) || !(y = next_for_pnj(str, &i)))
-        return (NULL);
-    pnj->next_dialog = 0;
-    if (!(pnj->discuss = init_discuss(str, &i)))
-        return (NULL);
-    if (!(pnj->game_object = fill_go_pnj(go, pnj->name, my_getnbr(x), \
-        my_getnbr(y))))
-        return (NULL);
-    return (pnj);
-}*/
 
 scene_object_t *init_pnj(scene_object_t *so, char *path)
 {

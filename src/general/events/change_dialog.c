@@ -9,7 +9,10 @@
 
 bool change_dialog_pnj(pnj_t *pnj)
 {
-    pnj->next_dialog++;
+    if (pnj->discuss[pnj->next_dialog + 1])
+        pnj->next_dialog += 2;
+    else
+        pnj->next_dialog++;
     if (pnj->discuss[pnj->next_dialog] == NULL) {
         pnj->next_dialog = 0;
         pnj->speak = false;

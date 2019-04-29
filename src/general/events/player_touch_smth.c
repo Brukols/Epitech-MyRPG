@@ -27,7 +27,7 @@ game_object_t *go)
     for (; go; go = go->next) {
         if (go->type == PLAYER)
             continue;
-        if (will_touch(bg, player, go) == true)
+        if (will_touch(bg, player, go) == true && go->display == true)
             return (true);
     }
     return (false);

@@ -20,6 +20,7 @@
 #include <stdio.h>
 
 #include "macros.h"
+#include "quests.h"
 #include "inventory.h"
 #include "scene_object.h"
 #include "my.h"
@@ -42,6 +43,7 @@ void display_buttons(game_t *);
 void display_pnj_dialog(game_t *, texts_t *, pnj_t *);
 void display_pnj_name(game_t *, texts_t *, pnj_t *);
 void display_inventory(game_t *);
+void display_quests(game_t *);
 
 // GENERAL_EVENTS //
 
@@ -79,6 +81,7 @@ player_t *init_player(int, int);
 game_object_t *init_game_object_scene(char *);
 char *init_what_texture(char *, int *);
 char *next_for_pnj(char *, int *);
+quests_t *init_quests(void);
 
 game_t *init_all_game(void);
 sfRenderWindow *create_window(unsigned int, unsigned int, unsigned int);

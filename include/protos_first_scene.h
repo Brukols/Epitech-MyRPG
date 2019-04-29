@@ -32,6 +32,7 @@ void display_texts_fs_scene(game_t *);
 
 game_t *events_fs_scene(game_t *);
 void move_the_scene(game_t *, sfKeyCode, bool);
+void unlock_smth_fs_scene(game_t *);
 
 // DESTROY //
 

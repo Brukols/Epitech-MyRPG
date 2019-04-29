@@ -12,6 +12,7 @@
 
 typedef struct game_s {
     scenes_t *scenes;
+    quests_t *quests;
     sfRenderWindow *window;
 } game_t;
 
