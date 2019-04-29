@@ -42,10 +42,13 @@ typedef struct background_s {
 
 typedef struct game_object_s {
     enum game_object_e type;
+    int item;
     int move_x;
     int move_y;
     int comparison;
     bool display;
+    bool interaction;
+    bool open;
     sfClock *clock;
     sfTexture *texture;
     sfSprite *sprite;

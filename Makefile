@@ -50,12 +50,19 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/display_dialog.c				\
 		$(GENERAL_DISPLAY)/display_inventory.c				\
 		$(GENERAL_DISPLAY)/display_quests.c				\
+		$(GENERAL_DISPLAY)/display_msg_in_box.c				\
 		$(GENERAL_EVENTS)/player_touch_smth.c				\
 		$(GENERAL_EVENTS)/will_touch_smth.c				\
 		$(GENERAL_EVENTS)/change_dialog.c				\
 		$(GENERAL_EVENTS)/interactions.c				\
 		$(GENERAL_EVENTS)/button_is_clicked.c				\
 		$(GENERAL_EVENTS)/manage_mouse_button_event.c			\
+		$(GENERAL_EVENTS)/interaction_with_chest.c			\
+		$(GENERAL_EVENTS)/player_have_the_key.c				\
+		$(GENERAL_EVENTS)/there_is_an_interaction.c			\
+		$(GENERAL_EVENTS)/change_quest.c				\
+		$(GENERAL_EVENTS)/add_item.c					\
+		$(GENERAL_EVENTS)/remove_item.c					\
 		$(GENERAL_INIT)/init_color.c					\
 		$(GENERAL_INIT)/init_house.c					\
 		$(GENERAL_INIT)/init_map.c					\
@@ -78,6 +85,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/create_ring.c					\
 		$(GENERAL_INIT)/init_what_texture.c				\
 		$(GENERAL_INIT)/init_quests.c					\
+		$(GENERAL_INIT)/create_key.c					\
 		$(MENU_EVENTS)/bottoms_buttons.c	\
 		$(MENU_EVENTS)/play_buttons_event.c	\
 		$(MENU_DISPLAY)/display.c			\

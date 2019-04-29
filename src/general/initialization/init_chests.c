@@ -22,5 +22,8 @@ game_object_t *init_first_chest(game_object_t *go, int x, int y)
     go->scale = init_vec2f(2.3, 2.3);
     go->display = false;
     go->type = FIRST_CHEST;
+    go->interaction = false;
+    go->open = false;
+    go->item = 0;
     return (go);
 }

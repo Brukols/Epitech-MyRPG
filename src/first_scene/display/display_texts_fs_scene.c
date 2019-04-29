@@ -23,10 +23,17 @@ void display_dialog_fs_scene(game_t *game, texts_t *texts)
 void display_texts_fs_scene(game_t *game)
 {
     texts_t *texts = game->scenes->texts;
+    game_object_t *go = game->scenes->objs->game_object;
 
     for (; texts->prev; texts = texts->prev);
     for (; texts; texts = texts->next) {
         if (texts->type == NAME_BOX || texts->type == TEXT_BOX)
             display_dialog_fs_scene(game, texts);
+    }
+    for (; go; go = go->next) {
+        if (go->type != FIRST_CHEST)
+            continue;
+        if (go->interaction == true)
+            display_msg_in_box(game, "Vous devez recuperer une clee");
     }
 }

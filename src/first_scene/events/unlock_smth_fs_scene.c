@@ -13,8 +13,6 @@ void unlock_chest(game_t *game, char *name)
 
     if (my_strcmp(name, "Dobby") == 0)
         for (; go->type != FIRST_CHEST; go = go->next);
-    if (go->display == false)
-        game->quests->quest++;
     go->display = true;
 }
 

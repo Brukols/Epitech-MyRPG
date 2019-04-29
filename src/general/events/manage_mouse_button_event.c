@@ -11,8 +11,8 @@ bool touch_an_items(game_t *game, sfVector2f mouse)
 {
     slot_t *slots = game->scenes->objs->player->inventory->slots;
 
-    for (; slots; slots = slots->next) {
-        if (click(slots->pos, slots->size, mouse) == true) {
+    for (; slots && slots->item; slots = slots->next) {
+        if (click(slots->pos, slots->size, mouse) == false) {
             slots->select = !slots->select;
             return (true);
         }

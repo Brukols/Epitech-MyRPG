@@ -5,14 +5,14 @@
 ** remove_item
 */
 
-#include "inventory.h"
+#include "my_rpg.h"
 
 void remove_item(slot_t *slot, int nb)
 {
     if (slot->number != nb)
         remove_item(slot->next, nb);
     else if (slot->item == NULL)
-        printf("There is no item on this slot\n");
+        return;
     else
         slot->item = NULL;
 }

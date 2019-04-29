@@ -44,6 +44,7 @@ void display_pnj_dialog(game_t *, texts_t *, pnj_t *);
 void display_pnj_name(game_t *, texts_t *, pnj_t *);
 void display_inventory(game_t *);
 void display_quests(game_t *);
+void display_msg_in_box(game_t *, char *);
 
 // GENERAL_EVENTS //
 
@@ -56,6 +57,10 @@ void interactions(game_t *game, sfKeyCode);
 bool click(sfVector2f pos, sfVector2f size, sfVector2f mouse);
 void manage_mouse_button_event(game_t *);
 void touch_a_button(game_t *, sfVector2f);
+bool interaction_with_chest(game_t *);
+bool player_have_the_key(player_t *);
+bool there_is_an_interaction(game_t *);
+void change_quest(game_t *, enum all_quests_e);
 
 // GENERAL INIT //
 
@@ -82,6 +87,7 @@ game_object_t *init_game_object_scene(char *);
 char *init_what_texture(char *, int *);
 char *next_for_pnj(char *, int *);
 quests_t *init_quests(void);
+item_t *create_key(void);
 
 game_t *init_all_game(void);
 sfRenderWindow *create_window(unsigned int, unsigned int, unsigned int);

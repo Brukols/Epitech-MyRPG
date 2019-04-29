@@ -1,0 +1,58 @@
+/*
+** EPITECH PROJECT, 2019
+** my_rpg
+** File description:
+** interaction_with_chest
+*/
+
+#include "my_rpg.h"
+
+void open_the_chest(game_t *game, game_object_t *go)
+{
+    slot_t *slot = game->scenes->objs->player->inventory->slots;
+    inventory_t *inventory = game->scenes->objs->player->inventory;
+
+    remove_item(slot, 0);
+    add_item(inventory, go->item);
+    go->open = true;
+    go->rect.top += 108;
+}
+
+bool player_touch_chest(game_object_t *go, game_object_t *player)
+{
+    if ((player->pos.x + 35 > go->pos.x && player->pos.x + 35 < \
+        go->pos.x + go->hitbox_size.x && player->pos.y > go->pos.y && \
+        player->pos.y < go->pos.y + go->hitbox_size.y) || \
+        (player->pos.x + 35 > go->pos.x && player->pos.x + 35 < \
+        go->pos.x + go->hitbox_size.x && player->pos.y + 45 > go->pos.y && \
+        player->pos.y + 45 < go->pos.y + go->hitbox_size.y))
+        return (true);
+    return (false);
+}
+
+bool interaction_with_chest(game_t *game)
+{
+    game_object_t *go = game->scenes->objs->game_object;
+    player_t *player = game->scenes->objs->player;
+
+    for (; go; go = go->next) {
+        if (go->type != FIRST_CHEST || go->display == false)
+            continue;
+        if (go->open == true)
+            continue;
+        if (go->interaction == true) {
+            change_quest(game, FIND_A_CHEST);
+            go->interaction = false;
+            return (false);
+        }
+        if (player_touch_chest(go, player->game_object) != true)
+            continue;
+        if (player_have_the_key(game->scenes->objs->player) == \
+            false)
+            go->interaction = true;
+        else
+            open_the_chest(game, go);
+        return (true);
+    }
+    return (false);
+}

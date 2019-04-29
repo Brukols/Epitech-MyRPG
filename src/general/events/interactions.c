@@ -16,16 +16,17 @@ bool is_ready_to_talk(game_object_t *go, sfVector2f pos_player)
     return (false);
 }
 
-void new_dialog(game_t *game, sfVector2f pos_player)
+bool new_dialog(game_t *game, sfVector2f pos_player)
 {
     pnj_t *pnj = game->scenes->objs->pnj;
 
     for (; pnj; pnj = pnj->next) {
         if (is_ready_to_talk(pnj->game_object, pos_player) == true) {
             pnj->speak = true;
-            return;
+            return (true);
         }
     }
+    return (false);
 }
 
 void interactions(game_t *game, sfKeyCode code)
@@ -35,6 +36,9 @@ void interactions(game_t *game, sfKeyCode code)
     if (code == sfKeyReturn) {
         if (change_dialog(game) == true)
             return;
-        new_dialog(game, player->game_object->pos);
+        if (new_dialog(game, player->game_object->pos) == true)
+            return;
+        if (interaction_with_chest(game) == true)
+            return;
     }
 }

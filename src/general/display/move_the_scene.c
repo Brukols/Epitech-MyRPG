@@ -55,6 +55,8 @@ void move_the_scene(game_t *game, sfKeyCode code, bool move)
     background_t *bg = game->scenes->objs->background;
     player_t *player = game->scenes->objs->player;
 
+    if (there_is_an_interaction(game) == true)
+        return;
     if (code == sfKeyEscape)
         sfRenderWindow_close(game->window);
     change_position_scene(player, bg, code, move);

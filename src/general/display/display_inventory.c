@@ -19,7 +19,7 @@ void display_inventory(game_t *game)
             sfSprite_setPosition(slot->item->sprite, slot->pos);
             sfRenderWindow_drawSprite(window, slot->item->sprite, NULL);
         }
-        if (slot->item != NULL && slot->select == true) {
+        if (slot->item != NULL && slot->select == true && slot->item->box_s) {
             sfSprite_setPosition(slot->item->box_s, pos_box);
             sfRenderWindow_drawSprite(window, slot->item->box_s, NULL);
         }

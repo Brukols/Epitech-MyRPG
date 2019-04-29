@@ -54,7 +54,7 @@ inventory_t *init_inventory(void);
 void manage_inventory_with_items(inventory_t *inventory, item_t **items);
 void print_inventory_data(inventory_t *inventory);
 void destroy_inventory(inventory_t *inventory);
-void add_item(inventory_t *, item_t **, int);
+void add_item(inventory_t *, int);
 void remove_item(slot_t *slot, int nb);
 
 //Get Input

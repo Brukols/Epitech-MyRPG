@@ -9,10 +9,7 @@
 
 void display_box_dialog(game_t *game, buttons_t *buttons)
 {
-    pnj_t *pnj = game->scenes->objs->pnj;
-
-    for (; pnj && pnj->speak != true; pnj = pnj->next);
-    if (!pnj)
+    if (there_is_an_interaction(game) == false)
         return;
     sfSprite_setPosition(buttons->sprite, buttons->pos);
     sfSprite_setTexture(buttons->sprite, buttons->texture, sfFalse);
