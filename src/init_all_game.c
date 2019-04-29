@@ -39,7 +39,7 @@ game_t *init_all_game(void)
 
     if (!game)
         return (NULL);
-    game->window = create_window(1980, 1020, 60);
+    game->window = create_window(1920, 1080, 60);
     if (!game->window)
         return NULL;
     game->quests = init_quests();
