@@ -63,18 +63,15 @@ typedef struct game_object_s {
 
 typedef struct player_s {
     char *name;
-    sfVector2f pos;
-    sfIntRect rect;
-    sfSprite *sprite;
-    sfTexture *texture;
     int direction;
-    sfClock *clock;
     int move_x;
     int move_y;
     int up;
     int down;
     int right;
     int left;
+    int attack;
+    int power;
     inventory_t *inventory;
     game_object_t *game_object;
 } player_t;

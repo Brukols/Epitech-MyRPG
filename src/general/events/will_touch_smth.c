@@ -47,7 +47,7 @@ bool will_touch_the_border(background_t *bg, sfVector2f pos_player)
         return (true);
     if (bg->move_y < 0 && pos_player.y - 5 < 0)
         return (true);
-    if (bg->move_y > 0 && pos_player.y + 5 + 108 > 1020)
+    if (bg->move_y > 0 && pos_player.y + 5 + 108 > 1050)
         return (true);
     return (false);
 }

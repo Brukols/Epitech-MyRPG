@@ -24,7 +24,6 @@ item_t *create_sword(void)
     if (!(sword->sprite = sfSprite_create()))
         return (NULL);
     sword->name = "Sword";
-    sword->description = "An old sword found on a cellar";
     sword->atk = 5;
     sword->pow = 0;
     sfSprite_setTexture(sword->sprite, sword->texture, sfTrue);

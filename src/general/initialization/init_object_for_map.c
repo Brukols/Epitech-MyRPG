@@ -28,9 +28,9 @@ game_object_t *init_object(game_object_t *go, char *str)
     char *tmp = next_data(str, &i);
     char *x = next_data(str, &i);
     char *y = next_data(str, &i);
-    char *name[5] = {"shaft", "house_player", "brown_house", "rock", \
+    char *name[] = {"shaft", "house_player", "brown_house", "rock", \
     "first_chest"};
-    game_object_t *(*init_every_object[5])() = {init_shaft, init_house_player,\
+    game_object_t *(*init_every_object[])() = {init_shaft, init_house_player,\
     init_brown_house, init_rock, init_first_chest};
 
     if (!tmp || !x || !y)
