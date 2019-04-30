@@ -7,7 +7,17 @@
 
 #include "my_rpg.h"
 
-void display_fight_scene(sfRenderWindow *window, scene_t *scene)
+game_t *display_fight(game_t *game)
+{
+    int nb = game->quest->all_quests;
+    sfRenderWindow *window = game->window;
+    player_t *player = game->scenes->objs->player;
+
+    
+    return (game);
+}
+
+game_t display_fight_scene(game_t *game)
 {
     for (int i = 0; i < scene->nb_object; i++) {
         sfSprite_setPosition(scene->object[i]->sprite,
