@@ -36,7 +36,7 @@ inventory_t *init_inventory(void)
     inventory->nb_slots = 6;
     inventory->nb_items = 0;
     if (!(inventory->texture = sfTexture_createFromFile(\
-        "ressources/sprites/Inventory_bar2.png", NULL)))
+        "ressources/sprites/inventory/inventory_bar2.png", NULL)))
         return (NULL);
     if (!(inventory->sprite = sfSprite_create()))
         return (NULL);

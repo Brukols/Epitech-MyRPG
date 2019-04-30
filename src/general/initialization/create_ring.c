@@ -14,10 +14,10 @@ item_t *create_ring(void)
     if (ring == NULL)
         return (NULL);
     if (!(ring->texture = sfTexture_createFromFile(\
-        "ressources/sprites/Ring_50*50.png" , NULL)))
+        "ressources/sprites/inventory/items/Ring.png" , NULL)))
         return (NULL);
     if (!(ring->box_t = sfTexture_createFromFile(\
-        "ressources/sprites/Box_ring.png", NULL)))
+        "ressources/sprites/inventory/box/Box_ring.png", NULL)))
         return (NULL);
     if (!(ring->box_s = sfSprite_create()))
         return (NULL);

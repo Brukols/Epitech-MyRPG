@@ -11,7 +11,7 @@ bool click(sfVector2f pos, sfVector2f size, sfVector2f mouse)
 {
     if (mouse.x > pos.x && mouse.x < pos.x + size.x) {
         if (mouse.y > pos.y && mouse.y < pos.y + size.y)
-            return (SUCCESS);
+            return (true);
     }
-    return (FAILURE);
+    return (false);
 }

@@ -14,10 +14,10 @@ item_t *create_sword(void)
     if (sword == NULL)
         return (NULL);
     if (!(sword->texture = sfTexture_createFromFile(\
-        "ressources/sprites/Sword_50*50.png" , NULL)))
+        "ressources/sprites/inventory/items/Sword.png" , NULL)))
         return (NULL);
     if (!(sword->box_t = sfTexture_createFromFile(\
-        "ressources/sprites/Box_sword.png", NULL)))
+        "ressources/sprites/inventory/box/Box_sword.png", NULL)))
         return (NULL);
     if (!(sword->box_s = sfSprite_create()))
         return (NULL);

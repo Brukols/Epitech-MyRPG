@@ -14,7 +14,7 @@ item_t *create_key(void)
     if (ring == NULL)
         return (NULL);
     if (!(ring->texture = sfTexture_createFromFile(\
-        "ressources/sprites/key.png" , NULL)))
+        "ressources/sprites/inventory/items/key.png" , NULL)))
         return (NULL);
     if (!(ring->sprite = sfSprite_create()))
         return (NULL);
