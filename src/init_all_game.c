@@ -10,24 +10,22 @@
 scenes_t *init_scenes(void)
 {
     scenes_t *scenes = malloc(sizeof(scenes_t));
+    scenes_t *(*init_every_scene[])() = {init_scene_menu, init_intro, \
+    init_first_scene};
 
     if (scenes == NULL)
         return NULL;
     scenes->prev = NULL;
-    if ((scenes = init_scene_menu(scenes)) == NULL)
-      return NULL;
-    if ((scenes->next = malloc(sizeof(scenes_t))) == NULL)
-        return NULL;
-    scenes->next->prev = scenes;
-    scenes = scenes->next;
-    if ((scenes = init_intro(scenes)) == NULL)
-        return NULL;
-    if ((scenes->next = malloc(sizeof(scenes_t))) == NULL)
-        return NULL;
-    scenes->next->prev = scenes;
-    scenes = scenes->next;
-    if (!(scenes = init_first_scene(scenes)))
-      return (NULL);
+    for (int i = 0; i < 3; i++) {
+        scenes = init_every_scene[i](scenes);
+        if (i == 2)
+            break;
+        scenes->next = malloc(sizeof(scenes_t));
+        if (!scenes->next)
+            return (NULL);
+        scenes->next->prev = scenes;
+        scenes = scenes->next;
+    }
     scenes->next = NULL;
     for (; scenes->prev->prev; scenes = scenes->prev);
     return (scenes);
