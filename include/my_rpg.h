@@ -31,6 +31,7 @@
 #include "game.h"
 #include "protos_menu.h"
 #include "protos_first_scene.h"
+#include "fight_scene.h"
 
 // GENERAL_DISPLAY //
 

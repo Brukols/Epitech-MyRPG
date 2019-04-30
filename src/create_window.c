@@ -17,7 +17,7 @@ unsigned int fps)
     mode.height = height;
     mode.bitsPerPixel = 32;
     window = sfRenderWindow_create(mode, "My defender",
-    sfClose | sfResize, NULL);
+    sfFullscreen, NULL);
     sfRenderWindow_setFramerateLimit(window, fps);
     sfRenderWindow_setVerticalSyncEnabled(window, sfTrue);
     return (window);
