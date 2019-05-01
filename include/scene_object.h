@@ -52,6 +52,7 @@ typedef struct game_object_s {
     bool display;
     bool interaction;
     bool open;
+    bool hit;
     sfClock *clock;
     sfTexture *texture;
     sfSprite *sprite;
@@ -95,12 +96,38 @@ typedef struct pnj_s {
     struct pnj_s *prev;
 } pnj_t;
 
+typedef struct framebuffer_s {
+    int width;
+    int height;
+    sfUint8 *pixels;
+} framebuffer_t;
+
+typedef struct all_particle_s {
+    sfColor color;
+    int y;
+    int x;
+    int speed;
+    struct all_particle_s *next;
+    struct all_particle_s *prev;
+} all_particle_t;
+
+typedef struct particle_s {
+    sfSprite *sprite;
+    sfTexture *texture;
+    framebuffer_t *frame;
+    game_object_t *game_object;
+    all_particle_t *all_particle;
+    struct particle_s *next;
+    struct particle_s *prev;
+} particle_t;
+
 typedef struct scene_object_s {
     background_t *background;
     game_object_t *game_object;
     player_t *player;
     event_click_t *clicks;
     pnj_t *pnj;
+    particle_t *particle;
     int test;
 } scene_object_t;
 

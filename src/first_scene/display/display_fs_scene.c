@@ -15,6 +15,7 @@ game_t *display_fs_scene(game_t *game)
     display_bg(game);
     display_player(game);
     display_game_object(game);
+    game->scenes->objs->particle = display_particle(game);
     display_inventory(game);
     display_buttons(game);
     display_texts_fs_scene(game);

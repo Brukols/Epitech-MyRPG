@@ -14,6 +14,11 @@
 #define FAILURE_EXIT 84
 #define SUCCESS 0
 #define FAILURE -1
+#define AGAIN 1
+#define NOTHING 0
+#define CONTINUE 0
+#define STOP 1
+#define DISPLAY 2
 #define ABS(value) (value < 0 ? value * -1 : value)
 
 #endif

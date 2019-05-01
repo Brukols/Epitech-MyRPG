@@ -20,24 +20,24 @@ bool will_touch(background_t *bg, player_t *player, game_object_t *go)
     return (false);
 }
 
-bool player_touch_a_go(background_t *bg, player_t *player,
-game_object_t *go)
+bool player_touch_a_go(game_t *game)
 {
+    player_t *player = game->scenes->objs->player;
+    game_object_t *go = game->scenes->objs->game_object;
+    background_t *bg = game->scenes->objs->background;
+
     for (; go->prev; go = go->prev);
     for (; go; go = go->next) {
         if (go->type == PLAYER)
             continue;
-        if (will_touch(bg, player, go) == true && go->display == true)
-            return (true);
+        if (will_touch(bg, player, go) == true && go->display == true) {
+            return (animation_shaft(game, go));
+        }
     }
     return (false);
 }
 
 bool player_touch_smth(game_t *game)
 {
-    player_t *player = game->scenes->objs->player;
-    game_object_t *go = game->scenes->objs->game_object;
-    background_t *bg = game->scenes->objs->background;
-
-    return (player_touch_a_go(bg, player, go));
+    return (player_touch_a_go(game));
 }
