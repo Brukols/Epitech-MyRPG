@@ -10,7 +10,7 @@
 game_object_t *init_bed(game_object_t *go, int x, int y)
 {
     if (!(go->texture = sfTexture_createFromFile(\
-        "ressources/sprites/Houses/interiortileset.png", NULL)))
+        "ressources/sprites/Houses/interior tileset.png", NULL)))
         return (NULL);
     if (!(go->sprite = sfSprite_create()))
         return (NULL);
