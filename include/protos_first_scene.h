@@ -10,6 +10,16 @@
 
 #include "my_rpg.h"
 
+// INITIALIZATION HOUSES //
+
+game_object_t *init_house_1_background(game_object_t *go, int x, int y);
+game_object_t *init_plant(game_object_t *go, int x, int y);
+game_object_t *init_bed(game_object_t *go, int x, int y);
+game_object_t *init_house_1(void);
+scenes_t *init_house_1_scene(scenes_t *);
+char *next_data(char *str, int *i);
+game_object_t *init_house_objects(game_object_t *go, char *str);
+
 // INITIALIZATION //
 
 scenes_t *init_first_scene(scenes_t *);

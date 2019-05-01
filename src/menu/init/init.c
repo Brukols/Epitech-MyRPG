@@ -46,11 +46,11 @@ scenes_t *init_scene_menu(scenes_t *scene)
     scene->scene = MENU;
     if ((scene->objs = init_menu_objects(scene->objs)) == NULL)
         return NULL;
-    if (scene->objs == NULL)
-        return NULL;
     scene->buttons = init_buttons();
     if (scene->buttons == NULL)
         return NULL;
     scene->texts = init_title();
+    if (scene->texts == NULL)
+        return NULL;
     return (scene);
 }

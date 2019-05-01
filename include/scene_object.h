@@ -27,7 +27,10 @@ enum game_object_e {
     INTRO_KING_WALK,
     INTRO_KING_SURPRISE,
     INTRO_BUBBLE4,
-    INTRO_BUBBLE5
+    INTRO_BUBBLE5,
+    PLANT_HOUSE,
+    BED_HOUSE,
+    BACKGROUND_HOUSE_1
 };
 
 typedef struct background_s {
@@ -101,6 +104,7 @@ typedef struct scene_object_s {
     player_t *player;
     event_click_t *clicks;
     pnj_t *pnj;
+    int test;
 } scene_object_t;
 
 #endif

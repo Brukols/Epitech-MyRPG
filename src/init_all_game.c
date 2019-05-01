@@ -10,15 +10,15 @@
 scenes_t *init_scenes(void)
 {
     scenes_t *scenes = malloc(sizeof(scenes_t));
-    scenes_t *(*init_every_scene[])() = {init_scene_menu, init_intro, \
-    init_first_scene};
+    scenes_t *(*init_every_scene[4])() = {init_scene_menu, init_intro, \
+init_first_scene, init_house_1_scene};
 
     if (scenes == NULL)
         return NULL;
     scenes->prev = NULL;
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 4; i++) {
         scenes = init_every_scene[i](scenes);
-        if (i == 2)
+        if (i == 3)
             break;
         scenes->next = malloc(sizeof(scenes_t));
         if (!scenes->next)

@@ -25,7 +25,9 @@ FS_SCENE_DISPLAY	=	src/first_scene/display
 
 FS_SCENE_EVENTS	=	src/first_scene/events
 
-MENU	=	src/menu
+MENU		=	src/menu
+
+HOUSES		=	src/houses
 
 MENU_SELECT	=	src/menu/select
 
@@ -116,6 +118,9 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FS_SCENE_INIT)/init_scene_object_fs_scene.c			\
 		$(FS_SCENE_INIT)/init_texts_fs_scene.c				\
 		$(FS_SCENE_INIT)/init_buttons_fs_scene.c			\
+		$(HOUSES)/init_house_1.c					\
+		$(HOUSES)/init_plant.c						\
+		$(HOUSES)/init_bed.c						\
 		$(SRC)/init_all_game.c						\
 		$(SRC)/launch_game.c						\
 		$(SRC)/create_window.c						\
