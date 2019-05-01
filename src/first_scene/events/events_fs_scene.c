@@ -24,8 +24,7 @@ game_t *events_fs_scene(game_t *game)
             interactions(game, event.key.code);
         }
         if (event.type == sfEvtMouseButtonPressed)
-            game->scenes->scene = HOUSE_1;
+            game->scenes = game->scenes->next;
     }
-    unlock_smth_fs_scene(game);
     return (game);
 }
