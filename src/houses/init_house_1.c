@@ -70,6 +70,8 @@ scenes_t *init_house_1_scene(scenes_t *scene)
     scene->scene = HOUSE_1;
     if ((scene->objs = malloc(sizeof(scene_object_t))) == NULL)
         return NULL;
+    /*if ((scene->objs = put_chara_in_game_object(scene->objs, 400, 400)) == NULL)
+      return NULL;*/
     if ((scene->objs->game_object = init_house_1()) == NULL)
         return NULL;
     return scene;
