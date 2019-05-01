@@ -30,6 +30,7 @@ buttons_t *init_buttons_fs_scene(void);
 
 // DISPLAY //
 
+game_t *display_house_1(game_t *game);
 game_t *display_fs_scene(game_t *);
 void display_bg_fs_scene(game_t *);
 void display_player_fs_scene(game_t *);

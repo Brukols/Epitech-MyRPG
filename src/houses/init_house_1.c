@@ -7,19 +7,22 @@
 
 #include "my_rpg.h"
 
-game_object_t *init_house_1_background(game_object_t *go, int x, int y)
+background_t *init_background_house_1(void)
 {
-    if (!(go->texture = sfTexture_createFromFile(\
+    background_t *bg = malloc(sizeof(background_t));
+
+    if (!bg)
+        return (NULL);
+    if (!(bg->texture = sfTexture_createFromFile(\
         "ressources/sprites/Houses/without.png", NULL)))
         return (NULL);
-    if (!(go->sprite = sfSprite_create()))
+    if (!(bg->sprite = sfSprite_create()))
         return (NULL);
-    go->pos = init_vec2f(x * 2.3, y * 2.3);
-    go->comparison = y * 2.3;
-    go->rect = init_intrect(142, 0, 490, 480);
-    go->scale = init_vec2f(2.3, 2.3);
-    go->type = BACKGROUND_HOUSE_1;
-    return (go);
+    bg->pos = init_vec2f(727, 1123);
+    bg->scale = init_vec2f(2.3, 2.3);
+    bg->move_x = 0;
+    bg->move_y = 0;
+    return (bg);
 }
 
 game_object_t *init_house_objects(game_object_t *go, char *str)
@@ -28,14 +31,13 @@ game_object_t *init_house_objects(game_object_t *go, char *str)
     char *tmp = next_data(str, &i);
     char *x = next_data(str, &i);
     char *y = next_data(str, &i);
-    char *name[3] = {"plant", "bed", "background"};
+    char *name[3] = {"plant", "bed"};
 
-    game_object_t *(*init_every_object[3])() = {init_plant, init_bed, \
-    init_house_1_background};
+    game_object_t *(*init_every_object[3])() = {init_plant, init_bed};
 
     if (!tmp || !x || !y)
         return (NULL);
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 2; i++) {
         if (!my_strcmp(tmp, name[i]))
             return (init_every_object[i](go, my_getnbr(x), my_getnbr(y)));
     }
@@ -70,9 +72,13 @@ scenes_t *init_house_1_scene(scenes_t *scene)
     scene->scene = HOUSE_1;
     if ((scene->objs = malloc(sizeof(scene_object_t))) == NULL)
         return NULL;
-    /*if ((scene->objs = put_chara_in_game_object(scene->objs, 400, 400)) == NULL)
-      return NULL;*/
+    if ((scene->objs->player = init_player()) == NULL)
+        return NULL;
     if ((scene->objs->game_object = init_house_1()) == NULL)
         return NULL;
+    if ((scene->objs->background = init_background_house_1()) == NULL)
+        return NULL;
+    if ((scene->objs = put_chara_in_game_object(scene->objs, 400, 400)) == NULL)
+      return NULL;
     return scene;
 }
