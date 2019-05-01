@@ -7,14 +7,30 @@
 
 #include "my_rpg.h"
 
+game_t *leave_the_game(game_t *game)
+{
+    sfRenderWindow_close(game->window);
+    return (game);
+}
+
+game_t *show_setting(game_t *game)
+{
+    return (game);
+}
+
 buttons_t *setting_button(buttons_t *button)
 {
     button->type = MENU_SETTINGS;
     button->texture = sfTexture_createFromFile(\
     "ressources/sprites/menu/settings.png", NULL);
+    button->hover = sfTexture_createFromFile(\
+    "ressources/sprites/menu/settings2.png", NULL);
     button->sprite = sfSprite_create();
     button->pos.x = 1770;
     button->pos.y = 900;
+    button->hitbox_pos = init_vec2f(1802, 905);
+    button->size = init_vec2f(93, 92);
+    button->callback = &show_setting;
     return (button);
 }
 
@@ -23,8 +39,13 @@ buttons_t *exit_button(buttons_t *button)
     button->type = MENU_EXIT;
     button->texture = sfTexture_createFromFile(\
     "ressources/sprites/menu/exit.png", NULL);
+    button->hover = sfTexture_createFromFile(\
+    "ressources/sprites/menu/exit2.png", NULL);
     button->sprite = sfSprite_create();
     button->pos.x = 1650;
     button->pos.y = 900;
+    button->hitbox_pos = init_vec2f(1682, 905);
+    button->size = init_vec2f(93, 92);
+    button->callback = &leave_the_game;
     return (button);
 }

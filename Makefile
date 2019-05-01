@@ -104,10 +104,9 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT_ITEMS)/create_vulcan.c				\
 		$(GENERAL_INIT_ITEMS)/create_wand.c				\
 		$(GENERAL_INIT_ITEMS)/create_key.c				\
-		$(MENU_EVENTS)/bottoms_buttons.c	\
-		$(MENU_EVENTS)/play_buttons_event.c	\
+		$(MENU_EVENTS)/events_menu.c	\
 		$(MENU_DISPLAY)/display.c			\
-		$(MENU_DISPLAY)/display_buttons.c		\
+		$(MENU_DISPLAY)/display_buttons_menu.c		\
 		$(MENU_DISPLAY_INTRO)/display_intro.c		\
 		$(MENU_DISPLAY_INTRO)/fairy.c			\
 		$(MENU_DISPLAY_INTRO)/bubbles.c			\
@@ -119,12 +118,13 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(MENU_INIT_BUTTONS)/init_buttons_play.c	\
 		$(MENU_INIT_BUTTONS)/init_bottoms_buttons.c	\
 		$(MENU_INIT_INTRO)/bubbles.c			\
+		$(MENU_INIT_INTRO)/bubbles_2.c			\
 		$(MENU_INIT_INTRO)/init_intro.c			\
 		$(MENU_INIT_INTRO)/skip.c			\
 		$(MENU_INIT_INTRO)/polypoppy.c			\
 		$(MENU_INIT_INTRO)/fairy_events.c		\
-		$(MENU_SELECT)/start_button.c			\
 		$(MENU_SELECT)/bubbles.c			\
+		$(MENU_SELECT)/bubbles_2.c			\
 		$(FS_SCENE_DISPLAY)/display_fs_scene.c				\
 		$(FS_SCENE_DISPLAY)/display_texts_fs_scene.c			\
 		$(FS_SCENE_EVENTS)/events_fs_scene.c				\

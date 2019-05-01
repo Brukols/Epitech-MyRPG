@@ -23,9 +23,9 @@ background_t *init_intro_background(background_t *background)
 game_object_t *init_intro_sprites(game_object_t *game_object)
 {
     game_object_t *(*init_each_sprites_intro[12])() = {init_fairy, init_skip1, \
-    init_skip2, init_bubble_1, init_bubble_2, init_bubble_3, \
-    init_interrogation, init_bubble_red, init_polipoppy_walk, \
-    init_polipoppy_surprise, init_bubble_4, init_bubble_5};
+        init_skip2, init_bubble_1, init_bubble_2, init_bubble_3, \
+        init_interrogation, init_bubble_red, init_polipoppy_walk, \
+        init_polipoppy_surprise, init_bubble_4, init_bubble_5};
 
     game_object->prev = NULL;
     for (int i = 0; i < 12; i++) {

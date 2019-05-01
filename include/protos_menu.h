@@ -64,5 +64,7 @@ void display_play_button(game_t *);
 int launch_game(void);
 game_t *scene_managing(game_t *);
 game_t *display_menu(game_t *);
+void display_buttons_menu(game_t *);
+void events_menu(game_t *);
 
 #endif

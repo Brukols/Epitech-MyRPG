@@ -12,7 +12,6 @@
 
 enum button_e {
     START,
-    START_2,
     MENU_SETTINGS,
     MENU_EXIT,
     BOX_DIALOG
@@ -21,13 +20,13 @@ enum button_e {
 typedef struct buttons_s {
     enum button_e type;
     sfTexture *texture;
+    sfTexture *hover;
     sfSprite *sprite;
     sfVector2f pos;
     sfVector2f size;
     sfIntRect rect;
     sfClock *clock;
     sfVector2f hitbox_pos;
-    sfVector2f hitbox_size;
     game_t *(*callback)();
     struct buttons_s *next;
     struct buttons_s *prev;

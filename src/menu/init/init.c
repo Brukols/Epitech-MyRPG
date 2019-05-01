@@ -10,15 +10,15 @@
 buttons_t *init_buttons(void)
 {
     buttons_t *button = malloc(sizeof(buttons_t));
-    buttons_t *(*init_each_button_menu[4])() = {button_play, button_play2, \
-    setting_button, exit_button};
+    buttons_t *(*init_each_button_menu[3])() = {button_play, \
+        setting_button, exit_button};
 
     if (!button)
         return (NULL);
     button->prev = NULL;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 3; i++) {
         button = init_each_button_menu[i](button);
-        if (i == 3)
+        if (i == 2)
             break;
         if ((button->next = malloc(sizeof(buttons_t))) == NULL)
             return NULL;

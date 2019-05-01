@@ -22,7 +22,7 @@ void event_intro(game_t *game)
             game->scenes->objs->clicks->user_click < 8)
             game->scenes->objs->clicks->user_click++;
         if (game->scenes->objs->clicks->user_click == 7)
-            game->scenes->scene = MENU;
+            game->scenes = game->scenes->prev;
     }
 }
 
@@ -47,11 +47,11 @@ void display_skip_button(game_t *game)
 game_t *display_intro(game_t *game)
 {
     game_t *(*fairy_discution[9])() = {bubble_1, bubble_2, bubble_3, \
-    earthquake, earthquake, king_walk, king_surprise, bubble_5};
+        earthquake, earthquake, king_walk, king_surprise, bubble_5};
 
-    event_intro(game);
     game = fairy_discution[game->scenes->objs->clicks->user_click](game);
     game = display_fairy(game);
     display_skip_button(game);
+    event_intro(game);
     return (game);
 }

@@ -47,7 +47,7 @@ game_t *king_walk(game_t *game)
     king_event = game->scenes->objs->clicks->fairy_event;
     game = move_king(game, &stop_king);
     if (sfClock_getElapsedTime(king->clock).microseconds > 200000 && \
-        stop_king != 1) {
+    stop_king != 1) {
         if (king_event == 0)
             king->rect.left += 70;
         else

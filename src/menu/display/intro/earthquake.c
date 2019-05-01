@@ -7,7 +7,6 @@
 
 #include "my_rpg.h"
 
-
 void interrogation(game_t *game)
 {
     game_object_t *interrogation = NULL;
