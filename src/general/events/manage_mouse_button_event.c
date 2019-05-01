@@ -39,5 +39,7 @@ void manage_mouse_button_event(game_t *game)
 
     if (touch_an_items(game, mouse) == true)
         return;
+    if (delete_an_item(game, mouse) == true)
+        return;
     touch_a_button(game, mouse);
 }

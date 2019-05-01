@@ -11,8 +11,6 @@ void remove_item(slot_t *slot, int nb)
 {
     if (slot->number != nb)
         remove_item(slot->next, nb);
-    else if (slot->item == NULL)
-        return;
     else
         slot->item = NULL;
 }

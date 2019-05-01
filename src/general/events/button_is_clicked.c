@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** button_is_clicked
 ** File description:
-** defedner
+** my_rpg
 */
 
 #include "my_rpg.h"

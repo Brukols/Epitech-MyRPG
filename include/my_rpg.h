@@ -63,6 +63,7 @@ bool player_have_the_key(player_t *);
 bool there_is_an_interaction(game_t *);
 void change_quest(game_t *, enum all_quests_e);
 bool player_touch_chest(game_object_t *, game_object_t *);
+bool delete_an_item(game_t *, sfVector2f);
 
 // GENERAL INIT //
 
