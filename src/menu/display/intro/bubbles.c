@@ -52,7 +52,6 @@ game_t *bubble_3(game_t *game)
 game_t *bubble_4(game_t *game)
 {
     game_object_t *bubble = NULL;
-    background_t *background = game->scenes->objs->background;
 
     game = select_bubble_4(game);
     bubble = game->scenes->objs->game_object;

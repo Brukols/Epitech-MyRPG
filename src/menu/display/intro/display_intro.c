@@ -9,7 +9,6 @@
 
 void event_intro(game_t *game)
 {
-    game_object_t *fairy = game->scenes->objs->game_object;
     sfEvent event;
     sfVector2i mouse_pos = sfMouse_getPositionRenderWindow(game->window);
 
