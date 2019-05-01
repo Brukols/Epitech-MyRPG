@@ -17,7 +17,8 @@ init_first_scene, init_house_1_scene};
         return NULL;
     scenes->prev = NULL;
     for (int i = 0; i < 4; i++) {
-        scenes = init_every_scene[i](scenes);
+        if (!(scenes = init_every_scene[i](scenes)))
+            return (NULL);
         if (i == 3)
             break;
         scenes->next = malloc(sizeof(scenes_t));
