@@ -136,6 +136,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(HOUSES)/init_house_1.c					\
 		$(HOUSES)/init_plant.c						\
 		$(HOUSES)/init_bed.c						\
+		$(HOUSES)/display_house_1.c					\
 		$(SRC)/init_all_game.c						\
 		$(SRC)/launch_game.c						\
 		$(SRC)/create_window.c						\

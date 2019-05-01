@@ -23,6 +23,8 @@ game_t *events_fs_scene(game_t *game)
             move_the_scene(game, event.key.code, false);
             interactions(game, event.key.code);
         }
+        if (event.type == sfEvtMouseButtonPressed)
+            game->scenes->scene = HOUSE_1;
     }
     unlock_smth_fs_scene(game);
     return (game);
