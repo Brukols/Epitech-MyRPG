@@ -7,24 +7,16 @@
 
 #include "my_rpg.h"
 
-player_t *init_player(int x, int y)
+player_t *init_player()
 {
     player_t *player = malloc(sizeof(player_t));
 
     if (!player)
         return (NULL);
-    if (!(player->texture = sfTexture_createFromFile(\
-        "ressources/sprites/chara5.png", NULL)))
-        return (NULL);
-    if (!(player->sprite = sfSprite_create()))
-        return (NULL);
     if (!(player->inventory = init_inventory()))
         return (NULL);
-    player->pos = init_vec2f(x, y);
-    player->rect = init_intrect(78, 0, 78, 108);
     player->move_x = 0;
     player->move_y = 0;
-    player->clock = sfClock_create();
     player->up = 324;
     player->down = 0;
     player->left = 108;

@@ -18,18 +18,6 @@ void open_the_chest(game_t *game, game_object_t *go)
     go->rect.top += 108;
 }
 
-bool player_touch_chest(game_object_t *go, game_object_t *player)
-{
-    if ((player->pos.x + 35 > go->pos.x && player->pos.x + 35 < \
-        go->pos.x + go->hitbox_size.x && player->pos.y > go->pos.y && \
-        player->pos.y < go->pos.y + go->hitbox_size.y) || \
-        (player->pos.x + 35 > go->pos.x && player->pos.x + 35 < \
-        go->pos.x + go->hitbox_size.x && player->pos.y + 45 > go->pos.y && \
-        player->pos.y + 45 < go->pos.y + go->hitbox_size.y))
-        return (true);
-    return (false);
-}
-
 bool interaction_with_chest(game_t *game)
 {
     game_object_t *go = game->scenes->objs->game_object;

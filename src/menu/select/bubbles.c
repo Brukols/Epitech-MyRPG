@@ -10,7 +10,7 @@
 game_t *select_fairy(game_t *game)
 {
     for (; game->scenes->objs->game_object->prev != NULL; \
-         game->scenes->objs->game_object =                \
+         game->scenes->objs->game_object = \
          game->scenes->objs->game_object->prev);
     for (;game->scenes->objs->game_object->type != INTRO_FAIRY; \
          game->scenes->objs->game_object = \

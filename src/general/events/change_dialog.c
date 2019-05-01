@@ -17,11 +17,12 @@ void change_quest_pnj(game_t *game, pnj_t *pnj)
 
 bool change_dialog_pnj(game_t *game, pnj_t *pnj)
 {
-    if (game->quests->quest < 2 && my_strcmp(pnj->name, "Freddy") == 0) {
+    if (game->quests->quest != 2 && my_strcmp(pnj->name, "Freddy") == 0) {
         pnj->next_dialog = 0;
         pnj->speak = false;
         return (true);
     }
+    pnj->has_talk_with = true;
     if (pnj->discuss[pnj->next_dialog + 1])
         pnj->next_dialog += 2;
     else

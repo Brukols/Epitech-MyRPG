@@ -17,6 +17,8 @@ GENERAL_EVENTS	=	src/general/events
 
 GENERAL_INIT	=	src/general/initialization
 
+GENERAL_INIT_ITEMS	=	src/general/initialization/items
+
 FS_SCENE	=	src/first_scene
 
 FS_SCENE_INIT	=	src/first_scene/initialization
@@ -65,6 +67,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_EVENTS)/change_quest.c				\
 		$(GENERAL_EVENTS)/add_item.c					\
 		$(GENERAL_EVENTS)/remove_item.c					\
+		$(GENERAL_EVENTS)/player_touch_chest.c				\
 		$(GENERAL_INIT)/init_color.c					\
 		$(GENERAL_INIT)/init_house.c					\
 		$(GENERAL_INIT)/init_map.c					\
@@ -83,11 +86,22 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/init_game_object_scene.c			\
 		$(GENERAL_INIT)/init_inventory.c				\
 		$(GENERAL_INIT)/init_items.c					\
-		$(GENERAL_INIT)/create_sword.c					\
-		$(GENERAL_INIT)/create_ring.c					\
 		$(GENERAL_INIT)/init_what_texture.c				\
 		$(GENERAL_INIT)/init_quests.c					\
-		$(GENERAL_INIT)/create_key.c					\
+		$(GENERAL_INIT_ITEMS)/create_amulet.c				\
+		$(GENERAL_INIT_ITEMS)/create_banana.c				\
+		$(GENERAL_INIT_ITEMS)/create_chaos.c				\
+		$(GENERAL_INIT_ITEMS)/create_cloak.c				\
+		$(GENERAL_INIT_ITEMS)/create_helmet.c				\
+		$(GENERAL_INIT_ITEMS)/create_katana.c				\
+		$(GENERAL_INIT_ITEMS)/create_potion.c				\
+		$(GENERAL_INIT_ITEMS)/create_ring.c				\
+		$(GENERAL_INIT_ITEMS)/create_speelbook.c				\
+		$(GENERAL_INIT_ITEMS)/create_star.c				\
+		$(GENERAL_INIT_ITEMS)/create_sword.c				\
+		$(GENERAL_INIT_ITEMS)/create_vulcan.c				\
+		$(GENERAL_INIT_ITEMS)/create_wand.c				\
+		$(GENERAL_INIT_ITEMS)/create_key.c				\
 		$(MENU_EVENTS)/bottoms_buttons.c	\
 		$(MENU_EVENTS)/play_buttons_event.c	\
 		$(MENU_DISPLAY)/display.c			\
