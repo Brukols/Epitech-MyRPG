@@ -46,6 +46,7 @@ void display_pnj_name(game_t *, texts_t *, pnj_t *);
 void display_inventory(game_t *);
 void display_quests(game_t *);
 void display_msg_in_box(game_t *, char *);
+void display_game_object(game_t *);
 
 // GENERAL_EVENTS //
 

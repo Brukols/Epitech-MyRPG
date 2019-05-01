@@ -7,7 +7,7 @@
 
 #include "my_rpg.h"
 
-void display_game_object_fs_scene(game_t *game)
+void display_game_object(game_t *game)
 {
     game_object_t *go = game->scenes->objs->game_object;
 

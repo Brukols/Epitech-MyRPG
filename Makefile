@@ -55,6 +55,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/display_inventory.c				\
 		$(GENERAL_DISPLAY)/display_quests.c				\
 		$(GENERAL_DISPLAY)/display_msg_in_box.c				\
+		$(GENERAL_DISPLAY)/display_game_object.c			\
 		$(GENERAL_EVENTS)/player_touch_smth.c				\
 		$(GENERAL_EVENTS)/will_touch_smth.c				\
 		$(GENERAL_EVENTS)/change_dialog.c				\
@@ -125,7 +126,6 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(MENU_SELECT)/start_button.c			\
 		$(MENU_SELECT)/bubbles.c			\
 		$(FS_SCENE_DISPLAY)/display_fs_scene.c				\
-		$(FS_SCENE_DISPLAY)/display_game_object_fs_scene.c		\
 		$(FS_SCENE_DISPLAY)/display_texts_fs_scene.c			\
 		$(FS_SCENE_EVENTS)/events_fs_scene.c				\
 		$(FS_SCENE_EVENTS)/unlock_smth_fs_scene.c			\
