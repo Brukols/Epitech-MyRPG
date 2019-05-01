@@ -10,7 +10,7 @@
 background_t *init_intro_background(background_t *background)
 {
     background->texture = sfTexture_createFromFile(\
-    "ressources/sprites/intro/intro_fée.png", NULL);
+    "ressources/sprites/intro/intro_fée.jpg", NULL);
     background->sprite = sfSprite_create();
     background->pos.x = 0;
     background->pos.y = 0;
