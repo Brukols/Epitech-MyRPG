@@ -79,6 +79,7 @@ pnj_t *fill_a_pnj(pnj_t *pnj, game_object_t *go, char *str)
     pnj->next_dialog = 0;
     pnj->speak = false;
     pnj->game_object->display = true;
+    pnj->has_talk_with = false;
     free_array(all);
     return (pnj);
 }

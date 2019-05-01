@@ -62,6 +62,7 @@ bool interaction_with_chest(game_t *);
 bool player_have_the_key(player_t *);
 bool there_is_an_interaction(game_t *);
 void change_quest(game_t *, enum all_quests_e);
+bool player_touch_chest(game_object_t *, game_object_t *);
 
 // GENERAL INIT //
 

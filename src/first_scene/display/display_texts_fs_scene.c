@@ -34,6 +34,6 @@ void display_texts_fs_scene(game_t *game)
         if (go->type != FIRST_CHEST)
             continue;
         if (go->interaction == true)
-            display_msg_in_box(game, "Vous devez recuperer une clee");
+            display_msg_in_box(game, "You need to retrieve a key");
     }
 }
