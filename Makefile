@@ -27,6 +27,8 @@ FS_SCENE_DISPLAY	=	src/first_scene/display
 
 FS_SCENE_EVENTS	=	src/first_scene/events
 
+HOUSES		=	src/first_scene/initialization/houses
+
 MENU		=	src/menu
 
 INIT_HOUSES	=	src/first_scene/initialization/houses
@@ -137,6 +139,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(MENU_SELECT)/bubbles.c			\
 		$(MENU_SELECT)/bubbles_2.c			\
 		$(FS_SCENE_DISPLAY)/display_fs_scene.c				\
+		$(FS_SCENE_DISPLAY)/display_house_1.c				\
 		$(FS_SCENE_DISPLAY)/display_texts_fs_scene.c			\
 		$(FS_SCENE_EVENTS)/events_fs_scene.c				\
 		$(FS_SCENE_EVENTS)/unlock_smth_fs_scene.c			\
@@ -147,7 +150,6 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(HOUSES)/init_house_1.c					\
 		$(HOUSES)/init_plant.c						\
 		$(HOUSES)/init_bed.c						\
-		$(HOUSES)/display_house_1.c					\
 		$(FIGHT_SCENE)/init/init_fight_scene.c		\
 		$(FIGHT_SCENE)/init/init_fight_scene_buttons.c	\
 		$(FIGHT_SCENE)/init/init_fight_scene_music.c		\

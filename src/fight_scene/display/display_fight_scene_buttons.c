@@ -11,7 +11,7 @@ void display_fight_scene_buttons(game_t *game)
 {
     buttons_t *buttons = game->scenes->buttons;
 
-    for (; buttons->prev; buttons = buttons->prev);
+//    for (; buttons->prev; buttons = buttons->prev);
     for (; buttons; buttons = buttons->next) {
         sfRenderWindow_drawSprite(game->window, buttons->sprite, NULL);
     }

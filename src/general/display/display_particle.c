@@ -66,6 +66,6 @@ particle_t *display_particle(game_t *game)
     }
     if (!tmp)
         return (NULL);
-    for (; tmp->prev; particle = particle->prev);
+    for (; tmp->prev; tmp = tmp->prev);
     return (tmp);
 }
