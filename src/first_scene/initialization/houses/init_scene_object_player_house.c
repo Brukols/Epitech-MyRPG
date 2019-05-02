@@ -19,7 +19,7 @@ background_t *init_background_house_player(void)
     if (!(bg->sprite = sfSprite_create()))
         return (NULL);
     bg->pos = init_vec2f(350, 0);
-    bg->scale = init_vec2f(1.66, 1.66);
+    bg->scale = init_vec2f(1.63, 1.63);
     bg->move_x = 0;
     bg->move_y = 0;
     return (bg);
@@ -35,9 +35,9 @@ scene_object_t *init_scene_object_player_house(void)
         return (NULL);
     if (!(so->player = init_player()))
         return (NULL);
-    if (!(so->game_object = init_object_player_house()))
+    if (!(so->game_object = init_game_object_scene("maps/house_1")))
         return (NULL);
-    if (!(so = put_chara_in_game_object(so, 950, 940)))
+    if (!(so = put_chara_in_game_object(so, 950, 930)))
         return (NULL);
     so->particle = NULL;
     so->pnj = NULL;

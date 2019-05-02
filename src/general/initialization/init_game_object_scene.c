@@ -6,7 +6,7 @@
 */
 
 #include "my_rpg.h"
-//Donner en parametrele chemin du fichier texte
+
 game_object_t *init_game_object_scene(char *str)
 {
     game_object_t *go = malloc(sizeof(game_object_t));

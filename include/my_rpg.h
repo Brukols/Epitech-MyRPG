@@ -54,6 +54,7 @@ bool animation_shaft(game_t *, game_object_t *);
 void my_draw_square(framebuffer_t *, all_particle_t *, int);
 int display_leaf(particle_t *);
 int display_wind(particle_t *);
+void move_player_on_the_house(game_t *);
 
 // GENERAL_EVENTS //
 
@@ -72,6 +73,8 @@ bool there_is_an_interaction(game_t *);
 void change_quest(game_t *, enum all_quests_e);
 bool player_touch_chest(game_object_t *, game_object_t *);
 bool delete_an_item(game_t *, sfVector2f);
+void move_on_the_house(game_t *, sfKeyCode, bool);
+bool touch_walls_house(game_t *);
 
 // GENERAL INIT //
 

@@ -37,6 +37,7 @@ void display_player_fs_scene(game_t *);
 void move_all_the_scene(game_t *);
 bool player_touch_smth(game_t *);
 void display_texts_fs_scene(game_t *);
+void move_player_on_the_house(game_t *);
 
 // EVENTS //
 

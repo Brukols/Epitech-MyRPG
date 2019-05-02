@@ -20,8 +20,9 @@ void event_intro(game_t *game)
             event.mouseButton.type == sfEvtMouseButtonReleased && \
             game->scenes->objs->clicks->user_click < 8)
             game->scenes->objs->clicks->user_click++;
-        if (game->scenes->objs->clicks->user_click == 8)
+        if (game->scenes->objs->clicks->user_click >= 8)
             game->scenes = game->scenes->prev;
+        return;
     }
 }
 

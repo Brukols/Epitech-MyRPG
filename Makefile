@@ -66,6 +66,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/my_draw_square.c				\
 		$(GENERAL_DISPLAY)/display_wind.c				\
 		$(GENERAL_DISPLAY)/display_leaf.c				\
+		$(GENERAL_DISPLAY)/move_player_in_house.c			\
 		$(GENERAL_EVENTS)/player_touch_smth.c				\
 		$(GENERAL_EVENTS)/will_touch_smth.c				\
 		$(GENERAL_EVENTS)/change_dialog.c				\
@@ -80,6 +81,8 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_EVENTS)/remove_item.c					\
 		$(GENERAL_EVENTS)/player_touch_chest.c				\
 		$(GENERAL_EVENTS)/delete_an_item.c				\
+		$(GENERAL_EVENTS)/move_on_the_house.c				\
+		$(GENERAL_EVENTS)/touch_walls_house.c				\
 		$(GENERAL_INIT)/init_color.c					\
 		$(GENERAL_INIT)/init_house.c					\
 		$(GENERAL_INIT)/init_map.c					\
