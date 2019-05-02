@@ -9,27 +9,9 @@
 
 int refresh_frame(particle_t *particle)
 {
-    framebuffer_t *frame = particle->frame;
-    all_particle_t *all_particle = particle->all_particle;
-    sfColor color = {0, 0, 0, 0};
-
-    for (int i = 0; i < 165; i++) {
-        for (int a = 0; a < 165; a++)
-            my_put_pixel(frame, i, a, color);
-    }
-    for (; all_particle; all_particle = all_particle->next) {
-        my_draw_square(frame, all_particle, 5);
-        all_particle->y += all_particle->speed;
-        if (all_particle->y < 165)
-            continue;
-        if (!all_particle->prev && !all_particle->next)
-            return (NOTHING);
-        if (all_particle->prev)
-            all_particle->prev->next = all_particle->next;
-        if (all_particle->next)
-            all_particle->next->prev = all_particle->prev;
-    }
-    return (AGAIN);
+    if (particle->type == LEAF)
+        return (display_leaf(particle));
+    return (display_wind(particle));
 }
 
 int display_frame(particle_t *particle, particle_t **tmp, sfVector2f pos)
@@ -56,6 +38,14 @@ int display_frame(particle_t *particle, particle_t **tmp, sfVector2f pos)
     return (CONTINUE);
 }
 
+sfVector2f init_pos_frame(particle_t *particle)
+{
+    if (particle->type == LEAF)
+        return (init_vec2f(particle->game_object->hitbox_pos.x + 33, \
+        particle->game_object->hitbox_pos.y - 45));
+    return (init_vec2f(particle->all_particle->x, particle->all_particle->y));
+}
+
 particle_t *display_particle(game_t *game)
 {
     particle_t *particle = game->scenes->objs->particle;
@@ -64,10 +54,9 @@ particle_t *display_particle(game_t *game)
     int verif;
 
     for (; particle; particle = particle->next) {
-        if (!particle->game_object)
+        if (!particle->game_object && particle->type != WIND)
             continue;
-        pos = init_vec2f(particle->game_object->hitbox_pos.x + 33, \
-        particle->game_object->hitbox_pos.y - 45);
+        pos = init_pos_frame(particle);
         verif = display_frame(particle, &tmp, pos);
         if (verif == STOP)
             return (NULL);

@@ -39,6 +39,7 @@ scene_object_t *init_scene_object_fs_scene(void)
         return (NULL);
     if (!(objs = put_chara_in_game_object(objs, 400, 400)))
         return (NULL);
-    objs->particle = NULL;
+    if (!(objs->particle = init_wind_particle()))
+        return (NULL);
     return (objs);
 }

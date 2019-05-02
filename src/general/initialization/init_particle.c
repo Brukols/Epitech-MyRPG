@@ -38,6 +38,7 @@ particle_t *init_particle(game_object_t *go)
     particle->frame = create_framebuffer(145, 165);
     if (!particle->frame)
         return (NULL);
+    particle->type = LEAF;
     particle->all_particle = init_all_particle();
     particle->game_object = go;
     return (particle);

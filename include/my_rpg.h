@@ -51,6 +51,8 @@ void my_put_pixel(framebuffer_t *, int, int, sfColor);
 particle_t *display_particle(game_t *);
 bool animation_shaft(game_t *, game_object_t *);
 void my_draw_square(framebuffer_t *, all_particle_t *, int);
+int display_leaf(particle_t *);
+int display_wind(particle_t *);
 
 // GENERAL_EVENTS //
 
@@ -98,6 +100,8 @@ quests_t *init_quests(void);
 item_t *create_key(void);
 particle_t *init_particle(game_object_t *);
 all_particle_t *init_all_particle(void);
+framebuffer_t *create_framebuffer(int, int);
+particle_t *init_wind_particle(void);
 
 game_t *init_all_game(void);
 sfRenderWindow *create_window(unsigned int, unsigned int, unsigned int);

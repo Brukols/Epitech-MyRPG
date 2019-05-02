@@ -60,6 +60,8 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/display_particle.c				\
 		$(GENERAL_DISPLAY)/animation_shaft.c				\
 		$(GENERAL_DISPLAY)/my_draw_square.c				\
+		$(GENERAL_DISPLAY)/display_wind.c				\
+		$(GENERAL_DISPLAY)/display_leaf.c				\
 		$(GENERAL_EVENTS)/player_touch_smth.c				\
 		$(GENERAL_EVENTS)/will_touch_smth.c				\
 		$(GENERAL_EVENTS)/change_dialog.c				\
@@ -96,6 +98,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/init_quests.c					\
 		$(GENERAL_INIT)/init_particle.c					\
 		$(GENERAL_INIT)/init_all_particle.c					\
+		$(GENERAL_INIT)/init_wind_particle.c					\
 		$(GENERAL_INIT_ITEMS)/create_amulet.c				\
 		$(GENERAL_INIT_ITEMS)/create_banana.c				\
 		$(GENERAL_INIT_ITEMS)/create_chaos.c				\

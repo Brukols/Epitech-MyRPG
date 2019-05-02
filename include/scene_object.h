@@ -33,6 +33,11 @@ enum game_object_e {
     BACKGROUND_HOUSE_1
 };
 
+enum particle_e {
+    LEAF,
+    WIND
+};
+
 typedef struct background_s {
     sfTexture *texture;
     sfSprite *sprite;
@@ -112,6 +117,7 @@ typedef struct all_particle_s {
 } all_particle_t;
 
 typedef struct particle_s {
+    enum particle_e type;
     sfSprite *sprite;
     sfTexture *texture;
     framebuffer_t *frame;
