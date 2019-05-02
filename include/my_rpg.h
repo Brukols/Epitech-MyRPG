@@ -110,5 +110,6 @@ particle_t *init_wind_particle(void);
 game_t *init_all_game(void);
 sfRenderWindow *create_window(unsigned int, unsigned int, unsigned int);
 int launch_game(void);
+void make_connection_between_scenes(game_t *);
 
 #endif

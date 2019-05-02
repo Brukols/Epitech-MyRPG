@@ -46,5 +46,6 @@ game_t *init_all_game(void)
         return (NULL);
     if (!(game->scenes = init_scenes()))
         return (NULL);
+    make_connection_between_scenes(game);
     return (game);
 }

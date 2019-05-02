@@ -142,7 +142,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(MENU_SELECT)/bubbles.c			\
 		$(MENU_SELECT)/bubbles_2.c			\
 		$(FS_SCENE_DISPLAY)/display_fs_scene.c				\
-		$(FS_SCENE_DISPLAY)/display_player_house.c				\
+		$(FS_SCENE_DISPLAY)/display_player_house.c			\
 		$(FS_SCENE_DISPLAY)/display_texts_fs_scene.c			\
 		$(FS_SCENE_EVENTS)/events_fs_scene.c				\
 		$(FS_SCENE_EVENTS)/unlock_smth_fs_scene.c			\
@@ -155,13 +155,14 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(HOUSES)/init_bed.c						\
 		$(HOUSES)/init_scene_object_player_house.c			\
 		$(HOUSES)/init_object_player_house.c				\
-		$(FIGHT_SCENE)/init/init_fight_scene.c		\
-		$(FIGHT_SCENE)/init/init_fight_scene_buttons.c	\
-		$(FIGHT_SCENE)/init/init_fight_scene_music.c		\
-		$(FIGHT_SCENE)/init/init_fight_scene_objs.c		\
-		$(FIGHT_SCENE)/display/display_fight_scene.c		\
-		$(FIGHT_SCENE)/display/display_fight_scene_buttons.c	\
-		$(FIGHT_SCENE)/display/display_fight_scene_objs.c	\
+		$(FIGHT_SCENE)/init/init_fight_scene.c				\
+		$(FIGHT_SCENE)/init/init_fight_scene_buttons.c			\
+		$(FIGHT_SCENE)/init/init_fight_scene_music.c			\
+		$(FIGHT_SCENE)/init/init_fight_scene_objs.c			\
+		$(FIGHT_SCENE)/display/display_fight_scene.c			\
+		$(FIGHT_SCENE)/display/display_fight_scene_buttons.c		\
+		$(FIGHT_SCENE)/display/display_fight_scene_objs.c		\
+		$(SRC)/make_connection_between_scenes.c				\
 		$(SRC)/init_all_game.c						\
 		$(SRC)/launch_game.c						\
 		$(SRC)/create_window.c						\

@@ -15,7 +15,9 @@ bool touch_walls_house(game_t *game)
         return (true);
     if (player->move_x < 0 && player->pos.x - 5 < 580)
         return (true);
-    if (player->move_y > 0 && player->pos.y + 5 > 1080)
+    if (player->move_y > 0 && player->pos.y + 155 > 1080)
+        return (true);
+    if (player->move_y < 0 && player->pos.y - 5 < 180)
         return (true);
     return (false);
 }
