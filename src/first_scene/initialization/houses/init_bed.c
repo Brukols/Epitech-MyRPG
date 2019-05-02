@@ -14,12 +14,13 @@ game_object_t *init_bed(game_object_t *go, int x, int y)
         return (NULL);
     if (!(go->sprite = sfSprite_create()))
         return (NULL);
-    go->pos = init_vec2f(x * 2.3, y * 2.3);
-    go->comparison = y * 2.3;
-    go->rect = init_intrect(612, 256, 24, 22); //22 a changer
-    go->hitbox_pos = init_vec2f(x * 2.3, (y + 15) * 2.3);
-    go->hitbox_size = init_vec2f(24 * 2.3, 31 * 2.3);
-    go->scale = init_vec2f(2.3, 2.3);
+    go->pos = init_vec2f(x * 4.3, y * 4.3);
+    go->comparison = y * 4.3;
+    go->display = true;
+    go->rect = init_intrect(613, 256, 23, 32);
+    go->hitbox_pos = init_vec2f(x * 4.3, y * 4.3);
+    go->hitbox_size = init_vec2f(24 * 4.3, 31 * 4.3);
+    go->scale = init_vec2f(4.3, 4.3);
     go->type = BED_HOUSE;
     return (go);
 }

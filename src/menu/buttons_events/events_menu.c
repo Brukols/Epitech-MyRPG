@@ -22,7 +22,7 @@ void events_menu(game_t *game)
     while (sfRenderWindow_pollEvent(game->window, &event)) {
         if (event.type == sfEvtClosed)
             sfRenderWindow_close(game->window);
-        if (event.mouseButton.type == sfEvtMouseButtonPressed)
+        if (event.mouseButton.type == sfEvtMouseButtonReleased)
             manage_buttons_menu(game);
     }
 }

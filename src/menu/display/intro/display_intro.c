@@ -17,7 +17,7 @@ void event_intro(game_t *game)
             sfRenderWindow_close(game->window);
         if (mouse_pos.x >= 1700 && mouse_pos.x <= 1850 && \
             mouse_pos.y >= 820 && mouse_pos.y <= 970 && \
-            event.mouseButton.type == sfEvtMouseButtonPressed && \
+            event.mouseButton.type == sfEvtMouseButtonReleased && \
             game->scenes->objs->clicks->user_click < 8)
             game->scenes->objs->clicks->user_click++;
         if (game->scenes->objs->clicks->user_click == 8)

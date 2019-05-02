@@ -17,8 +17,10 @@ scenes_t *init_scenes(void)
         return NULL;
     scenes->prev = NULL;
     for (int i = 0; i < 5; i++) {
-        if (!(scenes = init_every_scene[i](scenes)))
+        if (!(scenes = init_every_scene[i](scenes))) {
+            my_put_nbr(i);
             return (NULL);
+        }
         if (i == 4)
             break;
         scenes->next = malloc(sizeof(scenes_t));

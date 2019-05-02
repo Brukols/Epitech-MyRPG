@@ -14,12 +14,13 @@ game_object_t *init_plant(game_object_t *go, int x, int y)
         return (NULL);
     if (!(go->sprite = sfSprite_create()))
         return (NULL);
-    go->pos = init_vec2f(x * 2.3, y * 2.3);
-    go->comparison = y * 2.3;
-    go->rect = init_intrect(616, 200, 18, 16);
-    go->hitbox_pos = init_vec2f(x * 2.3, (y + 11) * 2.3);
-    go->hitbox_size = init_vec2f(18 * 2.3, 18 * 2.3);
-    go->scale = init_vec2f(2.3, 2.3);
+    go->pos = init_vec2f(x * 4.3, y * 4.3);
+    go->comparison = y * 4.3;
+    go->display = true;
+    go->rect = init_intrect(620, 197, 13, 19);
+    go->hitbox_pos = init_vec2f(x * 4.3, (y + 3) * 4.3);
+    go->hitbox_size = init_vec2f(18 * 4.3, 18 * 4.3);
+    go->scale = init_vec2f(4.3, 4.3);
     go->type = PLANT_HOUSE;
     return (go);
 }

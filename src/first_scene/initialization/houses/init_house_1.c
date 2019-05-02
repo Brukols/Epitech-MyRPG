@@ -18,8 +18,8 @@ background_t *init_background_house_1(void)
         return (NULL);
     if (!(bg->sprite = sfSprite_create()))
         return (NULL);
-    bg->pos = init_vec2f(527, 0);
-    bg->scale = init_vec2f(2.3, 2.3);
+    bg->pos = init_vec2f(350, 0);
+    bg->scale = init_vec2f(1.66, 1.66);
     bg->move_x = 0;
     bg->move_y = 0;
     return (bg);
@@ -78,7 +78,8 @@ scenes_t *init_house_1_scene(scenes_t *scene)
         return NULL;
     if ((scene->objs->background = init_background_house_1()) == NULL)
         return NULL;
-    if ((scene->objs = put_chara_in_game_object(scene->objs, 400, 400)) == NULL)
+    if ((scene->objs = put_chara_in_game_object(scene->objs, 950, 940)) == NULL)
       return NULL;
+    scene->objs->pnj = NULL;
     return scene;
 }
