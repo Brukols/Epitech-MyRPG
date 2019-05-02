@@ -18,7 +18,7 @@ background_t *init_background_house_1(void)
         return (NULL);
     if (!(bg->sprite = sfSprite_create()))
         return (NULL);
-    bg->pos = init_vec2f(727, 1123);
+    bg->pos = init_vec2f(527, 0);
     bg->scale = init_vec2f(2.3, 2.3);
     bg->move_x = 0;
     bg->move_y = 0;

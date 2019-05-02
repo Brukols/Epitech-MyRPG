@@ -22,5 +22,6 @@ game_object_t *init_shaft(game_object_t *go, int x, int y)
     go->scale = init_vec2f(2.3, 2.3);
     go->type = SHAFT;
     go->display = true;
+    go->hit = false;
     return (go);
 }
