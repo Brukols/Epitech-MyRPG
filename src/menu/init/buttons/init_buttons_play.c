@@ -7,11 +7,11 @@
 
 #include "my_rpg.h"
 
-game_t *go_to_the_game(game_t *game)
+int go_to_the_game(game_t *game)
 {
     for (; game->scenes->scene != FIRST_SCENE; \
     game->scenes = game->scenes->next);
-    return (game);
+    return (SUCCESS);
 }
 
 buttons_t *button_play(buttons_t *button)

@@ -7,9 +7,9 @@
 
 #include "my_rpg.h"
 
-game_t *nothing(game_t *game)
+int nothing(game_t *game)
 {
-    return (game);
+    return (SUCCESS);
 }
 
 buttons_t *init_box_dialog(buttons_t *button)

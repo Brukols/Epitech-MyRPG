@@ -7,15 +7,15 @@
 
 #include "my_rpg.h"
 
-game_t *leave_the_game(game_t *game)
+int leave_the_game(game_t *game)
 {
     sfRenderWindow_close(game->window);
-    return (game);
+    return (SUCCESS);
 }
 
-game_t *show_setting(game_t *game)
+int show_setting(game_t *game)
 {
-    return (game);
+    return (SUCCESS);
 }
 
 buttons_t *setting_button(buttons_t *button)
