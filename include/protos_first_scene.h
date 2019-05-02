@@ -12,13 +12,13 @@
 
 // INITIALIZATION HOUSES //
 
-game_object_t *init_house_1_background(game_object_t *go, int x, int y);
 game_object_t *init_plant(game_object_t *go, int x, int y);
 game_object_t *init_bed(game_object_t *go, int x, int y);
-game_object_t *init_house_1(void);
-scenes_t *init_house_1_scene(scenes_t *);
+scenes_t *init_player_house(scenes_t *);
+scene_object_t *init_scene_object_player_house(void);
 char *next_data(char *str, int *i);
 game_object_t *init_house_objects(game_object_t *go, char *str);
+game_object_t *init_object_player_house(void);
 
 // INITIALIZATION //
 
@@ -30,7 +30,7 @@ buttons_t *init_buttons_fs_scene(void);
 
 // DISPLAY //
 
-game_t *display_house_1(game_t *game);
+game_t *display_player_house(game_t *);
 game_t *display_fs_scene(game_t *);
 void display_bg_fs_scene(game_t *);
 void display_player_fs_scene(game_t *);

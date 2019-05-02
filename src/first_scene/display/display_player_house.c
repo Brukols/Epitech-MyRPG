@@ -141,7 +141,7 @@ void move_player_on_the_house(game_t *game)
     move_player_in_x_y(game);
 }
 
-game_t *display_house_1(game_t *game)
+game_t *display_player_house(game_t *game)
 {
     move_player_on_the_house(game);
     game->scenes->objs->game_object = sort_game_object(game->scenes->objs->game_object);

@@ -139,7 +139,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(MENU_SELECT)/bubbles.c			\
 		$(MENU_SELECT)/bubbles_2.c			\
 		$(FS_SCENE_DISPLAY)/display_fs_scene.c				\
-		$(FS_SCENE_DISPLAY)/display_house_1.c				\
+		$(FS_SCENE_DISPLAY)/display_player_house.c				\
 		$(FS_SCENE_DISPLAY)/display_texts_fs_scene.c			\
 		$(FS_SCENE_EVENTS)/events_fs_scene.c				\
 		$(FS_SCENE_EVENTS)/unlock_smth_fs_scene.c			\
@@ -147,9 +147,11 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FS_SCENE_INIT)/init_scene_object_fs_scene.c			\
 		$(FS_SCENE_INIT)/init_texts_fs_scene.c				\
 		$(FS_SCENE_INIT)/init_buttons_fs_scene.c			\
-		$(HOUSES)/init_house_1.c					\
+		$(HOUSES)/init_player_house.c					\
 		$(HOUSES)/init_plant.c						\
 		$(HOUSES)/init_bed.c						\
+		$(HOUSES)/init_scene_object_player_house.c			\
+		$(HOUSES)/init_object_player_house.c				\
 		$(FIGHT_SCENE)/init/init_fight_scene.c		\
 		$(FIGHT_SCENE)/init/init_fight_scene_buttons.c	\
 		$(FIGHT_SCENE)/init/init_fight_scene_music.c		\

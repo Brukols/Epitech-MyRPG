@@ -14,7 +14,7 @@ enum scene_e {
     INTRO,
     MENU,
     FIRST_SCENE,
-    HOUSE_1,
+    PLAYER_HOUSE,
     FIGHT
 };
 
