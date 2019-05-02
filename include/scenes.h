@@ -14,7 +14,8 @@ enum scene_e {
     INTRO,
     MENU,
     FIRST_SCENE,
-    HOUSE_1
+    HOUSE_1,
+    FIGHT
 };
 
 typedef struct scenes_s {

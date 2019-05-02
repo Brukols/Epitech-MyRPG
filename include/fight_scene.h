@@ -11,52 +11,36 @@
 #include "my_rpg.h"
 
 #define ERROR -1
-#define BG_FIGHT "../../ressources/sprites/fight/bg.png"
-#define ACTIONBAR_FIGHT "../../ressources/sprites/fight/actionbar.png"
-#define ATTACK_BUTTON "../../ressources/sprites/fight/attack_button.png"
-#define MAGIC_BUTTON "../../ressources/sprites/fight/magic_button.png"
-#define ESCAPE_BUTTON "../../ressources/sprites/fight/escape_button.png"
+#define BG_FIGHT "ressources/sprites/fight/bg.png"
+#define ACTIONBAR_FIGHT "ressources/sprites/fight/actionbar.png"
+#define ATTACK_BUTTON "ressources/sprites/fight/attack_button.png"
+#define MAGIC_BUTTON "ressources/sprites/fight/magic_button.png"
+#define ESCAPE_BUTTON "ressources/sprites/fight/escape_button.png"
+#define FIGHT_MUSIC "ressources/music/pokemon_fight_music.ogg"
 
-typedef struct button
-{
-    sfVector2f position;
-    sfVector2f size;
-    sfRectangleShape *shape;
-    sfSprite *sprite;
-    sfTexture *texture;
-    void (*callback)(game_t *game);
-} button_t;
+scenes_t *init_fight_scene(scenes_t *scenes);
 
-typedef struct object
-{
-    sfVector2f position;
-    sfSprite *sprite;
-    sfTexture *texture;
-    sfText *text;
-    sfIntRect *rect;
-} object_t;
+//buttons
+buttons_t *init_fight_scene_buttons(void);
+buttons_t *attack_button(buttons_t *button);
+buttons_t *magic_button(buttons_t *button);
+buttons_t *escape_button(buttons_t *button);
 
-typedef struct scene
-{
-    int nb_button;
-    button_t **button;
-    int nb_object;
-    object_t **object;
-    sfClock *clock;
-} scene_t;
+//music
+struct musics_s *init_fight_scene_music(void);
 
-scene_t *init_fight_scene(void);
+//objects
+scene_object_t *init_fight_scene_objs(void);
+background_t *init_fight_scene_background(void);
+game_object_t *init_fight_scene_game_objects(void);
 
-//object
-int init_fight_scene_objects(scene_t *scene);
-object_t *create_object(char *filepath, sfVector2f position);
-void destroy_object(object_t *object);
-
-//button
-int init_fight_scene_buttons(scene_t *scene);
-button_t *create_button(char *filepath, sfVector2f size, sfVector2f position);
+//player
+player_t *init_fight_scene_player(void);
+game_object_t *init_fight_scene_player_object(void);
 
 //display
-void display_fight_scene(sfRenderWindow *window, scene_t *scene);
+game_t *display_fight_scene(game_t *game);
+void display_fight_scene_buttons(game_t *game);
+void display_fight_scene_objs(game_t *game);
 
 #endif

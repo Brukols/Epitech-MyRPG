@@ -14,7 +14,10 @@ enum button_e {
     START,
     MENU_SETTINGS,
     MENU_EXIT,
-    BOX_DIALOG
+    BOX_DIALOG,
+    ATTACK,
+    MAGIC,
+    ESCAPE
 };
 
 typedef struct buttons_s {

@@ -45,6 +45,8 @@ MENU_INIT_BUTTONS	=	src/menu/init/buttons
 
 MENU_INIT_INTRO	=	src/menu/init/intro
 
+FIGHT_SCENE = src/fight_scene/
+
 SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/display_player.c				\
 		$(GENERAL_DISPLAY)/move_all_the_scene.c				\
@@ -98,7 +100,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT_ITEMS)/create_katana.c				\
 		$(GENERAL_INIT_ITEMS)/create_potion.c				\
 		$(GENERAL_INIT_ITEMS)/create_ring.c				\
-		$(GENERAL_INIT_ITEMS)/create_speelbook.c				\
+		$(GENERAL_INIT_ITEMS)/create_speelbook.c			\
 		$(GENERAL_INIT_ITEMS)/create_star.c				\
 		$(GENERAL_INIT_ITEMS)/create_sword.c				\
 		$(GENERAL_INIT_ITEMS)/create_vulcan.c				\
@@ -137,6 +139,13 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(HOUSES)/init_plant.c						\
 		$(HOUSES)/init_bed.c						\
 		$(HOUSES)/display_house_1.c					\
+		$(FIGHT_SCENE)/init/init_fight_scene.c		\
+		$(FIGHT_SCENE)/init/init_fight_scene_buttons.c	\
+		$(FIGHT_SCENE)/init/init_fight_scene_music.c		\
+		$(FIGHT_SCENE)/init/init_fight_scene_objs.c		\
+		$(FIGHT_SCENE)/display/display_fight_scene.c		\
+		$(FIGHT_SCENE)/display/display_fight_scene_buttons.c	\
+		$(FIGHT_SCENE)/display/display_fight_scene_objs.c	\
 		$(SRC)/init_all_game.c						\
 		$(SRC)/launch_game.c						\
 		$(SRC)/create_window.c						\

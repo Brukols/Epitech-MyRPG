@@ -32,6 +32,7 @@
 #include "protos_menu.h"
 #include "protos_first_scene.h"
 #include "fight_scene.h"
+#include "musics.h"
 
 // GENERAL_DISPLAY //
 
