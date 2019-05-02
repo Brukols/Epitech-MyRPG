@@ -13,7 +13,6 @@ void display_fight_scene_buttons(game_t *game)
 
     for (; buttons->prev; buttons = buttons->prev);
     for (; buttons; buttons = buttons->next) {
-        sfSprite_setTextureRect(buttons->sprite, buttons->rect);
         sfRenderWindow_drawSprite(game->window, buttons->sprite, NULL);
     }
 }
