@@ -36,7 +36,7 @@ buttons_t *init_fight_scene_buttons(void)
 
 buttons_t *attack_button(buttons_t *button)
 {
-    sfIntRect rect = {.left=0, .top=0, .width=0, .height=0};
+    sfIntRect rect = {.left=0, .top=0, .width=300, .height=134};
 
     button->type = ATTACK;
     button->pos = init_vec2f(100.0, 890.0);
@@ -56,7 +56,7 @@ buttons_t *attack_button(buttons_t *button)
 
 buttons_t *magic_button(buttons_t *button)
 {
-    sfIntRect rect = {.left=0, .top=0, .width=0, .height=0};
+    sfIntRect rect = {.left=0, .top=0, .width=300, .height=134};
 
     button->type = MAGIC;
     button->pos = init_vec2f(450.0, 890.0);
@@ -76,7 +76,7 @@ buttons_t *magic_button(buttons_t *button)
 
 buttons_t *escape_button(buttons_t *button)
 {
-    sfIntRect rect = {.left=0, .top=0, .width=0, .height=0};
+    sfIntRect rect = {.left=0, .top=0, .width=300, .height=134};
 
     button->type = ESCAPE;
     button->pos = init_vec2f(800.0, 890.0);
