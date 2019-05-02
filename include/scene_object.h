@@ -98,6 +98,7 @@ typedef struct pnj_s {
     char *name;
     char **discuss;
     int next_dialog;
+    sfClock *clock;
     game_object_t *game_object;
     struct pnj_s *next;
     struct pnj_s *prev;
