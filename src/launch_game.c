@@ -9,11 +9,11 @@
 
 game_t *scene_managing(game_t *game)
 {
-    enum scene_e type[] = {INTRO, MENU, FIRST_SCENE, HOUSE_1};
+    enum scene_e type[] = {INTRO, MENU, FIRST_SCENE, HOUSE_1, FIGHT};
     game_t *(*display_scenes[])() = {display_intro, display_menu, \
-                                     display_fs_scene, display_house_1};
+    display_fs_scene, display_house_1, display_fight_scene};
 
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 5; i++) {
         if (game->scenes->scene == type[i])
             return (game = display_scenes[i](game));
     }
@@ -26,9 +26,12 @@ int launch_game(void)
 
     if (!game)
         return (FAILURE_EXIT);
+    //for(; game->scenes->scene != FIGHT; game->scenes = game->scenes->next);
     while (sfRenderWindow_isOpen(game->window)) {
-        if (!(game = scene_managing(game)))
+        if (!(game = scene_managing(game))) {
+            sfRenderWindow_close(game->window);
             return (FAILURE_EXIT);
+        }
         sfRenderWindow_display(game->window);
         sfRenderWindow_clear(game->window, sfBlack);
     }
