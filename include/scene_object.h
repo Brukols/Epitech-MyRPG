@@ -81,6 +81,8 @@ typedef struct player_s {
     int left;
     int attack;
     int power;
+    int pv_max;
+    int pv;
     inventory_t *inventory;
     game_object_t *game_object;
 } player_t;
