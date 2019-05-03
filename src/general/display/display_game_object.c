@@ -11,6 +11,7 @@ void display_game_object(game_t *game)
 {
     game_object_t *go = game->scenes->objs->game_object;
 
+    for (; go->prev; go = go->prev);
     for (; go; go = go->next) {
         if (go->display == false)
             continue;

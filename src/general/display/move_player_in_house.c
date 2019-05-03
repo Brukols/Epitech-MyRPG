@@ -10,7 +10,7 @@
 bool will_touch_house_side(game_object_t *player, game_object_t *go, \
 sfVector2f pos_player)
 {
-    if (player->move_x < 0 && pos_player.x + 10 > go->hitbox_pos.x &&   \
+    if (player->move_x < 0 && pos_player.x + 10 > go->hitbox_pos.x && \
         pos_player.x + 10 < go->hitbox_pos.x + go->hitbox_size.x && \
         pos_player.y + 85 > go->hitbox_pos.y && pos_player.y + 85 < \
         go->hitbox_pos.y + go->hitbox_size.y)
@@ -65,6 +65,7 @@ bool player_touch_smth_in_house(game_t *game)
     game_object_t *player = game->scenes->objs->player->game_object;
     sfVector2f pos_pla = init_vec2f(player->pos.x, player->pos.y);
 
+    for (; go->prev; go = go->prev);
     for (; go; go = go->next) {
         if (go->display == false)
             continue;

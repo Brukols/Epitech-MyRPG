@@ -78,6 +78,7 @@ game_object_t *sort_game_object(game_object_t *game_object)
     int i = 0;
     game_object_t *first = NULL;
 
+    for (; game_object->prev; game_object = game_object->prev);
     while (game_object->next) {
         first = game_object;
         i = more_position(game_object);

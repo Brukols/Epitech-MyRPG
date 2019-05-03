@@ -10,7 +10,6 @@
 game_t *events_house(game_t *game)
 {
     sfEvent event;
-    game_object_t *player = player_params(game);
 
     while (sfRenderWindow_pollEvent(game->window, &event)) {
         if (event.type == sfEvtClosed)
@@ -23,10 +22,6 @@ game_t *events_house(game_t *game)
             move_on_the_house(game, event.key.code, false);
             interactions(game, event.key.code);
         }
-        if (player->pos.x >= 925 && player->pos.x <= 960 && player->pos.y \
-            <= 930 && player->pos.y >= 900 && event.type == sfEvtKeyPressed \
-            && event.key.code == sfKeySpace)
-            game->scenes = game->scenes->prev;
     }
     return game;
 }
