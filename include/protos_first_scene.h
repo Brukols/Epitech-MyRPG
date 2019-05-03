@@ -35,15 +35,14 @@ game_t *display_fs_scene(game_t *);
 void display_bg_fs_scene(game_t *);
 void display_player_fs_scene(game_t *);
 void move_all_the_scene(game_t *);
-bool player_touch_smth(game_t *);
 void display_texts_fs_scene(game_t *);
-void move_player_on_the_house(game_t *);
 
 // EVENTS //
 
 game_t *events_fs_scene(game_t *);
 void move_the_scene(game_t *, sfKeyCode, bool);
 void unlock_smth_fs_scene(game_t *);
+bool go_back_to_first_scene(game_t *);
 
 // DESTROY //
 

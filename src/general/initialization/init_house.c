@@ -21,7 +21,7 @@ game_object_t *init_house_player(game_object_t *go, int x, int y)
     go->hitbox_size = init_vec2f(128 * 2.3, 120 * 2.3);
     go->scale = init_vec2f(2.3, 2.3);
     go->display = true;
-    go->type = HOUSE;
+    go->type = PLAYER_HOUSE_FS_SCENE;
     return (go);
 }
 
@@ -39,6 +39,6 @@ game_object_t *init_brown_house(game_object_t *go, int x, int y)
     go->hitbox_size = init_vec2f(96 * 2.3, 83 * 2.3);
     go->scale = init_vec2f(2.3, 2.3);
     go->display = true;
-    go->type = HOUSE;
+    go->type = BROWN_HOUSE_FS_SCENE;
     return (go);
 }

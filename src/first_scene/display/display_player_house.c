@@ -26,6 +26,8 @@ game_t *events_house(game_t *game)
 
 game_t *display_player_house(game_t *game)
 {
+    if (go_back_to_first_scene(game) == true)
+        return (game);
     move_player_on_the_house(game);
     game->scenes->objs->game_object = sort_game_object(game->scenes->objs->game_object);
     display_player(game);

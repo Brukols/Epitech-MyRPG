@@ -20,7 +20,7 @@ game_object_t *init_rock(game_object_t *go, int x, int y)
     go->hitbox_pos = init_vec2f(x * 2.3, (y + 20) * 2.3);
     go->hitbox_size = init_vec2f(62 * 2.3, 35 * 2.3);
     go->scale = init_vec2f(2.3, 2.3);
-    go->type = HOUSE;
+    go->type = ROCK;
     go->display = true;
     return (go);
 }

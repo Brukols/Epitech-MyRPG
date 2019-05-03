@@ -75,6 +75,8 @@ bool player_touch_chest(game_object_t *, game_object_t *);
 bool delete_an_item(game_t *, sfVector2f);
 void move_on_the_house(game_t *, sfKeyCode, bool);
 bool touch_walls_house(game_t *);
+bool go_in_another_scene_fs_scene(game_t *);
+bool will_touch(background_t *, player_t *, game_object_t *);
 
 // GENERAL INIT //
 

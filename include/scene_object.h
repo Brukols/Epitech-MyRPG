@@ -13,7 +13,9 @@
 enum game_object_e {
     PLAYER,
     SHAFT,
-    HOUSE,
+    PLAYER_HOUSE_FS_SCENE,
+    BROWN_HOUSE_FS_SCENE,
+    ROCK,
     PNJ,
     FIRST_CHEST,
     INTRO_SKIP1,
