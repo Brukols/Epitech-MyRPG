@@ -21,7 +21,7 @@ game_t *display_fs_scene(game_t *game)
     display_inventory(game);
     display_buttons(game);
     display_texts_fs_scene(game);
-    display_quests(game);
+    display_quests(game, sfBlack);
     events_fs_scene(game);
     return (game);
 }

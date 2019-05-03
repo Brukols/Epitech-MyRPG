@@ -45,7 +45,7 @@ void display_buttons(game_t *);
 void display_pnj_dialog(game_t *, texts_t *, pnj_t *);
 void display_pnj_name(game_t *, texts_t *, pnj_t *);
 void display_inventory(game_t *);
-void display_quests(game_t *);
+void display_quests(game_t *, sfColor);
 void display_msg_in_box(game_t *, char *);
 void display_game_object(game_t *);
 void my_put_pixel(framebuffer_t *, int, int, sfColor);
@@ -55,6 +55,7 @@ void my_draw_square(framebuffer_t *, all_particle_t *, int);
 int display_leaf(particle_t *);
 int display_wind(particle_t *);
 void move_player_on_the_house(game_t *);
+void display_dialog(game_t *, texts_t *);
 
 // GENERAL_EVENTS //
 

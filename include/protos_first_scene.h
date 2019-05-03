@@ -19,6 +19,8 @@ scene_object_t *init_scene_object_player_house(void);
 char *next_data(char *str, int *i);
 game_object_t *init_house_objects(game_object_t *go, char *str);
 game_object_t *init_object_player_house(void);
+buttons_t *init_buttons_house_player(void);
+texts_t *init_texts_player_house(void);
 
 // INITIALIZATION //
 
@@ -36,6 +38,7 @@ void display_bg_fs_scene(game_t *);
 void display_player_fs_scene(game_t *);
 void move_all_the_scene(game_t *);
 void display_texts_fs_scene(game_t *);
+void display_texts_house_player(game_t *);
 
 // EVENTS //
 

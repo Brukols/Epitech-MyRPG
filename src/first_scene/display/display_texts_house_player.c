@@ -1,26 +1,13 @@
 /*
 ** EPITECH PROJECT, 2019
-** my_rpg
+** display_texts_house_player
 ** File description:
-** init_texts_fs_scnee
+** my_rpg
 */
 
 #include "my_rpg.h"
 
-void display_dialog(game_t *game, texts_t *texts)
-{
-    pnj_t *pnj = game->scenes->objs->pnj;
-
-    for (; pnj && pnj->speak != true; pnj = pnj->next);
-    if (!pnj)
-        return;
-    if (texts->type == NAME_BOX)
-        display_pnj_name(game, texts, pnj);
-    else
-        display_pnj_dialog(game, texts, pnj);
-}
-
-void display_texts_fs_scene(game_t *game)
+void display_texts_house_player(game_t *game)
 {
     texts_t *texts = game->scenes->texts;
     game_object_t *go = game->scenes->objs->game_object;

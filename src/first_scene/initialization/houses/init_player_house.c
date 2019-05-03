@@ -30,8 +30,10 @@ scenes_t *init_player_house(scenes_t *scene)
     scene->scene = PLAYER_HOUSE;
     if (!(scene->objs = init_scene_object_player_house()))
         return (NULL);
-    scene->buttons = NULL;
-    scene->texts = NULL;
+    if (!(scene->buttons = init_buttons_house_player()))
+        return (NULL);
+    if (!(scene->texts = init_texts_player_house()))
+        return (NULL);
     scene->musics = NULL;
     return (scene);
 }
