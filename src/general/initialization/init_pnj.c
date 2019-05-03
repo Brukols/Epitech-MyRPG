@@ -56,6 +56,7 @@ game_object_t *fill_game_object_pnj(game_object_t *go, char **all)
     if (!(go->sprite = sfSprite_create()))
         return (NULL);
     go->scale = init_vec2f(1, 1);
+    go->stock_top = my_getnbr(all[4]);
     go->rect = init_intrect(my_getnbr(all[3]), my_getnbr(all[4]), \
     my_getnbr(all[5]), my_getnbr(all[6]));
     go->hitbox_pos = init_vec2f(my_getnbr(all[1]) + 12, my_getnbr(all[2]) + 54);

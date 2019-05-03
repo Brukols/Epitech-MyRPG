@@ -15,9 +15,19 @@ void change_quest_pnj(game_t *game, pnj_t *pnj)
         change_quest(game, FIND_THE_KEY);
 }
 
+bool stop_dialog(game_t *game, pnj_t *pnj)
+{
+    if (game->quests->quest != 2 && my_strcmp(pnj->name, "Freddy") == 0)
+        return (true);
+    if (game->quests->quest != 4 && my_strcmp(pnj->name, "Zoro") == 0)
+        return (true);
+    return (false);
+}
+
 bool change_dialog_pnj(game_t *game, pnj_t *pnj)
 {
-    if (game->quests->quest != 2 && my_strcmp(pnj->name, "Freddy") == 0) {
+    if (stop_dialog(game, pnj) == true) {
+        pnj->game_object->rect.top = pnj->game_object->stock_top;
         pnj->next_dialog = 0;
         pnj->speak = false;
         return (true);
@@ -30,6 +40,7 @@ bool change_dialog_pnj(game_t *game, pnj_t *pnj)
     if (pnj->discuss[pnj->next_dialog] == NULL) {
         pnj->next_dialog = 0;
         pnj->speak = false;
+        pnj->game_object->rect.top = pnj->game_object->stock_top;
         change_quest_pnj(game, pnj);
     }
     return (true);
