@@ -24,6 +24,8 @@ void touch_a_button(game_t *game, sfVector2f mouse)
 {
     buttons_t *buttons = game->scenes->buttons;
 
+    while (buttons->prev != NULL)
+        buttons = buttons->prev;
     for (; buttons; buttons = buttons->next) {
         if (click(buttons->hitbox_pos, buttons->size, mouse) == true) {
             buttons->callback(game);

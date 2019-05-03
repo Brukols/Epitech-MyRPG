@@ -104,8 +104,8 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/init_what_texture.c				\
 		$(GENERAL_INIT)/init_quests.c					\
 		$(GENERAL_INIT)/init_particle.c					\
-		$(GENERAL_INIT)/init_all_particle.c					\
-		$(GENERAL_INIT)/init_wind_particle.c					\
+		$(GENERAL_INIT)/init_all_particle.c				\
+		$(GENERAL_INIT)/init_wind_particle.c				\
 		$(GENERAL_INIT_ITEMS)/create_amulet.c				\
 		$(GENERAL_INIT_ITEMS)/create_banana.c				\
 		$(GENERAL_INIT_ITEMS)/create_chaos.c				\
@@ -120,7 +120,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT_ITEMS)/create_vulcan.c				\
 		$(GENERAL_INIT_ITEMS)/create_wand.c				\
 		$(GENERAL_INIT_ITEMS)/create_key.c				\
-		$(MENU_EVENTS)/events_menu.c	\
+		$(MENU_EVENTS)/events_menu.c			\
 		$(MENU_DISPLAY)/display.c			\
 		$(MENU_DISPLAY)/display_buttons_menu.c		\
 		$(MENU_DISPLAY_INTRO)/display_intro.c		\
@@ -162,11 +162,15 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(HOUSES)/init_texts_player_house.c				\
 		$(FIGHT_SCENE)/init/init_fight_scene.c				\
 		$(FIGHT_SCENE)/init/init_fight_scene_buttons.c			\
+		$(FIGHT_SCENE)/init/init_fight_scene_enemy_buttons.c		\
 		$(FIGHT_SCENE)/init/init_fight_scene_music.c			\
 		$(FIGHT_SCENE)/init/init_fight_scene_objs.c			\
 		$(FIGHT_SCENE)/display/display_fight_scene.c			\
 		$(FIGHT_SCENE)/display/display_fight_scene_buttons.c		\
 		$(FIGHT_SCENE)/display/display_fight_scene_objs.c		\
+		$(FIGHT_SCENE)/actions/player_attack.c			\
+		$(FIGHT_SCENE)/events/fight_events.c			\
+		$(FIGHT_SCENE)/events/manage_fight_scene_buttons_events.c	\
 		$(SRC)/make_connection_between_scenes.c				\
 		$(SRC)/init_all_game.c						\
 		$(SRC)/launch_game.c						\

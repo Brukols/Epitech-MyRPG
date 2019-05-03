@@ -10,7 +10,7 @@
 game_t *display_fight_scene(game_t *game)
 {
     display_fight_scene_objs(game);
-    //display_player(game);
     display_fight_scene_buttons(game);
+    fight_events(game);
     return (game);
 }

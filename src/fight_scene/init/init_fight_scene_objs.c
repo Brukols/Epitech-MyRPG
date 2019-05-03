@@ -15,7 +15,7 @@ scene_object_t *init_fight_scene_objs(void)
         return (NULL);
     obj->background = init_fight_scene_background();
     obj->game_object = init_fight_scene_game_objects();
-    obj->player = NULL;//init_fight_scene_player();
+    obj->player = NULL;
     obj->clicks = NULL;
     obj->pnj = NULL;
     if (obj->background == NULL || obj->game_object == NULL) {
@@ -56,11 +56,7 @@ game_object_t *init_fight_scene_game_objects(void)
     obj->prev = NULL;
     obj->next = NULL;
     obj->pos = init_vec2f(0, 830);
-    obj->comparison = 0;
     obj->rect = rect;
-    obj->hitbox_pos = init_vec2f(0, 0);
-    obj->hitbox_size = init_vec2f(0, 0);
-    obj->type = 0;
     obj->display = true;
     obj->texture = sfTexture_createFromFile(ACTIONBAR_FIGHT, NULL);
     obj->sprite = sfSprite_create();

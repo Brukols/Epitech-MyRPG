@@ -10,18 +10,16 @@
 buttons_t *init_fight_scene_buttons(void)
 {
     buttons_t *button = malloc(sizeof(buttons_t));
-    buttons_t *(*init_fight_button[3])() = {attack_button, magic_button, \
-    escape_button};
+    buttons_t *(*init_fight_button[6])() = {attack_button, magic_button, \
+        escape_button, enemy_button_one, enemy_button_two, enemy_button_three};
 
     if (button == NULL)
         return (NULL);
     button->prev = NULL;
-    for (int i = 0; i < 3; i++) {
-        if ((button = init_fight_button[i](button)) == NULL) {
-            printf("here\n");
+    for (int i = 0; i < 6; i++) {
+        if ((button = init_fight_button[i](button)) == NULL)
             return (NULL);
-        }
-        if (i == 2)
+        if (i == 5)
             break;
         button->next = malloc(sizeof(buttons_t));
         if (button->next == NULL)
@@ -44,6 +42,7 @@ buttons_t *attack_button(buttons_t *button)
     button->rect = rect;
     button->clock = NULL;
     button->hitbox_pos = button->pos;
+    button->display = true;
     button->texture = sfTexture_createFromFile(ATTACK_BUTTON, NULL);
     button->sprite = sfSprite_create();
     if (button->texture == NULL || button->sprite == NULL)
@@ -51,6 +50,7 @@ buttons_t *attack_button(buttons_t *button)
     sfSprite_setTexture(button->sprite, button->texture, sfFalse);
     sfSprite_setPosition(button->sprite, button->pos);
     sfSprite_setTextureRect(button->sprite, button->rect);
+    button->callback = &player_attack;
     return (button);
 }
 
@@ -64,6 +64,7 @@ buttons_t *magic_button(buttons_t *button)
     button->rect = rect;
     button->clock = NULL;
     button->hitbox_pos = button->pos;
+    button->display = true;
     button->texture = sfTexture_createFromFile(MAGIC_BUTTON, NULL);
     button->sprite = sfSprite_create();
     if (button->texture == NULL || button->sprite == NULL)
@@ -71,6 +72,7 @@ buttons_t *magic_button(buttons_t *button)
     sfSprite_setTexture(button->sprite, button->texture, sfFalse);
     sfSprite_setPosition(button->sprite, button->pos);
     sfSprite_setTextureRect(button->sprite, button->rect);
+    //button->callback = &magic;
     return (button);
 }
 
@@ -84,6 +86,7 @@ buttons_t *escape_button(buttons_t *button)
     button->rect = rect;
     button->clock = NULL;
     button->hitbox_pos = button->pos;
+    button->display = true;
     button->texture = sfTexture_createFromFile(ESCAPE_BUTTON, NULL);
     button->sprite = sfSprite_create();
     if (button->texture == NULL || button->sprite == NULL)
@@ -91,5 +94,6 @@ buttons_t *escape_button(buttons_t *button)
     sfSprite_setTexture(button->sprite, button->texture, sfFalse);
     sfSprite_setPosition(button->sprite, button->pos);
     sfSprite_setTextureRect(button->sprite, button->rect);
+    //button->callback = &escape;
     return (button);
 }
