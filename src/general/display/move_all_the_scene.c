@@ -42,7 +42,8 @@ sfVector2f pos_bg)
     }
 }
 
-void move_game_object(game_object_t *go, background_t *bg, game_object_t *player)
+void move_game_object(game_object_t *go, background_t *bg, \
+game_object_t *player)
 {
     if (bg->move_x > 0 && bg->pos.x > -2470 && player->pos.x >= 900) {
         go->pos.x -= 5;

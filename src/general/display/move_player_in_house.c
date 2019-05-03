@@ -41,9 +41,7 @@ sfVector2f pos_player)
 
 void move_player_in_x_y(game_t *game)
 {
-    game_object_t *go = game->scenes->objs->game_object;
     game_object_t *player = game->scenes->objs->player->game_object;
-    sfVector2f pos_pla = init_vec2f(player->pos.x, player->pos.y);
 
     if (player->move_x > 0)
         player->pos.x += 5;
@@ -70,7 +68,7 @@ bool player_touch_smth_in_house(game_t *game)
         if (go->display == false)
             continue;
         if (will_touch_house_up_and_down(player, go, pos_pla) == true || \
-            will_touch_house_side(player, go, pos_pla) == true) {
+        will_touch_house_side(player, go, pos_pla) == true) {
             player->move_x = 0;
             player->move_y = 0;
             return true;

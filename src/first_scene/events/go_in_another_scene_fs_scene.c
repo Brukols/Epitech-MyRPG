@@ -23,7 +23,8 @@ bool go_to_other_scene(game_t *game, game_object_t *player, game_object_t *go)
 {
     sfVector2f pos = init_vec2f(go->pos.x + (80 * 2.3), \
     go->pos.y + (159 * 2.3));
-    sfVector2f size_player = init_vec2f(player->rect.width, player->rect.height);
+    sfVector2f size_player = init_vec2f(player->rect.width, \
+    player->rect.height);
 
     if (click(player->pos, size_player, pos) == true) {
         re_initialize_value(game);

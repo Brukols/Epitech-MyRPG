@@ -40,9 +40,16 @@ bool move)
 
 void move_on_the_house(game_t *game, sfKeyCode code, bool move)
 {
-    background_t *bg = game->scenes->objs->background;
     player_t *player = game->scenes->objs->player;
+    game_object_t *go = game->scenes->objs->game_object;
 
+    for (; go; go = go->next) {
+        if (go->interaction == true) {
+            player->game_object->move_x = 0;
+            player->game_object->move_y = 0;
+            return;
+        }
+    }
     if (code == sfKeyEscape)
         sfRenderWindow_close(game->window);
     change_position_player(player, bg, code, move);

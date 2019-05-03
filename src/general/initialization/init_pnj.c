@@ -56,8 +56,6 @@ game_object_t *fill_game_object_pnj(game_object_t *go, char **all)
     if (!(go->sprite = sfSprite_create()))
         return (NULL);
     go->scale = init_vec2f(1, 1);
-    go->stock_top = my_getnbr(all[4]);
-    go->stock_left = my_getnbr(all[3]);
     go->rect = init_intrect(my_getnbr(all[3]), my_getnbr(all[4]), \
     my_getnbr(all[5]), my_getnbr(all[6]));
     go->hitbox_pos = init_vec2f(my_getnbr(all[1]) + 12, my_getnbr(all[2]) + 54);
@@ -73,7 +71,10 @@ pnj_t *fill_a_pnj(pnj_t *pnj, game_object_t *go, char *str)
     if (!all)
         return (NULL);
     for (; go->next; go = go->next);
-    pnj->game_object = fill_game_object_pnj(go, all);
+    if (!(pnj->game_object = fill_game_object_pnj(go, all)))
+        return (NULL);
+    pnj->game_object->stock_top = my_getnbr(all[4]);
+    pnj->game_object->stock_left = my_getnbr(all[3]);
     if (!(pnj->name = my_strdup(all[0])))
         return (NULL);
     if (!(pnj->discuss = init_discuss(str, &i)))

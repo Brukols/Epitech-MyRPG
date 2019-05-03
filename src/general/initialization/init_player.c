@@ -7,7 +7,7 @@
 
 #include "my_rpg.h"
 
-player_t *init_player()
+player_t *init_player(void)
 {
     player_t *player = malloc(sizeof(player_t));
 
