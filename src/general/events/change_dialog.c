@@ -13,6 +13,10 @@ void change_quest_pnj(game_t *game, pnj_t *pnj)
         change_quest(game, TALK_TO_DOBBY);
     if (my_strcmp(pnj->name, "Freddy") == 0)
         change_quest(game, FIND_THE_KEY);
+    if (my_strcmp(pnj->name, "Ariana") == 0)
+        change_quest(game, TALK_TO_ARIANA);
+    if (my_strcmp(pnj->name, "Guard") == 0)
+        change_quest(game, TALK_TO_THE_GUARD);
 }
 
 bool stop_dialog(game_t *game, pnj_t *pnj)
@@ -20,6 +24,10 @@ bool stop_dialog(game_t *game, pnj_t *pnj)
     if (game->quests->quest != 2 && my_strcmp(pnj->name, "Freddy") == 0)
         return (true);
     if (game->quests->quest != 4 && my_strcmp(pnj->name, "Zoro") == 0)
+        return (true);
+    if (game->quests->quest != 5 && my_strcmp(pnj->name, "Ariana") == 0)
+        return (true);
+    if (game->quests->quest != 8 && my_strcmp(pnj->name, "Guard") == 0)
         return (true);
     return (false);
 }

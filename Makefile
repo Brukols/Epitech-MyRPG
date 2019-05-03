@@ -47,7 +47,7 @@ MENU_INIT_BUTTONS	=	src/menu/init/buttons
 
 MENU_INIT_INTRO	=	src/menu/init/intro
 
-FIGHT_SCENE = src/fight_scene/
+FIGHT_SCENE = src/fight_scene
 
 SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/display_player.c				\

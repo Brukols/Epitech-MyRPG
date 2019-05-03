@@ -15,5 +15,7 @@ char *init_what_texture(char *str, int *i)
         return (NULL);
     if (next[0] == '1')
         return (my_strdup("ressources/sprites/chara5.png"));
+    if (next[0] == '2')
+        return (my_strdup("ressources/sprites/chara4.png"));
     return (NULL);
 }

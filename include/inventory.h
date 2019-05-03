@@ -65,5 +65,17 @@ char *remove_return_line(char *buffer);
 item_t *create_one_item(int id);
 item_t *create_sword(void);
 item_t *create_ring(void);
+item_t *create_key(void);
+item_t *create_amulet(void);
+item_t *create_banana(void);
+item_t *create_chaos(void);
+item_t *create_cloak(void);
+item_t *create_helmet(void);
+item_t *create_katana(void);
+item_t *create_potion(void);
+item_t *create_speelbook(void);
+item_t *create_star(void);
+item_t *create_vulcan(void);
+item_t *create_wand(void);
 
 #endif

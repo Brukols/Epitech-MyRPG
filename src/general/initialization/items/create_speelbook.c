@@ -14,16 +14,16 @@ item_t *create_speelbook(void)
     if (item == NULL)
         return (NULL);
     if (!(item->texture = sfTexture_createFromFile(\
-        "ressources/sprites/inventory/items/Speelbook.png" , NULL)))
+        "ressources/sprites/inventory/items/SpellBook.png" , NULL)))
         return (NULL);
     if (!(item->box_t = sfTexture_createFromFile(\
-        "ressources/sprites/inventory/box/Box_speelbook.png", NULL)))
+        "ressources/sprites/inventory/box/Box_spellbook.png", NULL)))
         return (NULL);
     if (!(item->box_s = sfSprite_create()))
         return (NULL);
     if (!(item->sprite = sfSprite_create()))
         return (NULL);
-    item->name = "Speelbook";
+    item->name = "Spellbook";
     item->atk = 1;
     item->pow = 10;
     sfSprite_setTexture(item->sprite, item->texture, sfTrue);
