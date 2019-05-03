@@ -7,9 +7,9 @@
 
 #include "my_rpg.h"
 
-int player_attack(scenes_t *scene)
+int player_attack(game_t *game)
 {
-    buttons_t *buttons = scene->buttons;
+    buttons_t *buttons = game->scenes->buttons;
 
     while (buttons->prev != NULL)
         buttons = buttons->prev;

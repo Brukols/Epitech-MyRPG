@@ -33,7 +33,7 @@ buttons_t *enemy_button_two(buttons_t *button);
 buttons_t *enemy_button_three(buttons_t *button);
 
 //actions
-int player_attack(scenes_t *scene);
+int player_attack(game_t *game);
 
 //music
 struct musics_s *init_fight_scene_music(void);
