@@ -40,6 +40,7 @@ bool move)
 
 void move_on_the_house(game_t *game, sfKeyCode code, bool move)
 {
+    background_t *bg = game->scenes->objs->background;
     player_t *player = game->scenes->objs->player;
     game_object_t *go = game->scenes->objs->game_object;
 
