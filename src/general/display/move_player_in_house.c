@@ -66,6 +66,8 @@ bool player_touch_smth_in_house(game_t *game)
     sfVector2f pos_pla = init_vec2f(player->pos.x, player->pos.y);
 
     for (; go; go = go->next) {
+        if (go->display == false)
+            continue;
         if (will_touch_house_up_and_down(player, go, pos_pla) == true || \
             will_touch_house_side(player, go, pos_pla) == true) {
             player->move_x = 0;
