@@ -32,7 +32,8 @@ enum game_object_e {
     INTRO_BUBBLE5,
     PLANT_HOUSE,
     BED_HOUSE,
-    BACKGROUND_HOUSE_1
+    BACKGROUND_HOUSE_1,
+    ENEMY_TRAINER,
 };
 
 enum particle_e {
@@ -57,6 +58,7 @@ typedef struct game_object_s {
     int move_y;
     int comparison;
     int stock_top;
+    int stock_left;
     bool display;
     bool interaction;
     bool open;

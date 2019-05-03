@@ -67,6 +67,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/display_wind.c				\
 		$(GENERAL_DISPLAY)/display_leaf.c				\
 		$(GENERAL_DISPLAY)/move_player_in_house.c			\
+		$(GENERAL_DISPLAY)/gameplay.c			\
 		$(GENERAL_EVENTS)/player_touch_smth.c				\
 		$(GENERAL_EVENTS)/will_touch_smth.c				\
 		$(GENERAL_EVENTS)/change_dialog.c				\
@@ -104,8 +105,8 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/init_what_texture.c				\
 		$(GENERAL_INIT)/init_quests.c					\
 		$(GENERAL_INIT)/init_particle.c					\
-		$(GENERAL_INIT)/init_all_particle.c					\
-		$(GENERAL_INIT)/init_wind_particle.c					\
+		$(GENERAL_INIT)/init_all_particle.c				\
+		$(GENERAL_INIT)/init_wind_particle.c				\
 		$(GENERAL_INIT_ITEMS)/create_amulet.c				\
 		$(GENERAL_INIT_ITEMS)/create_banana.c				\
 		$(GENERAL_INIT_ITEMS)/create_chaos.c				\
@@ -120,7 +121,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT_ITEMS)/create_vulcan.c				\
 		$(GENERAL_INIT_ITEMS)/create_wand.c				\
 		$(GENERAL_INIT_ITEMS)/create_key.c				\
-		$(MENU_EVENTS)/events_menu.c	\
+		$(MENU_EVENTS)/events_menu.c			\
 		$(MENU_DISPLAY)/display.c			\
 		$(MENU_DISPLAY)/display_buttons_menu.c		\
 		$(MENU_DISPLAY_INTRO)/display_intro.c		\
@@ -144,7 +145,9 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FS_SCENE_DISPLAY)/display_fs_scene.c				\
 		$(FS_SCENE_DISPLAY)/display_player_house.c			\
 		$(FS_SCENE_DISPLAY)/display_texts_fs_scene.c			\
-		$(FS_SCENE_DISPLAY)/display_texts_house_player.c			\
+		$(FS_SCENE_DISPLAY)/display_texts_house_player.c		\
+		$(FS_SCENE_DISPLAY)/move_zoro.c		\
+		$(FS_SCENE_DISPLAY)/move_zoro_gameplay.c		\
 		$(FS_SCENE_EVENTS)/events_fs_scene.c				\
 		$(FS_SCENE_EVENTS)/unlock_smth_fs_scene.c			\
 		$(FS_SCENE_EVENTS)/go_in_another_scene_fs_scene.c			\
@@ -162,11 +165,15 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(HOUSES)/init_texts_player_house.c				\
 		$(FIGHT_SCENE)/init/init_fight_scene.c				\
 		$(FIGHT_SCENE)/init/init_fight_scene_buttons.c			\
+		$(FIGHT_SCENE)/init/init_fight_scene_enemy_buttons.c		\
 		$(FIGHT_SCENE)/init/init_fight_scene_music.c			\
 		$(FIGHT_SCENE)/init/init_fight_scene_objs.c			\
 		$(FIGHT_SCENE)/display/display_fight_scene.c			\
 		$(FIGHT_SCENE)/display/display_fight_scene_buttons.c		\
 		$(FIGHT_SCENE)/display/display_fight_scene_objs.c		\
+		$(FIGHT_SCENE)/actions/player_attack.c			\
+		$(FIGHT_SCENE)/events/fight_events.c			\
+		$(FIGHT_SCENE)/events/manage_fight_scene_buttons_events.c	\
 		$(SRC)/make_connection_between_scenes.c				\
 		$(SRC)/init_all_game.c						\
 		$(SRC)/launch_game.c						\

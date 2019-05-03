@@ -56,6 +56,7 @@ int display_leaf(particle_t *);
 int display_wind(particle_t *);
 void move_player_on_the_house(game_t *);
 void display_dialog(game_t *, texts_t *);
+int gameplay(game_t *);
 
 // GENERAL_EVENTS //
 

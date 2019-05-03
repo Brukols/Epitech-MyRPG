@@ -13,10 +13,8 @@ scenes_t *init_fight_scene(scenes_t *scenes)
     scenes->objs = init_fight_scene_objs();
     scenes->buttons = init_fight_scene_buttons();
     scenes->texts = NULL;
-    scenes->musics = NULL;//init_fight_scene_music();
+    scenes->musics = NULL;
     if (scenes->objs == NULL || scenes->buttons == NULL)
         return (NULL);
     return (scenes);
 }
-
-//|| scenes->musics == NULL)

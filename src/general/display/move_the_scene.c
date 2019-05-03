@@ -55,6 +55,13 @@ void move_the_scene(game_t *game, sfKeyCode code, bool move)
     background_t *bg = game->scenes->objs->background;
     player_t *player = game->scenes->objs->player;
 
+    if (game->quests->all_quests == TRAINING) {
+        bg->move_x = 0;
+        bg->move_y = 0;
+        player->game_object->move_x = 0;
+        player->game_object->move_y = 0;
+        return;
+    }
     if (there_is_an_interaction(game) == true)
         return;
     if (code == sfKeyEscape)

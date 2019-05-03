@@ -17,7 +17,8 @@ enum button_e {
     BOX_DIALOG,
     ATTACK,
     MAGIC,
-    ESCAPE
+    ESCAPE,
+    ENEMY
 };
 
 typedef struct buttons_s {
@@ -30,6 +31,7 @@ typedef struct buttons_s {
     sfIntRect rect;
     sfClock *clock;
     sfVector2f hitbox_pos;
+    bool display;
     int (*callback)();
     struct buttons_s *next;
     struct buttons_s *prev;

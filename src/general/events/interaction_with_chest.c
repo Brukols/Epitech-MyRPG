@@ -16,8 +16,19 @@ void open_the_chest(game_t *game, game_object_t *go)
     add_item(inventory, go->item);
     go->open = true;
     go->rect.top += 108;
-    if (go->type == FIRST_CHEST)
+    if (go->type == FIRST_CHEST) {
         game->quests->quest++;
+        game->quests->all_quests = TRAINING;
+    }
+}
+
+bool manage_chest(game_t *game, game_object_t *go)
+{
+    if (player_have_the_key(game->scenes->objs->player) == false)
+        go->interaction = true;
+    else
+        open_the_chest(game, go);
+    return (true);
 }
 
 bool interaction_with_chest(game_t *game)
@@ -37,12 +48,7 @@ bool interaction_with_chest(game_t *game)
         }
         if (player_touch_chest(go, player->game_object) != true)
             continue;
-        if (player_have_the_key(game->scenes->objs->player) == \
-            false)
-            go->interaction = true;
-        else
-            open_the_chest(game, go);
-        return (true);
+        return (manage_chest(game, go));
     }
     return (false);
 }

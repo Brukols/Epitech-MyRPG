@@ -11,7 +11,7 @@ game_t *scene_managing(game_t *game)
 {
     enum scene_e type[] = {INTRO, MENU, FIRST_SCENE, PLAYER_HOUSE, FIGHT};
     game_t *(*display_scenes[])() = {display_intro, display_menu, \
-    display_fs_scene, display_player_house, display_fight_scene};
+        display_fs_scene, display_player_house, display_fight_scene};
 
     for (int i = 0; i < 5; i++) {
         if (game->scenes->scene == type[i])
@@ -26,7 +26,7 @@ int launch_game(void)
 
     if (!game)
         return (FAILURE_EXIT);
-    //for(; game->scenes->scene != PLAYER_HOUSE; game->scenes = game->scenes->next);
+    //for(; game->scenes->scene != FIGHT; game->scenes = game->scenes->next);
     while (sfRenderWindow_isOpen(game->window)) {
         if (!(game = scene_managing(game))) {
             sfRenderWindow_close(game->window);

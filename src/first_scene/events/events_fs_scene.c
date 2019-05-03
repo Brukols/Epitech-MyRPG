@@ -23,8 +23,6 @@ game_t *events_fs_scene(game_t *game)
             move_the_scene(game, event.key.code, false);
             interactions(game, event.key.code);
         }
-        if (event.type == sfEvtMouseButtonPressed)
-            game->scenes = game->scenes->next;
     }
     return (game);
 }

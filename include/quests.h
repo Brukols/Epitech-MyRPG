@@ -14,7 +14,9 @@ enum all_quests_e {
     TALK_TO_DOBBY = 0,
     FIND_A_CHEST,
     FIND_THE_KEY,
-    OPEN_THE_CHEST
+    OPEN_THE_CHEST,
+    TRAINING,
+    SAVE_LUCY
 };
 
 typedef struct quests_s {
