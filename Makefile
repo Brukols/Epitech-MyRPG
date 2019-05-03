@@ -67,6 +67,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/display_wind.c				\
 		$(GENERAL_DISPLAY)/display_leaf.c				\
 		$(GENERAL_DISPLAY)/move_player_in_house.c			\
+		$(GENERAL_DISPLAY)/gameplay.c			\
 		$(GENERAL_EVENTS)/player_touch_smth.c				\
 		$(GENERAL_EVENTS)/will_touch_smth.c				\
 		$(GENERAL_EVENTS)/change_dialog.c				\
@@ -144,7 +145,8 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FS_SCENE_DISPLAY)/display_fs_scene.c				\
 		$(FS_SCENE_DISPLAY)/display_player_house.c			\
 		$(FS_SCENE_DISPLAY)/display_texts_fs_scene.c			\
-		$(FS_SCENE_DISPLAY)/display_texts_house_player.c			\
+		$(FS_SCENE_DISPLAY)/display_texts_house_player.c		\
+		$(FS_SCENE_DISPLAY)/move_zoro.c		\
 		$(FS_SCENE_EVENTS)/events_fs_scene.c				\
 		$(FS_SCENE_EVENTS)/unlock_smth_fs_scene.c			\
 		$(FS_SCENE_EVENTS)/go_in_another_scene_fs_scene.c			\

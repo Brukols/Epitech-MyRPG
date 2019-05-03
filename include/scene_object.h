@@ -58,6 +58,7 @@ typedef struct game_object_s {
     int move_y;
     int comparison;
     int stock_top;
+    int stock_left;
     bool display;
     bool interaction;
     bool open;

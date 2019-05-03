@@ -16,8 +16,10 @@ void open_the_chest(game_t *game, game_object_t *go)
     add_item(inventory, go->item);
     go->open = true;
     go->rect.top += 108;
-    if (go->type == FIRST_CHEST)
+    if (go->type == FIRST_CHEST) {
         game->quests->quest++;
+        game->quests->all_quests = TRAINING;
+    }
 }
 
 bool interaction_with_chest(game_t *game)
