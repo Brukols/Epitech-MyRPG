@@ -30,19 +30,23 @@ bool go_to_other_scene(game_t *game, game_object_t *player, game_object_t *go)
 {
     sfVector2f pos = init_vec2f(go->pos.x + (80 * 2.3), \
     go->pos.y + (159 * 2.3));
+    sfVector2f pos_zoro = init_vec2f(go->pos.x + (48 * 2.3), \
+    go->pos.y + (82 * 2.3));
     sfVector2f size_player = init_vec2f(player->rect.width, \
     player->rect.height);
 
-    if (click(player->pos, size_player, pos) == true) {
+    if (click(player->pos, size_player, pos) == true && go->type == \
+        PLAYER_HOUSE_FS_SCENE) {
         stop_music_scene(game->scenes->musics);
-        if (go->pos.x <= 934 && go->pos.x >= 909 && \
-            go->pos.y == 265) {
-            game->scenes = select_zoro_house(game);
-            re_initialize_value(game);
-            return true;
-        }
         re_initialize_value(game);
         game->scenes = game->scenes->next;
+        return (true);
+    }
+    if (click(player->pos, size_player, pos_zoro) == true && go->type == \
+        PLAYER_HOUSE_FS_SCENE) {
+        stop_music_scene(game->scenes->musics);
+        re_initialize_value(game);
+        game->scenes = select_zoro_house(game);
         return (true);
     }
     return (false);
