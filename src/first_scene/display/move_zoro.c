@@ -34,8 +34,10 @@ void move_zoro(game_t *game, player_t *player, pnj_t *pnj)
         re_init_zoro(pnj, player, &i);
     if (i <= 2)
         first_move_zoro(pnj, &i);
-    if (i == 3)
+    if (i == 3) {
+        music_play(game->scenes->musics, VOICE_M, sfFalse);
         begin_speak_zoro(pnj, player, &i);
+    }
     if (pnj->speak == false && i == 4)
         i++;
     if (i == 5)

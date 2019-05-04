@@ -83,6 +83,8 @@ bool interaction_with_other_chest(game_t *);
 void music_play(musics_t *music, enum music_e type, sfBool);
 void music_pause(musics_t *music, enum music_e type);
 void music_stop(musics_t *music, enum music_e type);
+void play_music_voice(game_t *game, pnj_t *pnj);
+void pause_music_voice(game_t *game, pnj_t *pnj);
 
 // GENERAL INIT //
 
