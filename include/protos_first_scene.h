@@ -33,6 +33,7 @@ buttons_t *init_buttons_fs_scene(void);
 musics_t *init_musics_fs_scene(void);
 musics_t *run_sound(musics_t *);
 musics_t *init_musics_player_house(void);
+musics_t *open_chest_sound(musics_t *);
 
 // DISPLAY //
 

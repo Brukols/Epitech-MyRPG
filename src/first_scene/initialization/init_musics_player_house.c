@@ -10,16 +10,16 @@
 musics_t *init_musics_player_house(void)
 {
     musics_t *musics = malloc(sizeof(musics_t));
-    musics_t *(*fill_musics_fs_scene[])() = {run_sound};
+    musics_t *(*fill_musics_fs_scene[])() = {run_sound, open_chest_sound};
 
     if (!musics)
         return (NULL);
     musics->prev = NULL;
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < 2; i++) {
         musics = fill_musics_fs_scene[i](musics);
         if (!musics)
             return (NULL);
-        if (i == 0)
+        if (i == 1)
             break;
         if (!(musics->next = malloc(sizeof(musics_t))))
             return (NULL);

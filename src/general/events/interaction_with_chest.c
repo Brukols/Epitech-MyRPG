@@ -9,9 +9,11 @@
 
 void open_the_chest(game_t *game, game_object_t *go)
 {
+    musics_t *music = game->scenes->musics;
     slot_t *slot = game->scenes->objs->player->inventory->slots;
     inventory_t *inventory = game->scenes->objs->player->inventory;
 
+    music_play(music, OPEN_CHEST_SOUND, sfFalse);
     remove_item(slot, 0);
     add_item(inventory, go->item);
     go->open = true;

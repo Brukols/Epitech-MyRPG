@@ -86,6 +86,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_EVENTS)/touch_walls_house.c				\
 		$(GENERAL_EVENTS)/interaction_with_other_chest.c		\
 		$(GENERAL_EVENTS)/stop_music_scene.c				\
+		$(GENERAL_EVENTS)/music_play.c				\
 		$(GENERAL_INIT)/init_color.c					\
 		$(GENERAL_INIT)/init_house.c					\
 		$(GENERAL_INIT)/init_map.c					\

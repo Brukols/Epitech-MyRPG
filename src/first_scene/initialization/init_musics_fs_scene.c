@@ -26,19 +26,29 @@ musics_t *run_sound(musics_t *music)
     return (music);
 }
 
+musics_t *open_chest_sound(musics_t *music)
+{
+    music->type = OPEN_CHEST_SOUND;
+    music->music = sfMusic_createFromFile("ressources/music/open.ogg");
+    if (!music->music)
+        return (NULL);
+    return (music);
+}
+
 musics_t *init_musics_fs_scene(void)
 {
     musics_t *musics = malloc(sizeof(musics_t));
-    musics_t *(*fill_musics_fs_scene[])() = {wind_sound, run_sound};
+    musics_t *(*fill_musics_fs_scene[])() = {wind_sound, run_sound, \
+        open_chest_sound};
 
     if (!musics)
         return (NULL);
     musics->prev = NULL;
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 3; i++) {
         musics = fill_musics_fs_scene[i](musics);
         if (!musics)
             return (NULL);
-        if (i == 1)
+        if (i == 2)
             break;
         if (!(musics->next = malloc(sizeof(musics_t))))
             return (NULL);

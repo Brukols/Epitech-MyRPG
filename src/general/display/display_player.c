@@ -16,8 +16,7 @@ void display_player(game_t *game)
     for (; music->type != RUN_SOUND; music = music->next);
     if (player->move_x || player->move_y) {
         if (i == 0) {
-            sfMusic_play(music->music);
-            sfMusic_setLoop(music->music, sfTrue);
+            music_play(music, RUN_SOUND, sfTrue);
             i++;
         }
         if (sfClock_getElapsedTime(player->clock).microseconds > 120000) {
@@ -28,7 +27,7 @@ void display_player(game_t *game)
             player->rect.left = 0;
     } else {
         i = 0;
-        sfMusic_pause(music->music);
+        music_pause(music, RUN_SOUND);
         player->rect.left = 78;
     }
 }

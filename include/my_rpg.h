@@ -80,6 +80,9 @@ bool touch_walls_house(game_t *);
 bool go_in_another_scene_fs_scene(game_t *);
 bool will_touch(background_t *, player_t *, game_object_t *);
 bool interaction_with_other_chest(game_t *);
+void music_play(musics_t *music, enum music_e type, sfBool);
+void music_pause(musics_t *music, enum music_e type);
+void music_stop(musics_t *music, enum music_e type);
 
 // GENERAL INIT //
 

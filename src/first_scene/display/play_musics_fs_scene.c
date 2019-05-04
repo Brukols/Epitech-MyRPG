@@ -13,8 +13,7 @@ void play_musics_fs_scene(game_t *game)
     musics_t *music = game->scenes->musics;
 
     if (i == 0) {
-        sfMusic_play(music->music);
-        sfMusic_setLoop(music->music, sfTrue);
+        music_play(music, WIND_SOUND, sfTrue);
         i++;
     }
 }
