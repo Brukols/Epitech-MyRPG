@@ -27,7 +27,9 @@ FS_SCENE_DISPLAY	=	src/first_scene/display
 
 FS_SCENE_EVENTS	=	src/first_scene/events
 
-HOUSES		=	src/first_scene/initialization/houses
+HOUSE_PLAYER		=	src/first_scene/initialization/houses/house_player
+
+HOUSE_ZORO		=	src/first_scene/initialization/houses/zoro_house
 
 MENU		=	src/menu
 
@@ -165,13 +167,16 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FS_SCENE_INIT)/init_buttons_fs_scene.c			\
 		$(FS_SCENE_INIT)/init_musics_fs_scene.c			\
 		$(FS_SCENE_INIT)/init_musics_player_house.c			\
-		$(HOUSES)/init_player_house.c					\
-		$(HOUSES)/init_plant.c						\
-		$(HOUSES)/init_bed.c						\
-		$(HOUSES)/init_scene_object_player_house.c			\
-		$(HOUSES)/init_object_player_house.c				\
-		$(HOUSES)/init_buttons_house_player.c				\
-		$(HOUSES)/init_texts_player_house.c				\
+		$(HOUSE_PLAYER)/init_player_house.c					\
+		$(HOUSE_PLAYER)/init_plant.c						\
+		$(HOUSE_PLAYER)/init_bed.c						\
+		$(HOUSE_PLAYER)/init_scene_object_player_house.c			\
+		$(HOUSE_PLAYER)/init_object_player_house.c				\
+		$(HOUSE_PLAYER)/init_buttons_house_player.c				\
+		$(HOUSE_PLAYER)/init_texts_player_house.c				\
+		$(HOUSE_ZORO)/init_object.c					\
+		$(HOUSE_ZORO)/init_zoro_house.c					\
+		$(FS_SCENE_DISPLAY)/zoro_house.c			\
 		$(FIGHT_SCENE)/init/init_fight_scene.c				\
 		$(FIGHT_SCENE)/init/init_enemies.c				\
 		$(FIGHT_SCENE)/init/init_fight_scene_buttons.c			\
