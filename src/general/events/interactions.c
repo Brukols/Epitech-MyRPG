@@ -44,10 +44,13 @@ bool new_dialog(game_t *game, sfVector2f pos_player)
     pnj_t *pnj = game->scenes->objs->pnj;
 
     for (; pnj; pnj = pnj->next) {
-        if (is_ready_to_talk(pnj->game_object, pos_player) == true) {
-            pnj->speak = true;
-            return (true);
-        }
+        if (is_ready_to_talk(pnj->game_object, pos_player) != true)
+            continue;
+        if (game->quests->all_quests == TALK_TO_THE_GUARD && \
+        my_strcmp(pnj->name, "Guard") == 0)
+            pnj->next_dialog = 2;
+        pnj->speak = true;
+        return (true);
     }
     return (false);
 }
