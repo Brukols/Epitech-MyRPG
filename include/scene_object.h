@@ -18,6 +18,7 @@ enum game_object_e {
     ROCK,
     PNJ,
     FIRST_CHEST,
+    SECOND_CHEST,
     INTRO_SKIP1,
     INTRO_SKIP2,
     INTRO_FAIRY,

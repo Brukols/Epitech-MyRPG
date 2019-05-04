@@ -63,5 +63,7 @@ void interactions(game_t *game, sfKeyCode code)
             return;
         if (interaction_with_chest(game) == true)
             return;
+        if (interaction_with_other_chest(game) == true)
+            return;
     }
 }

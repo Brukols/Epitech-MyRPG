@@ -31,5 +31,13 @@ void unlock_chest_fs_scene(game_t *game)
 
 void unlock_smth_fs_scene(game_t *game)
 {
+    game_object_t *go = game->scenes->objs->game_object;
+
+    if (game->quests->all_quests == FIND_A_SECOND_CHEST) {
+        for (; go->prev; go = go->prev);
+        for (; go && go->type != SECOND_CHEST; go = go->next);
+        if (go)
+            go->display = true;
+    }
     unlock_chest_fs_scene(game);
 }

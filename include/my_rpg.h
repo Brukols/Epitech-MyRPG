@@ -79,6 +79,7 @@ void move_on_the_house(game_t *, sfKeyCode, bool);
 bool touch_walls_house(game_t *);
 bool go_in_another_scene_fs_scene(game_t *);
 bool will_touch(background_t *, player_t *, game_object_t *);
+bool interaction_with_other_chest(game_t *);
 
 // GENERAL INIT //
 
@@ -110,6 +111,7 @@ particle_t *init_particle(game_object_t *);
 all_particle_t *init_all_particle(void);
 framebuffer_t *create_framebuffer(int, int);
 particle_t *init_wind_particle(void);
+game_object_t *init_second_chest(game_object_t *, int, int);
 
 game_t *init_all_game(void);
 sfRenderWindow *create_window(unsigned int, unsigned int, unsigned int);

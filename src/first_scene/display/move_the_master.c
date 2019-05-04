@@ -49,4 +49,9 @@ void move_the_master(game_t *game, pnj_t *pnj)
     }
     if (pnj->speak == false && i == 3)
         i++;
+    if (i == 4) {
+        pnj->game_object->display = false;
+        game->quests->quest++;
+        game->quests->all_quests++;
+    }
 }
