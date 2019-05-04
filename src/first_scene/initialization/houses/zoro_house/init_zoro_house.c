@@ -37,7 +37,7 @@ scene_object_t *init_scene_object_zoro_house(void)
         return (NULL);
     if (!(so->game_object = init_game_object_scene("maps/zoro_house")))
         return (NULL);
-    if (!(so = put_chara_in_game_object(so, 950, 930)))
+    if (!(so = put_chara_in_game_object(so, 950, 780)))
         return (NULL);
     so->particle = NULL;
     so->pnj = NULL;
@@ -49,6 +49,11 @@ scenes_t *init_zoro_house(scenes_t *scene)
     scene->scene = ZORO_HOUSE;
     if (!(scene->objs = init_scene_object_zoro_house()))
         return (NULL);
-    scene->musics = NULL;
+    if (!(scene->buttons = init_buttons_house_player()))
+        return (NULL);
+    if (!(scene->texts = init_texts_player_house()))
+        return (NULL);
+    if (!(scene->musics = init_musics_player_house()))
+        return (NULL);
     return (scene);
 }

@@ -7,13 +7,10 @@
 
 #include "my_rpg.h"
 
-scenes_t *select_zoro_house(game_t *game)
+void select_zoro_house(game_t *game)
 {
-    int i = 0;
-
     for (; game->scenes->prev; game->scenes = game->scenes->prev);
-    for (; game->scenes->scene != ZORO_HOUSE; game->scenes = game->scenes->next)
-    return (game->scenes);
+    for (; game->scenes->scene != ZORO_HOUSE; game->scenes = game->scenes->next);
 }
 
 void re_initialize_value(game_t *game)
@@ -48,7 +45,7 @@ bool go_to_other_scene(game_t *game, game_object_t *player, game_object_t *go)
         BROWN_HOUSE_FS_SCENE) {
         stop_music_scene(game->scenes->musics);
         re_initialize_value(game);
-        game->scenes = select_zoro_house(game);
+        select_zoro_house(game);
         return (true);
     }
     return (false);
