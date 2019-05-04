@@ -69,8 +69,8 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/display_wind.c				\
 		$(GENERAL_DISPLAY)/display_leaf.c				\
 		$(GENERAL_DISPLAY)/move_player_in_house.c			\
-		$(GENERAL_DISPLAY)/gameplay.c			\
-		$(GENERAL_DISPLAY)/music_voice.c			\
+		$(GENERAL_DISPLAY)/gameplay.c					\
+		$(GENERAL_DISPLAY)/music_voice.c				\
 		$(GENERAL_EVENTS)/player_touch_smth.c				\
 		$(GENERAL_EVENTS)/will_touch_smth.c				\
 		$(GENERAL_EVENTS)/change_dialog.c				\
@@ -89,7 +89,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_EVENTS)/touch_walls_house.c				\
 		$(GENERAL_EVENTS)/interaction_with_other_chest.c		\
 		$(GENERAL_EVENTS)/stop_music_scene.c				\
-		$(GENERAL_EVENTS)/music_play.c				\
+		$(GENERAL_EVENTS)/music_play.c					\
 		$(GENERAL_INIT)/init_color.c					\
 		$(GENERAL_INIT)/init_house.c					\
 		$(GENERAL_INIT)/init_map.c					\
@@ -114,6 +114,8 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/init_particle.c					\
 		$(GENERAL_INIT)/init_all_particle.c				\
 		$(GENERAL_INIT)/init_wind_particle.c				\
+		$(GENERAL_INIT)/init_status_menu.c				\
+		$(GENERAL_INIT)/init_button_status_menu.c			\
 		$(GENERAL_INIT_ITEMS)/create_amulet.c				\
 		$(GENERAL_INIT_ITEMS)/create_banana.c				\
 		$(GENERAL_INIT_ITEMS)/create_chaos.c				\
@@ -153,10 +155,10 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FS_SCENE_DISPLAY)/display_player_house.c			\
 		$(FS_SCENE_DISPLAY)/display_texts_fs_scene.c			\
 		$(FS_SCENE_DISPLAY)/display_texts_house_player.c		\
-		$(FS_SCENE_DISPLAY)/move_zoro.c		\
-		$(FS_SCENE_DISPLAY)/move_zoro_gameplay.c		\
-		$(FS_SCENE_DISPLAY)/move_the_master.c		\
-		$(FS_SCENE_DISPLAY)/play_musics_fs_scene.c		\
+		$(FS_SCENE_DISPLAY)/move_zoro.c					\
+		$(FS_SCENE_DISPLAY)/move_zoro_gameplay.c			\
+		$(FS_SCENE_DISPLAY)/move_the_master.c				\
+		$(FS_SCENE_DISPLAY)/play_musics_fs_scene.c			\
 		$(FS_SCENE_EVENTS)/events_fs_scene.c				\
 		$(FS_SCENE_EVENTS)/unlock_smth_fs_scene.c			\
 		$(FS_SCENE_EVENTS)/go_in_another_scene_fs_scene.c		\
@@ -165,18 +167,18 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FS_SCENE_INIT)/init_scene_object_fs_scene.c			\
 		$(FS_SCENE_INIT)/init_texts_fs_scene.c				\
 		$(FS_SCENE_INIT)/init_buttons_fs_scene.c			\
-		$(FS_SCENE_INIT)/init_musics_fs_scene.c			\
+		$(FS_SCENE_INIT)/init_musics_fs_scene.c				\
 		$(FS_SCENE_INIT)/init_musics_player_house.c			\
-		$(HOUSE_PLAYER)/init_player_house.c					\
-		$(HOUSE_PLAYER)/init_plant.c						\
-		$(HOUSE_PLAYER)/init_bed.c						\
-		$(HOUSE_PLAYER)/init_scene_object_player_house.c			\
-		$(HOUSE_PLAYER)/init_object_player_house.c				\
-		$(HOUSE_PLAYER)/init_buttons_house_player.c				\
-		$(HOUSE_PLAYER)/init_texts_player_house.c				\
+		$(HOUSE_PLAYER)/init_player_house.c				\
+		$(HOUSE_PLAYER)/init_plant.c					\
+		$(HOUSE_PLAYER)/init_bed.c					\
+		$(HOUSE_PLAYER)/init_scene_object_player_house.c		\
+		$(HOUSE_PLAYER)/init_object_player_house.c			\
+		$(HOUSE_PLAYER)/init_buttons_house_player.c			\
+		$(HOUSE_PLAYER)/init_texts_player_house.c			\
 		$(HOUSE_ZORO)/init_object.c					\
 		$(HOUSE_ZORO)/init_zoro_house.c					\
-		$(FS_SCENE_DISPLAY)/zoro_house.c			\
+		$(FS_SCENE_DISPLAY)/zoro_house.c				\
 		$(FIGHT_SCENE)/init/init_fight_scene.c				\
 		$(FIGHT_SCENE)/init/init_enemies.c				\
 		$(FIGHT_SCENE)/init/init_fight_scene_buttons.c			\
@@ -203,7 +205,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 
 OBJS	=	$(SRCS:.c=.o)
 
-LDFLAGS	=	-Llib/my -lmy
+LDFLAGS	=	-L lib/my -lmy
 
 FLAGS	=	-lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 
@@ -213,12 +215,10 @@ MAKE	=	make
 
 CFLAGS	=	-I./include -W -Wall -Wextra
 
-all	: 	lib $(NAME)
-
-lib	:
-		make -C lib/my
+all	: 	$(NAME)
 
 $(NAME)	: 	$(OBJS)
+		make -C lib/my
 		$(CC) -o $(NAME) $(OBJS) $(LDFLAGS) $(FLAGS)
 
 clean	:
@@ -234,4 +234,4 @@ re	: 	fclean all
 debug	: 	CFLAGS += -g
 debug	: 	re
 
-.PHONY :	lib clean fclean re
+.PHONY	:	all clean fclean re

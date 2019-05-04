@@ -15,7 +15,8 @@ enum music_e {
     RUN_SOUND,
     OPEN_CHEST_SOUND,
     VOICE_M,
-    VOICE_F
+    VOICE_F,
+    RUN_SOUND_2
 };
 
 typedef struct musics_s {

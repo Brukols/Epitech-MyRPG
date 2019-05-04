@@ -19,7 +19,9 @@ enum button_e {
     MAGIC,
     ESCAPE,
     ENEMY,
-    INFO
+    INFO,
+    STATUS_MENU,
+    BUTTON_STATUS_MENU
 };
 
 typedef struct buttons_s {

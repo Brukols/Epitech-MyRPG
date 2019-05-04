@@ -84,14 +84,14 @@ void music_play(musics_t *music, enum music_e type, sfBool);
 void music_pause(musics_t *music, enum music_e type);
 void music_stop(musics_t *music, enum music_e type);
 void play_music_voice(game_t *game, pnj_t *pnj);
-void pause_music_voice(game_t *game, pnj_t *pnj);
+void stop_music_voice(game_t *game, pnj_t *pnj);
 
 // GENERAL INIT //
 
 char **init_map(char *);
 char **str_to_word_array_for_map(char *);
 sfVector2f init_vec2f(float x, float y);
-sfIntRect init_intrect(int top, int left, int width, int height);
+sfIntRect init_intrect(int left, int top, int width, int height);
 sfColor init_color(int r, int g, int b, int a);
 game_object_t *init_house_player(game_object_t *, int x, int y);
 game_object_t *init_object(game_object_t *, char *);
@@ -117,6 +117,9 @@ all_particle_t *init_all_particle(void);
 framebuffer_t *create_framebuffer(int, int);
 particle_t *init_wind_particle(void);
 game_object_t *init_second_chest(game_object_t *, int, int);
+musics_t *run_sound_2(musics_t *);
+buttons_t *init_button_status_menu(buttons_t *button);
+buttons_t *init_status_menu(buttons_t *button);
 
 game_t *init_all_game(void);
 sfRenderWindow *create_window(unsigned int, unsigned int, unsigned int);

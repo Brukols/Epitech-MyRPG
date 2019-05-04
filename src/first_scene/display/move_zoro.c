@@ -30,19 +30,25 @@ void move_zoro(game_t *game, player_t *player, pnj_t *pnj)
 {
     static int i = 0;
 
-    if (i == 0)
+    if (i == 0) {
+        music_play(game->scenes->musics, RUN_SOUND_2, sfTrue);
         re_init_zoro(pnj, player, &i);
+    }
     if (i <= 2)
         first_move_zoro(pnj, &i);
     if (i == 3) {
+        music_pause(game->scenes->musics, RUN_SOUND_2);
         music_play(game->scenes->musics, VOICE_M, sfFalse);
         begin_speak_zoro(pnj, player, &i);
     }
     if (pnj->speak == false && i == 4)
         i++;
-    if (i == 5)
+    if (i == 5) {
+        music_play(game->scenes->musics, RUN_SOUND_2, sfTrue);
         second_move_zoro(pnj, &i);
+    }
     if (i == 6) {
+        music_pause(game->scenes->musics, RUN_SOUND_2);
         game->quests->all_quests++;
         game->quests->quest++;
     }

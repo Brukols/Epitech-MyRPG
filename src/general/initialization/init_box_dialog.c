@@ -20,6 +20,7 @@ buttons_t *init_box_dialog(buttons_t *button)
     if (!(button->sprite = sfSprite_create()))
         return (NULL);
     button->type = BOX_DIALOG;
+    button->display = true;
     button->pos = init_vec2f(380, 700);
     button->size = init_vec2f(1136, 300);
     button->rect = init_intrect(0, 0, 1136, 300);
