@@ -28,6 +28,7 @@ texts_t *init_texts_player_house(void);
 scenes_t *init_first_scene(scenes_t *);
 scene_object_t *init_scene_object_fs_scene(void);
 game_object_t *init_shaft(game_object_t *, int x, int y);
+game_object_t *init_cone(game_object_t *, int x, int y);
 texts_t *init_texts_fs_scene(void);
 buttons_t *init_buttons_fs_scene(void);
 musics_t *init_musics_fs_scene(void);

@@ -1,0 +1,10 @@
+/*
+** EPITECH PROJECT, 2019
+** rpg
+** File description:
+** display_life
+*/
+
+#include "my_rpg.h"
+
+void display_life()

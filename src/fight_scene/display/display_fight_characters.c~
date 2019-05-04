@@ -1,0 +1,13 @@
+/*
+** EPITECH PROJECT, 2019
+** rpg
+** File description:
+** display_fight_characters
+*/
+
+#include "my_rpg.h"
+
+void display_fight_characters(game_t *game)
+{
+    
+}

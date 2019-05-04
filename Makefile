@@ -92,6 +92,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/init_map.c					\
 		$(GENERAL_INIT)/init_object_for_map.c				\
 		$(GENERAL_INIT)/init_shaft.c					\
+		$(GENERAL_INIT)/init_cone.c					\
 		$(GENERAL_INIT)/init_vec2f.c					\
 		$(GENERAL_INIT)/str_to_word_array_for_map.c			\
 		$(GENERAL_INIT)/init_pnj.c					\

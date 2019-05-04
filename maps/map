@@ -24,6 +24,11 @@ rock:670:890
 rock:1300:1000
 rock:1900:567
 rock:789:600
+cone:500:500
+cone:600:500
+cone:500:600
+cone:600:600
+cone:300:500
 house_player:965:540
 brown_house:417:100
 second_chest:1700:200
