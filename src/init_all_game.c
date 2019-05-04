@@ -19,7 +19,7 @@ scenes_t *init_scenes(void)
     for (int i = 0; i < 6; i++) {
         if (!(scenes = init_every_scene[i](scenes)))
             return (NULL);
-        if (i == 4)
+        if (i == 5)
             break;
         scenes->next = malloc(sizeof(scenes_t));
         if (!scenes->next)

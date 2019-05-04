@@ -9,8 +9,10 @@
 
 scenes_t *select_zoro_house(game_t *game)
 {
+    int i = 0;
+
     for (; game->scenes->prev; game->scenes = game->scenes->prev);
-    for (; game->scenes->scene != ZORO_HOUSE; game->scenes = game->scenes->next);
+    for (; game->scenes->scene != ZORO_HOUSE; game->scenes = game->scenes->next)
     return (game->scenes);
 }
 
@@ -43,7 +45,7 @@ bool go_to_other_scene(game_t *game, game_object_t *player, game_object_t *go)
         return (true);
     }
     if (click(player->pos, size_player, pos_zoro) == true && go->type == \
-        PLAYER_HOUSE_FS_SCENE) {
+        BROWN_HOUSE_FS_SCENE) {
         stop_music_scene(game->scenes->musics);
         re_initialize_value(game);
         game->scenes = select_zoro_house(game);

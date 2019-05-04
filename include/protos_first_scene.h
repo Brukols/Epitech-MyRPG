@@ -15,6 +15,7 @@
 game_t *display_zoro_house(game_t *game);
 scenes_t *init_zoro_house(scenes_t *scene);
 game_object_t *init_plant(game_object_t *go, int x, int y);
+game_object_t *init_table(game_object_t *go, int x, int y);
 game_object_t *init_bed(game_object_t *go, int x, int y);
 scenes_t *init_player_house(scenes_t *);
 scene_object_t *init_scene_object_player_house(void);
