@@ -16,5 +16,9 @@ void fight_events(game_t *game)
             sfRenderWindow_close(game->window);
         if (event.mouseButton.type == sfEvtMouseButtonPressed)
             manage_fight_scene_buttons_events(game);
+        if (event.type == sfEvtKeyPressed && event.key.code == sfKeyEscape)
+            sfRenderWindow_close(game->window);
     }
+    if (game->scenes->objs->player->attacking)
+        player_attack_animation(game);
 }

@@ -157,7 +157,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FS_SCENE_DISPLAY)/play_musics_fs_scene.c		\
 		$(FS_SCENE_EVENTS)/events_fs_scene.c				\
 		$(FS_SCENE_EVENTS)/unlock_smth_fs_scene.c			\
-		$(FS_SCENE_EVENTS)/go_in_another_scene_fs_scene.c			\
+		$(FS_SCENE_EVENTS)/go_in_another_scene_fs_scene.c		\
 		$(FS_SCENE_EVENTS)/go_back_to_first_scene.c			\
 		$(FS_SCENE_INIT)/init_first_scene.c				\
 		$(FS_SCENE_INIT)/init_scene_object_fs_scene.c			\
@@ -173,15 +173,22 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(HOUSES)/init_buttons_house_player.c				\
 		$(HOUSES)/init_texts_player_house.c				\
 		$(FIGHT_SCENE)/init/init_fight_scene.c				\
+		$(FIGHT_SCENE)/init/init_enemies.c				\
 		$(FIGHT_SCENE)/init/init_fight_scene_buttons.c			\
-		$(FIGHT_SCENE)/init/init_fight_scene_enemy_buttons.c		\
 		$(FIGHT_SCENE)/init/init_fight_scene_music.c			\
+		$(FIGHT_SCENE)/init/init_fight_scene_text.c			\
 		$(FIGHT_SCENE)/init/init_fight_scene_objs.c			\
-		$(FIGHT_SCENE)/display/display_fight_scene.c			\
-		$(FIGHT_SCENE)/display/display_fight_scene_buttons.c		\
-		$(FIGHT_SCENE)/display/display_fight_scene_objs.c		\
-		$(FIGHT_SCENE)/actions/player_attack.c			\
-		$(FIGHT_SCENE)/events/fight_events.c			\
+		$(FIGHT_SCENE)/init/init_fight_scene_game_objs.c		\
+		$(FIGHT_SCENE)/manage_fight_scene.c				\
+		$(FIGHT_SCENE)/display_fight_scene.c				\
+		$(FIGHT_SCENE)/actions/player_basic_attack.c			\
+		$(FIGHT_SCENE)/actions/player_magic_attack.c			\
+		$(FIGHT_SCENE)/actions/escape_fight_scene.c			\
+		$(FIGHT_SCENE)/actions/rand_action.c				\
+		$(FIGHT_SCENE)/actions/calcul_attack.c				\
+		$(FIGHT_SCENE)/actions/display_info.c				\
+		$(FIGHT_SCENE)/animations/player_attack_animation.c		\
+		$(FIGHT_SCENE)/events/fight_events.c				\
 		$(FIGHT_SCENE)/events/manage_fight_scene_buttons_events.c	\
 		$(SRC)/make_connection_between_scenes.c				\
 		$(SRC)/init_all_game.c						\
@@ -191,38 +198,35 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 
 OBJS	=	$(SRCS:.c=.o)
 
-LIB	=	-L./lib/my
+LDFLAGS	=	-Llib/my -lmy
 
-MY	=	-lmy
-
-GRAPH	=	-lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
+FLAGS	=	-lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 
 CC	=	gcc
 
 MAKE	=	make
 
-RM	=	rm -f
-
 CFLAGS	=	-I./include -W -Wall -Wextra
 
-all: $(NAME)
+all	: 	lib $(NAME)
 
-$(NAME): $(OBJS)
-	$(MAKE) -C lib/my --no-print-directory
-	$(CC) -o $(NAME) $(OBJS) $(LIB) $(MY) $(GRAPH)
+lib	:
+		make -C lib/my
 
-clean:
-	$(MAKE) clean -C lib/my --no-print-directory
-	$(RM) $(OBJS)
+$(NAME)	: 	$(OBJS)
+		$(CC) -o $(NAME) $(OBJS) $(LDFLAGS) $(FLAGS)
 
-fclean: clean
-	$(MAKE) fclean -C lib/my --no-print-directory
-	$(RM) $(NAME)
+clean	:
+		make clean -C lib/my
+		$(RM) $(OBJS)
 
-re: fclean all
+fclean	: 	clean
+		make fclean -C lib/my
+		$(RM) $(NAME)
 
-debug: CFLAGS += -g
+re	: 	fclean all
 
-debug: fclean $(OBJS)
-	$(MAKE) debug -C lib/my
-	$(CC) -o $(NAME) $(OBJS) $(LIB) $(MY) $(GRAPH)
+debug	: 	CFLAGS += -g
+debug	: 	re
+
+.PHONY :	lib clean fclean re

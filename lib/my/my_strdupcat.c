@@ -15,7 +15,6 @@ char *my_strdupcat(char *dest, char *src)
     if (dest) {
         if (!(tmp = my_strdup(dest)))
             return (NULL);
-        free(dest);
     }
     if (!(dest = malloc(sizeof(char) * (size + 3))))
         return (NULL);

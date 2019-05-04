@@ -18,7 +18,8 @@ enum button_e {
     ATTACK,
     MAGIC,
     ESCAPE,
-    ENEMY
+    ENEMY,
+    INFO
 };
 
 typedef struct buttons_s {

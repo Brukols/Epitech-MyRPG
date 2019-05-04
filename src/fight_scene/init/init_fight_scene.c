@@ -7,14 +7,14 @@
 
 #include "my_rpg.h"
 
-scenes_t *init_fight_scene(scenes_t *scenes)
+scenes_t *init_fight_scene(scenes_t *scene)
 {
-    scenes->scene = FIGHT;
-    scenes->objs = init_fight_scene_objs();
-    scenes->buttons = init_fight_scene_buttons();
-    scenes->texts = NULL;
-    scenes->musics = NULL;
-    if (scenes->objs == NULL || scenes->buttons == NULL)
+    scene->scene = FIGHT;
+    scene->objs = init_fight_scene_objs(scene);
+    scene->buttons = init_fight_scene_buttons();
+    scene->texts = init_fight_text();
+    scene->musics = NULL;
+    if (scene->objs == NULL || scene->buttons == NULL)
         return (NULL);
-    return (scenes);
+    return (scene);
 }

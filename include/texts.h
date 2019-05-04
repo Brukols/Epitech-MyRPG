@@ -15,7 +15,8 @@ enum text_e {
     MONEY,
     MENU_TITTLE,
     TEXT_BOX,
-    NAME_BOX
+    NAME_BOX,
+    FIGHT_TXT
 };
 
 typedef struct texts_s {
