@@ -42,6 +42,7 @@ void display_texts_house_player(game_t *);
 void move_zoro(game_t *game, player_t *player, pnj_t *pnj);
 void first_move_zoro(pnj_t *, int *);
 void second_move_zoro(pnj_t *, int *);
+void move_the_master(game_t *, pnj_t *);
 
 // EVENTS //
 

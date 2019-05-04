@@ -25,5 +25,6 @@ void change_quest(game_t *game, enum all_quests_e actual_quest)
     if (quest == actual_quest) {
         action_at_the_end(game, actual_quest);
         game->quests->quest++;
+        game->quests->all_quests++;
     }
 }

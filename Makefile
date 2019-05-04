@@ -148,6 +148,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FS_SCENE_DISPLAY)/display_texts_house_player.c		\
 		$(FS_SCENE_DISPLAY)/move_zoro.c		\
 		$(FS_SCENE_DISPLAY)/move_zoro_gameplay.c		\
+		$(FS_SCENE_DISPLAY)/move_the_master.c		\
 		$(FS_SCENE_EVENTS)/events_fs_scene.c				\
 		$(FS_SCENE_EVENTS)/unlock_smth_fs_scene.c			\
 		$(FS_SCENE_EVENTS)/go_in_another_scene_fs_scene.c			\

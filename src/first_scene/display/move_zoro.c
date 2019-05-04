@@ -41,7 +41,7 @@ void move_zoro(game_t *game, player_t *player, pnj_t *pnj)
     if (i == 5)
         second_move_zoro(pnj, &i);
     if (i == 6) {
-        game->quests->all_quests = SAVE_LUCY;
+        game->quests->all_quests++;
         game->quests->quest++;
     }
 }
