@@ -20,6 +20,7 @@
 #include <stdio.h>
 
 #include "macros.h"
+#include "musics.h"
 #include "quests.h"
 #include "inventory.h"
 #include "scene_object.h"
@@ -32,7 +33,6 @@
 #include "protos_menu.h"
 #include "protos_first_scene.h"
 #include "fight_scene.h"
-#include "musics.h"
 
 // GENERAL_DISPLAY //
 

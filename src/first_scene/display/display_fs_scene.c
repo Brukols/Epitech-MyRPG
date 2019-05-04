@@ -9,6 +9,7 @@
 
 game_t *display_fs_scene(game_t *game)
 {
+    play_musics_fs_scene(game);
     gameplay(game);
     unlock_smth_fs_scene(game);
     game->scenes->objs->game_object = sort_game_object(\

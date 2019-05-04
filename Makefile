@@ -85,6 +85,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_EVENTS)/move_on_the_house.c				\
 		$(GENERAL_EVENTS)/touch_walls_house.c				\
 		$(GENERAL_EVENTS)/interaction_with_other_chest.c		\
+		$(GENERAL_EVENTS)/stop_music_scene.c				\
 		$(GENERAL_INIT)/init_color.c					\
 		$(GENERAL_INIT)/init_house.c					\
 		$(GENERAL_INIT)/init_map.c					\
@@ -150,6 +151,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FS_SCENE_DISPLAY)/move_zoro.c		\
 		$(FS_SCENE_DISPLAY)/move_zoro_gameplay.c		\
 		$(FS_SCENE_DISPLAY)/move_the_master.c		\
+		$(FS_SCENE_DISPLAY)/play_musics_fs_scene.c		\
 		$(FS_SCENE_EVENTS)/events_fs_scene.c				\
 		$(FS_SCENE_EVENTS)/unlock_smth_fs_scene.c			\
 		$(FS_SCENE_EVENTS)/go_in_another_scene_fs_scene.c			\
@@ -158,6 +160,8 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FS_SCENE_INIT)/init_scene_object_fs_scene.c			\
 		$(FS_SCENE_INIT)/init_texts_fs_scene.c				\
 		$(FS_SCENE_INIT)/init_buttons_fs_scene.c			\
+		$(FS_SCENE_INIT)/init_musics_fs_scene.c			\
+		$(FS_SCENE_INIT)/init_musics_player_house.c			\
 		$(HOUSES)/init_player_house.c					\
 		$(HOUSES)/init_plant.c						\
 		$(HOUSES)/init_bed.c						\

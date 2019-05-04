@@ -23,7 +23,9 @@ bool go_back_to_first_scene(game_t *game)
     if (player->move_y > 0 && player->pos.y + 155 > 1080 && \
     player->pos.x > 940 && player->pos.x < 1000) {
         re_initialize_value_house(game);
+        stop_music_scene(game->scenes->musics);
         game->scenes = game->scenes->prev;
+        sfMusic_play(game->scenes->musics->music);
         return (true);
     }
     return (false);

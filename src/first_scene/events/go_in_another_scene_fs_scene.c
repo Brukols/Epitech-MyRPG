@@ -28,6 +28,7 @@ bool go_to_other_scene(game_t *game, game_object_t *player, game_object_t *go)
 
     if (click(player->pos, size_player, pos) == true) {
         re_initialize_value(game);
+        stop_music_scene(game->scenes->musics);
         game->scenes = game->scenes->next;
         return (true);
     }
