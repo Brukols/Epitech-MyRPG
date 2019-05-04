@@ -40,6 +40,7 @@ bool change_dialog_pnj(game_t *game, pnj_t *pnj)
         pnj->game_object->rect.top = pnj->game_object->stock_top;
         pnj->next_dialog = 0;
         pnj->speak = false;
+        pause_music_voice(game, pnj);
         return (true);
     }
     pnj->has_talk_with = true;
@@ -51,8 +52,10 @@ bool change_dialog_pnj(game_t *game, pnj_t *pnj)
         pnj->next_dialog = 0;
         pnj->speak = false;
         pnj->game_object->rect.top = pnj->game_object->stock_top;
+        pause_music_voice(game, pnj);
         change_quest_pnj(game, pnj);
-    }
+    } else
+        play_music_voice(game, pnj);
     return (true);
 }
 

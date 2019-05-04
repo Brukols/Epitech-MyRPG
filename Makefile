@@ -68,6 +68,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/display_leaf.c				\
 		$(GENERAL_DISPLAY)/move_player_in_house.c			\
 		$(GENERAL_DISPLAY)/gameplay.c			\
+		$(GENERAL_DISPLAY)/music_voice.c			\
 		$(GENERAL_EVENTS)/player_touch_smth.c				\
 		$(GENERAL_EVENTS)/will_touch_smth.c				\
 		$(GENERAL_EVENTS)/change_dialog.c				\

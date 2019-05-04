@@ -14,9 +14,9 @@ void display_dialog(game_t *game, texts_t *texts)
     for (; pnj && pnj->speak != true; pnj = pnj->next);
     if (!pnj)
         return;
-    if (texts->type == NAME_BOX)
+    if (texts->type == NAME_BOX) {
         display_pnj_name(game, texts, pnj);
-    else
+    } else
         display_pnj_dialog(game, texts, pnj);
 }
 

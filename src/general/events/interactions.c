@@ -50,6 +50,7 @@ bool new_dialog(game_t *game, sfVector2f pos_player)
         my_strcmp(pnj->name, "Guard") == 0)
             pnj->next_dialog = 2;
         pnj->speak = true;
+        play_music_voice(game, pnj);
         return (true);
     }
     return (false);
