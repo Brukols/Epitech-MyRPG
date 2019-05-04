@@ -78,8 +78,6 @@ typedef struct game_object_s {
 } game_object_t;
 
 typedef struct player_s {
-    char *name;
-    int direction;
     int move_x;
     int move_y;
     int up;
@@ -88,11 +86,20 @@ typedef struct player_s {
     int left;
     int attack;
     int power;
-    int pv_max;
-    int pv;
+    int hp;
+    bool attacking;
     inventory_t *inventory;
     game_object_t *game_object;
 } player_t;
+
+typedef struct enemy_s {
+    int hp;
+    int attack;
+    bool attacking;
+    game_object_t *obj;
+    struct enemy_s *prev;
+    struct enemy_s *next;
+} enemy_t;
 
 typedef struct event_click_s {
     int user_click;
@@ -141,6 +148,7 @@ typedef struct scene_object_s {
     background_t *background;
     game_object_t *game_object;
     player_t *player;
+    enemy_t *enemy;
     event_click_t *clicks;
     pnj_t *pnj;
     particle_t *particle;
