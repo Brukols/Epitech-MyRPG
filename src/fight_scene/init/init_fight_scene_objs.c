@@ -20,7 +20,7 @@ scene_object_t *init_fight_scene_objs(scenes_t *scene)
     obj->clicks = NULL;
     obj->pnj = NULL;
     if (obj->background == NULL || obj->game_object == NULL || \
-        obj->player == NULL || obj->enemy == NULL) {
+    obj->player == NULL || obj->enemy == NULL) {
         free(obj);
         return (NULL);
     }

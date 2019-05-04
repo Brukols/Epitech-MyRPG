@@ -26,7 +26,10 @@
 #define FIGHT_MUSIC "ressources/music/pokemon_fight_music.ogg"
 
 game_t *manage_fight_scene(game_t *game);
+int check_hp(game_t *game);
+int defeated(game_t *game, char *str);
 scenes_t *init_fight_scene(scenes_t *scenes);
+void end_fight_scene(game_t *game);
 
 //**********
 // BUTTONS
@@ -42,7 +45,6 @@ buttons_t *info_button(buttons_t *button);
 //**********
 int player_basic_attack(game_t *game);
 int player_magic_attack(game_t *game);
-bool is_enemy_dead(game_t *game);
 char *make_normal_attack_msg(game_t *game, char *msg);
 char *make_powerful_attack_msg(game_t *game, char *msg);
 char *make_failed_attack_msg(game_t *game, char *msg);

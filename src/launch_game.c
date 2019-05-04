@@ -26,7 +26,6 @@ int launch_game(void)
 
     if (!game)
         return (FAILURE_EXIT);
-    for(; game->scenes->scene != FIRST_SCENE; game->scenes = game->scenes->next);
     while (sfRenderWindow_isOpen(game->window)) {
         if (!(game = scene_managing(game))) {
             sfRenderWindow_close(game->window);
