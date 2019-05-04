@@ -22,8 +22,7 @@ enemy_t *init_enemies(void)
             return (NULL);
         if (i == 3)
             break;
-        enemy->next = malloc(sizeof(enemy_t));
-        if (enemy->next == NULL)
+        if ((enemy->next = malloc(sizeof(enemy_t))) == NULL)
             return (NULL);
         enemy->next->prev = enemy;
         enemy = enemy->next;

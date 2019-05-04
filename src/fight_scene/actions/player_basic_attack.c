@@ -15,14 +15,6 @@ int player_basic_attack(game_t *game)
     char *(*make_msg[3])(game_t *, char *) = {make_normal_attack_msg, \
         make_powerful_attack_msg, make_failed_attack_msg};
 
-    if (is_enemy_dead(game) && game->scenes->objs->enemy->next != NULL) {
-        game->scenes->objs->enemy = game->scenes->objs->enemy->next;
-        return (0);
-    }
-    if (game->scenes->objs->player->hp == 0) {
-        sfText_setString(txt->text, "You died !");
-        return (0);
-    }
     msg = make_msg[attack_status](game, msg);
     if (msg == NULL)
         return (ERROR);
@@ -75,14 +67,4 @@ char *make_failed_attack_msg(game_t *game, char *msg)
     if (msg == NULL)
         return (NULL);
     return (msg);
-}
-
-bool is_enemy_dead(game_t *game)
-{
-    if (game->scenes->objs->enemy->hp == 0) {
-        sfText_setString(game->scenes->texts->text, \
-        "ENEMY is defeated.\nYou WON!");
-        return (true);
-    }
-    return (false);
 }

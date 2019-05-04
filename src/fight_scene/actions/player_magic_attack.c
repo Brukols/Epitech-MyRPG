@@ -13,12 +13,6 @@ int player_magic_attack(game_t *game)
     int attack_status = rand_action(2, 1);
     char *msg = "PLAYER attack with MAGIC: ";
 
-    if (is_enemy_dead(game))
-        return (0);
-    if (game->scenes->objs->player->hp == 0) {
-        sfText_setString(txt->text, "You died !");
-        return (0);
-    }
     if (attack_status == 1 || attack_status == 0) {
         msg = make_magic_attack_msg(game, msg);
         if (msg == NULL)
