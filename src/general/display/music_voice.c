@@ -10,10 +10,10 @@
 void play_music_voice(game_t *game, pnj_t *pnj)
 {
     if (my_strcmp(pnj->name, "Freddy") == 0 || \
-    my_strcmp(pnj->name, "Zoro") == 0 || my_strcmp(pnj->name, "Guard") == 0)
+my_strcmp(pnj->name, "Zoro") == 0 || my_strcmp(pnj->name, "Guard") == 0)
         music_play(game->scenes->musics, VOICE_M, sfFalse);
     if (my_strcmp(pnj->name, "Ariana") == 0 || \
-    my_strcmp(pnj->name, "Lucy") == 0)
+my_strcmp(pnj->name, "Lucy") == 0)
         music_play(game->scenes->musics, VOICE_F, sfFalse);
     if (my_strcmp(pnj->name, "Dobby") == 0)
         music_play(game->scenes->musics, ALIEN_SOUND, sfFalse);
@@ -28,10 +28,10 @@ void play_music_voice(game_t *game, pnj_t *pnj)
 void stop_music_voice(game_t *game, pnj_t *pnj)
 {
     if (my_strcmp(pnj->name, "Freddy") == 0 || \
-    my_strcmp(pnj->name, "Zoro") == 0 || my_strcmp(pnj->name, "Guard") == 0)
+my_strcmp(pnj->name, "Zoro") == 0 || my_strcmp(pnj->name, "Guard") == 0)
         music_stop(game->scenes->musics, VOICE_M);
     if (my_strcmp(pnj->name, "Ariana") == 0 || \
-    my_strcmp(pnj->name, "Lucy") == 0)
+my_strcmp(pnj->name, "Lucy") == 0)
         music_stop(game->scenes->musics, VOICE_F);
     if (my_strcmp(pnj->name, "Dobby") == 0)
         music_stop(game->scenes->musics, ALIEN_SOUND);

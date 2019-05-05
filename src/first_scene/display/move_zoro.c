@@ -49,7 +49,6 @@ void move_zoro(game_t *game, player_t *player, pnj_t *pnj)
     }
     if (i == 6) {
         music_pause(game->scenes->musics, RUN_SOUND_2);
-        game->quests->all_quests++;
-        game->quests->quest++;
+        i++;
     }
 }

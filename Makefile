@@ -209,6 +209,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FIGHT_SCENE)/events/fight_events.c				\
 		$(FIGHT_SCENE)/events/manage_fight_scene_buttons_events.c	\
 		$(SRC)/make_connection_between_scenes.c				\
+		$(SRC)/destroy_musics.c				\
 		$(SRC)/init_all_game.c						\
 		$(SRC)/launch_game.c						\
 		$(SRC)/create_window.c						\

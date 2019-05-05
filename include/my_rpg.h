@@ -140,5 +140,6 @@ game_t *init_all_game(void);
 sfRenderWindow *create_window(unsigned int, unsigned int, unsigned int);
 int launch_game(void);
 void make_connection_between_scenes(game_t *);
+void destroy_musics(game_t *game);
 
 #endif
