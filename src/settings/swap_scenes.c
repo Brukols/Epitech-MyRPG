@@ -24,7 +24,7 @@ int return_fs_scene(game_t *game)
 {
     for (; game->scenes->prev; game->scenes = game->scenes->prev);
     for (; game->scenes->scene != FIRST_SCENE; \
-         game->scenes = game->scenes->next);
+game->scenes = game->scenes->next);
     return SUCCESS;
 }
 
@@ -32,6 +32,6 @@ int return_menu_scene(game_t *game)
 {
     for (; game->scenes->prev; game->scenes = game->scenes->prev);
     for (; game->scenes->scene != MENU; \
-         game->scenes = game->scenes->next);
+game->scenes = game->scenes->next);
     return SUCCESS;
 }

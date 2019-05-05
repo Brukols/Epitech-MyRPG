@@ -79,7 +79,7 @@ buttons_t *init_settings(void)
 {
     buttons_t *buttons = malloc(sizeof(buttons_t));
     buttons_t *(*fill_buttons[])() = {init_music_button, init_exit_button, \
-                                      init_cancel_button, init_home_button};
+init_cancel_button, init_home_button};
 
     if (!buttons)
         return (NULL);

@@ -47,7 +47,7 @@ bool new_dialog(game_t *game, sfVector2f pos_player)
         if (is_ready_to_talk(pnj->game_object, pos_player) != true)
             continue;
         if (game->quests->all_quests == TALK_TO_THE_GUARD && \
-        my_strcmp(pnj->name, "Guard") == 0)
+my_strcmp(pnj->name, "Guard") == 0)
             pnj->next_dialog = 2;
         pnj->speak = true;
         play_music_voice(game, pnj);

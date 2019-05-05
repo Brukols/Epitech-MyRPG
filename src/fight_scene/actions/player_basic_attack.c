@@ -69,7 +69,7 @@ char *make_powerful_attack_msg(game_t *game, char *msg)
     return (msg);
 }
 
-char *make_failed_attack_msg(game_t *game, char *msg)
+char *make_failed_attack_msg(__attribute__((unused)) game_t *game, char *msg)
 {
     msg = my_strdupcat(msg, "it failed!");
     if (msg == NULL)

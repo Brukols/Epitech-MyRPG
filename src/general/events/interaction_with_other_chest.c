@@ -10,7 +10,6 @@
 bool manage_other_chest(game_t *game, game_object_t *go)
 {
     musics_t *music = game->scenes->musics;
-    slot_t *slot = game->scenes->objs->player->inventory->slots;
     inventory_t *inventory = game->scenes->objs->player->inventory;
 
     music_play(music, OPEN_CHEST_SOUND, sfFalse);

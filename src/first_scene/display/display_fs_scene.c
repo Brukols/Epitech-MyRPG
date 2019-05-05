@@ -9,6 +9,7 @@
 
 game_t *display_fs_scene(game_t *game)
 {
+    manage_story(game);
     play_musics_fs_scene(game);
     gameplay(game);
     unlock_smth_fs_scene(game);

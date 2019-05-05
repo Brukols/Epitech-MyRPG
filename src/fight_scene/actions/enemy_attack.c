@@ -12,7 +12,7 @@ int enemy_attack(game_t *game)
     char *msg = make_enemy_attack_msg(game, "ENEMY attacks: you take ");
 
     if (msg == NULL)
-        return (NULL);
+        return (-1);
     sfText_setString(game->scenes->texts->text, msg);
     display_fight_scene(game);
     sfRenderWindow_display(game->window);

@@ -46,6 +46,14 @@ void manage_music_button(game_t *game, buttons_t *buttons)
     }
 }
 
+void display_entire_button(game_t *game, buttons_t *buttons)
+{
+    sfSprite_setPosition(buttons->sprite, buttons->pos);
+    sfSprite_setTexture(buttons->sprite, buttons->texture, sfFalse);
+    sfSprite_setTextureRect(buttons->sprite, buttons->rect);
+    sfRenderWindow_drawSprite(game->window, buttons->sprite, NULL);
+}
+
 void display_buttons(game_t *game)
 {
     buttons_t *buttons = game->scenes->buttons;
@@ -67,9 +75,6 @@ void display_buttons(game_t *game)
             manage_music_button(game, buttons);
             continue;
         }
-        sfSprite_setPosition(buttons->sprite, buttons->pos);
-        sfSprite_setTexture(buttons->sprite, buttons->texture, sfFalse);
-        sfSprite_setTextureRect(buttons->sprite, buttons->rect);
-        sfRenderWindow_drawSprite(game->window, buttons->sprite, NULL);
+        display_entire_button(game, buttons);
     }
 }

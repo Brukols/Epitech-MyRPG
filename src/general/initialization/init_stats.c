@@ -11,7 +11,7 @@ level_bar_t *init_level_bar(void)
 {
     level_bar_t *level_bar = malloc(sizeof(level_bar_t));
 
-    if (!level_bar) 
+    if (!level_bar)
         return (NULL);
     level_bar->sprite = sfSprite_create();
     level_bar->texture = sfTexture_createFromFile(\

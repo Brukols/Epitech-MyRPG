@@ -53,6 +53,8 @@ SETTINGS	=	src/settings
 
 FIGHT_SCENE = src/fight_scene
 
+END_GAME	=	src/end
+
 SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/display_player.c				\
 		$(GENERAL_DISPLAY)/move_all_the_scene.c				\
@@ -98,6 +100,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_EVENTS)/music_play.c					\
 		$(GENERAL_EVENTS)/pause_the_game.c					\
 		$(GENERAL_EVENTS)/actualize_stats_player.c					\
+		$(GENERAL_EVENTS)/change_dialog2.c					\
 		$(GENERAL_INIT)/init_color.c					\
 		$(GENERAL_INIT)/init_house.c					\
 		$(GENERAL_INIT)/init_map.c					\
@@ -174,6 +177,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FS_SCENE_DISPLAY)/move_zoro.c					\
 		$(FS_SCENE_DISPLAY)/move_zoro_gameplay.c			\
 		$(FS_SCENE_DISPLAY)/move_the_master.c				\
+		$(FS_SCENE_DISPLAY)/manage_story.c				\
 		$(FS_SCENE_DISPLAY)/play_musics_fs_scene.c			\
 		$(FS_SCENE_EVENTS)/events_fs_scene.c				\
 		$(FS_SCENE_EVENTS)/unlock_smth_fs_scene.c			\
@@ -215,8 +219,9 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FIGHT_SCENE)/actions/display_info.c				\
 		$(FIGHT_SCENE)/events/fight_events.c				\
 		$(FIGHT_SCENE)/events/manage_fight_scene_buttons_events.c	\
+		$(END_GAME)/display_end_scene.c					\
 		$(SRC)/make_connection_between_scenes.c				\
-		$(SRC)/destroy_musics.c				\
+		$(SRC)/destroy_musics.c						\
 		$(SRC)/init_all_game.c						\
 		$(SRC)/launch_game.c						\
 		$(SRC)/create_window.c						\

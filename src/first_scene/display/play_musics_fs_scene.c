@@ -9,7 +9,6 @@
 
 void play_musics_fs_scene(game_t *game)
 {
-    static int i = 0;
     musics_t *music = game->scenes->musics;
 
     for (; music && music->type != WIND_SOUND; music = music->next);

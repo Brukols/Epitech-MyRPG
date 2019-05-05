@@ -10,7 +10,8 @@
 void select_zoro_house(game_t *game)
 {
     for (; game->scenes->prev; game->scenes = game->scenes->prev);
-    for (; game->scenes->scene != ZORO_HOUSE; game->scenes = game->scenes->next);
+    for (; game->scenes->scene != ZORO_HOUSE; \
+game->scenes = game->scenes->next);
 }
 
 void re_initialize_value(game_t *game)
@@ -27,22 +28,21 @@ void re_initialize_value(game_t *game)
 
 bool go_to_other_scene(game_t *game, game_object_t *player, game_object_t *go)
 {
-    sfVector2f pos = init_vec2f(go->pos.x + (80 * 2.3), \
-    go->pos.y + (159 * 2.3));
+    sfVector2f pos = init_vec2f(go->pos.x + (80 * 2.3), go->pos.y + (356.7));
     sfVector2f pos_zoro = init_vec2f(go->pos.x + (48 * 2.3), \
     go->pos.y + (82 * 2.3));
     sfVector2f size_player = init_vec2f(player->rect.width, \
     player->rect.height);
 
     if (click(player->pos, size_player, pos) == true && go->type == \
-        PLAYER_HOUSE_FS_SCENE) {
+    PLAYER_HOUSE_FS_SCENE) {
         stop_music_scene(game->scenes->musics);
         re_initialize_value(game);
         game->scenes = game->scenes->next;
         return (true);
     }
     if (click(player->pos, size_player, pos_zoro) == true && go->type == \
-        BROWN_HOUSE_FS_SCENE) {
+    BROWN_HOUSE_FS_SCENE) {
         stop_music_scene(game->scenes->musics);
         re_initialize_value(game);
         select_zoro_house(game);
@@ -70,7 +70,7 @@ bool go_in_another_scene_fs_scene(game_t *game)
     for (; go_zoro; go_zoro = go_zoro->next) {
         if (go_zoro->type != BROWN_HOUSE_FS_SCENE)
             continue;
-        if (will_touch(background, player, go_zoro) == true && go_zoro->display == true)
+        if (will_touch(background, player, go_zoro) && go_zoro->display)
             return (go_to_other_scene(game, player_go, go_zoro));
     }
     return (false);

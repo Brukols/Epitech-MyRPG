@@ -11,8 +11,8 @@ int display_settings(game_t *game)
 {
     stop_music_scene(game->scenes->musics);
     for (; game->scenes->prev; game->scenes = game->scenes->prev);
-    for (; game->scenes->scene != SETTINGS;\
-         game->scenes = game->scenes->next);
+    for (; game->scenes->scene != SETTINGS; \
+game->scenes = game->scenes->next);
     return SUCCESS;
 }
 

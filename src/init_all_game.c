@@ -11,7 +11,8 @@ scenes_t *init_scenes(void)
 {
     scenes_t *scenes = malloc(sizeof(scenes_t));
     scenes_t *(*init_every_scene[7])() = {init_scene_menu, init_intro, \
-                                          init_first_scene, init_player_house, init_fight_scene, init_zoro_house, init_scene_settings};
+init_first_scene, init_player_house, init_fight_scene, init_zoro_house, \
+init_scene_settings};
 
     if (scenes == NULL)
         return NULL;
@@ -21,8 +22,7 @@ scenes_t *init_scenes(void)
             return (NULL);
         if (i == 6)
             break;
-        scenes->next = malloc(sizeof(scenes_t));
-        if (!scenes->next)
+        if (!(scenes->next = malloc(sizeof(scenes_t))))
             return (NULL);
         scenes->next->prev = scenes;
         scenes = scenes->next;

@@ -36,6 +36,7 @@ int touch_a_button(game_t *game, sfVector2f mouse)
         else if (buttons->type == ESCAPE && callback == 1)
             return (1);
     }
+    return (0);
 }
 
 void manage_mouse_button_event(game_t *game)

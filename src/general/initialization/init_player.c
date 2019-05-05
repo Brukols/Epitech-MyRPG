@@ -22,7 +22,7 @@ player_t *init_player(void)
     player->left = 108;
     player->right = 216;
     player->current_level = 1;
-    player->level = 1.9;
+    player->level = 1;
     player->attack = 10;
     player->power = 20;
     player->hp = 200;

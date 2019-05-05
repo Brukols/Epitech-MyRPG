@@ -19,10 +19,10 @@
 #define ESCAPE_BUTTON "ressources/sprites/fight/escape_button.png"
 #define FIGHT_INFO_BUTTON "ressources/sprites/fight/info_button.png"
 #define ENEMY_SHEET "ressources/sprites/fight/enemies.png"
-#define FIGHT_INFO  "ressources/sprites/fight/info_box.png"
-#define FIGHT_HELP  "ressources/sprites/fight/fight_help.png"
+#define FIGHT_INFO "ressources/sprites/fight/info_box.png"
+#define FIGHT_HELP "ressources/sprites/fight/fight_help.png"
 #define PLAYER_SHEET "ressources/sprites/chara5.png"
-#define FIGHT_FONT  "ressources/font/fight_font.ttf"
+#define FIGHT_FONT "ressources/font/fight_font.ttf"
 #define FIGHT_MUSIC "ressources/music/pokemon_fight_music.ogg"
 
 //*******************

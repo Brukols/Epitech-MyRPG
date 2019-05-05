@@ -33,7 +33,7 @@ musics_t *init_musics_player_house(void)
 {
     musics_t *musics = malloc(sizeof(musics_t));
     musics_t *(*fill_musics_fs_scene[])() = {run_sound, open_chest_sound, \
-    voice_f_sound, voice_m_sound, run_sound_2};
+voice_f_sound, voice_m_sound, run_sound_2};
 
     if (!musics)
         return (NULL);

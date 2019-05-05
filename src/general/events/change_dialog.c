@@ -37,16 +37,16 @@ bool stop_dialog(game_t *game, pnj_t *pnj)
 int check_event_fight(game_t *game, pnj_t *pnj)
 {
     if (my_strcmp(pnj->name, "Zoro") == 0 && game->quests->all_quests == \
-    TRAINING)
+TRAINING)
         return (go_to_fight_scene(game));
     if (my_strcmp(pnj->name, "Master") == 0 && game->quests->all_quests == \
-    FIGHT_THE_MASTER)
+FIGHT_THE_MASTER)
         return (go_to_fight_scene(game));
     if (my_strcmp(pnj->name, "Joker") == 0 && game->quests->all_quests == \
-    FIGHT_THE_JOKER)
+FIGHT_THE_JOKER)
         return (go_to_fight_scene(game));
     if (my_strcmp(pnj->name, "Leader") == 0 && game->quests->all_quests == \
-    SAVE_LUCY)
+SAVE_LUCY)
         return (go_to_fight_scene(game));
     return (SUCCESS);
 }
@@ -54,9 +54,7 @@ int check_event_fight(game_t *game, pnj_t *pnj)
 int change_dialog_pnj(game_t *game, pnj_t *pnj)
 {
     if (stop_dialog(game, pnj) == true) {
-        pnj->game_object->rect.top = pnj->game_object->stock_top;
-        pnj->next_dialog = 0;
-        pnj->speak = false;
+        re_init_pnj_dialog(pnj);
         stop_music_voice(game, pnj);
         return (SUCCESS);
     }

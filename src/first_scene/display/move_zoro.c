@@ -26,6 +26,20 @@ void begin_speak_zoro(pnj_t *pnj, player_t *player, int *i)
     (*i)++;
 }
 
+void move_zoro2(game_t *game, pnj_t *pnj, int *i)
+{
+    if (pnj->speak == false && *i == 4)
+        (*i)++;
+    if (*i == 5) {
+        music_play(game->scenes->musics, RUN_SOUND_2, sfTrue);
+        second_move_zoro(pnj, i);
+    }
+    if (*i == 6) {
+        music_pause(game->scenes->musics, RUN_SOUND_2);
+        (*i)++;
+    }
+}
+
 void move_zoro(game_t *game, player_t *player, pnj_t *pnj)
 {
     static int i = 0;
@@ -41,14 +55,5 @@ void move_zoro(game_t *game, player_t *player, pnj_t *pnj)
         music_play(game->scenes->musics, VOICE_M, sfFalse);
         begin_speak_zoro(pnj, player, &i);
     }
-    if (pnj->speak == false && i == 4)
-        i++;
-    if (i == 5) {
-        music_play(game->scenes->musics, RUN_SOUND_2, sfTrue);
-        second_move_zoro(pnj, &i);
-    }
-    if (i == 6) {
-        music_pause(game->scenes->musics, RUN_SOUND_2);
-        i++;
-    }
+    move_zoro2(game, pnj, &i);
 }

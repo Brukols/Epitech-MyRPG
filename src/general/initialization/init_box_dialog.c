@@ -7,7 +7,7 @@
 
 #include "my_rpg.h"
 
-int nothing(game_t *game)
+int nothing(__attribute__((unused)) game_t *game)
 {
     return (SUCCESS);
 }

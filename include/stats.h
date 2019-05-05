@@ -36,7 +36,7 @@ typedef struct player_stats_s {
 
 typedef struct stats_s {
     level_bar_t *level_bar;
-    player_stats_t *player_stats; 
+    player_stats_t *player_stats;
 } stats_t;
 
 #endif
