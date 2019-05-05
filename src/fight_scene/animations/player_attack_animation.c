@@ -9,26 +9,21 @@
 
 void player_attack_animation(game_t *game)
 {
-    static bool anim_running = false;
     game_object_t *obj = game->scenes->objs->player->game_object;
     sfTime time = sfClock_getElapsedTime(obj->clock);
     float seconds = sfTime_asSeconds(time);
     sfVector2f pos = {obj->pos.x + 50, obj->pos.y};
 
-    if (!anim_running) {
-        anim_running = true;
-        sfClock_restart(obj->clock);
-    }
-    if (anim_running == true && seconds < 1.0) {
-        printf("running\n");
-        sfSprite_setPosition(obj->sprite, pos);
-        update_enemy_pos(game);
-    } else if (anim_running == true && seconds > 1.0) {
-        printf("end\n");
-        anim_running = false;
-        game->scenes->objs->player->attacking = false;
-        sfSprite_setPosition(obj->sprite, obj->pos);
-        sfClock_restart(obj->clock);
+    if (game->scenes->objs->player->attacking) {
+        if (seconds < 2.0) {
+            sfSprite_setPosition(obj->sprite, pos);
+            update_enemy_pos(game);
+        } else {
+            game->scenes->objs->player->attacking = false;
+            sfSprite_setPosition(obj->sprite, obj->pos);
+            sfSprite_setPosition(game->scenes->objs->enemy->obj->sprite, \
+            game->scenes->objs->enemy->obj->pos);
+        }
     }
 }
 
@@ -40,10 +35,10 @@ void update_enemy_pos(game_t *game)
 
     if (!status) {
         status = true;
-        pos.x += 40;
+        pos.x += 30;
     } else {
-        status = true;
-        pos.x -= 80;
+        status = false;
+        pos.x -= 30;
     }
     sfSprite_setPosition(obj->sprite, pos);
 }

@@ -20,17 +20,21 @@ bool touch_an_items(game_t *game, sfVector2f mouse)
     return (false);
 }
 
-void touch_a_button(game_t *game, sfVector2f mouse)
+int touch_a_button(game_t *game, sfVector2f mouse)
 {
     buttons_t *buttons = game->scenes->buttons;
+    int callback = 0;
 
     while (buttons->prev != NULL)
         buttons = buttons->prev;
     for (; buttons; buttons = buttons->next) {
         if (click(buttons->hitbox_pos, buttons->size, mouse) == true) {
-            buttons->callback(game);
-            return;
+            callback = buttons->callback(game);
         }
+        if (callback == ERROR)
+            return (ERROR);
+        else if (buttons->type == ESCAPE && callback == 1)
+            return (1);
     }
 }
 

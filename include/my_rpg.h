@@ -71,7 +71,7 @@ int change_dialog(game_t *);
 int interactions(game_t *game, sfKeyCode);
 bool click(sfVector2f pos, sfVector2f size, sfVector2f mouse);
 void manage_mouse_button_event(game_t *);
-void touch_a_button(game_t *, sfVector2f);
+int touch_a_button(game_t *, sfVector2f);
 bool interaction_with_chest(game_t *);
 bool player_have_the_key(player_t *);
 bool there_is_an_interaction(game_t *);

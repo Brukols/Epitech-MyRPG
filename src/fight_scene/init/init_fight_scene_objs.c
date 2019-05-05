@@ -56,8 +56,9 @@ player_t *init_fight_scene_player(scenes_t *scene)
     if (player == NULL)
         return (NULL);
     player->inventory = inventory;
-    player->hp = 100;
+    player->hp = 10;
     player->attack = 50;
+    player->power = 50;
     player->attacking = false;
     player->game_object = init_fight_scene_player_object();
     if (player->game_object == NULL) {
