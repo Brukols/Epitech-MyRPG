@@ -46,7 +46,7 @@ FIGHT_THE_MASTER)
 FIGHT_THE_JOKER)
         return (go_to_fight_scene(game));
     if (my_strcmp(pnj->name, "Leader") == 0 && game->quests->all_quests == \
-SAVE_LUCY)
+FIND_THE_LEADER)
         return (go_to_fight_scene(game));
     return (SUCCESS);
 }
