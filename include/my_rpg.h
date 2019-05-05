@@ -63,6 +63,8 @@ void display_player_stats(game_t *, player_stats_t *, player_t *);
 
 // GENERAL_EVENTS //
 
+bool user_want_close_the_window(sfEvent event);
+bool user_pause_the_game(sfEvent event);
 bool player_touch_smth(game_t *);
 bool will_touch_the_border(background_t *, sfVector2f);
 bool will_touch_up_and_down(background_t *, game_object_t *, sfVector2f);

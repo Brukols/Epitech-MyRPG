@@ -12,8 +12,9 @@ void play_musics_fs_scene(game_t *game)
     static int i = 0;
     musics_t *music = game->scenes->musics;
 
-    if (i == 0) {
-        music_play(music, WIND_SOUND, sfTrue);
-        i++;
-    }
+    for (; music && music->type != WIND_SOUND; music = music->next);
+    if (!music)
+        return;
+    if (music->stop == true)
+        music_play(game->scenes->musics, WIND_SOUND, sfTrue);
 }

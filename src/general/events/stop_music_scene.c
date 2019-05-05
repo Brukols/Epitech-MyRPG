@@ -9,6 +9,9 @@
 
 void stop_music_scene(musics_t *music)
 {
-    for (; music; music = music->next)
+    for (; music; music = music->next) {
         sfMusic_stop(music->music);
+        music->stop = true;
+        music->pause = false;
+    }
 }

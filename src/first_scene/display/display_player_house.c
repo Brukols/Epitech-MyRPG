@@ -12,8 +12,10 @@ game_t *events_house(game_t *game)
     sfEvent event;
 
     while (sfRenderWindow_pollEvent(game->window, &event)) {
-        if (event.type == sfEvtClosed)
+        if (user_want_close_the_window(event) == true)
             sfRenderWindow_close(game->window);
+        if (user_pause_the_game(event) == true)
+            pause_the_game(game);
         if (event.type == sfEvtMouseButtonReleased)
             manage_mouse_button_event(game);
         if (event.type == sfEvtKeyPressed)
