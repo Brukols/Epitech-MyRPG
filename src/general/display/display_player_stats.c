@@ -7,10 +7,9 @@
 
 #include "my_rpg.h"
 
-void display_level(game_t *game)
+void display_level(game_t *game, player_stats_t *stats, \
+player_t *player)
 {
-    player_stats_t *stats = game->scenes->stats->player_stats;
-    player_t *player = game->scenes->objs->player;
     char *str;
 
     for (; stats->stat != LEVEL; stats = stats->next);
@@ -21,10 +20,9 @@ void display_level(game_t *game)
     free(str);
 }
 
-void display_life(game_t *game)
+void display_life(game_t *game, player_stats_t *stats, \
+player_t *player)
 {
-    player_stats_t *stats = game->scenes->stats->player_stats;
-    player_t *player = game->scenes->objs->player;
     char *str;
     char *str_2;
 
@@ -39,10 +37,9 @@ void display_life(game_t *game)
     free(str_2);
 }
 
-void display_power(game_t *game)
+void display_power(game_t *game, player_stats_t *stats, \
+player_t *player)
 {
-    player_stats_t *stats = game->scenes->stats->player_stats;
-    player_t *player = game->scenes->objs->player;
     char *str;
     char *str_2;
 
@@ -57,10 +54,9 @@ void display_power(game_t *game)
     free(str_2);
 }
 
-void display_attack(game_t *game)
+void display_attack(game_t *game, player_stats_t *stats, \
+player_t *player)
 {
-    player_stats_t *stats = game->scenes->stats->player_stats;
-    player_t *player = game->scenes->objs->player;
     char *str;
     char *str_2;
 
@@ -75,12 +71,11 @@ void display_attack(game_t *game)
     free(str_2);
 }
 
-void display_player_stats(game_t *game)
+void display_player_stats(game_t *game, player_stats_t *stats, \
+player_t *player)
 {
-    player_stats_t *stats = game->scenes->stats->player_stats;
-
-    display_level(game);
-    display_life(game);
-    display_power(game);
-    display_attack(game);
+    display_level(game, stats, player);
+    display_life(game, stats, player);
+    display_power(game, stats, player);
+    display_attack(game, stats, player);
 }

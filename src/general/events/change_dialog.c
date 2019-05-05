@@ -29,6 +29,8 @@ bool stop_dialog(game_t *game, pnj_t *pnj)
         return (true);
     if (game->quests->quest != 8 && my_strcmp(pnj->name, "Guard") == 0)
         return (true);
+    if (game->quests->quest != 9 && my_strcmp(pnj->name, "Joker") == 0)
+        return (true);
     return (false);
 }
 

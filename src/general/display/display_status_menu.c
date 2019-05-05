@@ -7,12 +7,12 @@
 
 #include "my_rpg.h"
 
-void display_progress_bar(game_t *game)
+void display_progress_bar(game_t *game, level_bar_t *stats, player_t *player)
 {
-    level_bar_t *stats = game->scenes->stats->level_bar;
-    player_t *player = game->scenes->objs->player;
-    int tmp = (player->level - player->current_level) * 10;
+    int tmp;
 
+    player->current_level = player->level;
+    tmp = (player->level - player->current_level) * 10;
     stats->rect.top = 25 * tmp;
     sfSprite_setPosition(stats->sprite, stats->pos);
     sfSprite_setTexture(stats->sprite, stats->texture, sfFalse);
@@ -22,11 +22,16 @@ void display_progress_bar(game_t *game)
 
 void display_status_menu(game_t *game)
 {
-    buttons_t *button = game->scenes->buttons;
+    buttons_t *button;
+    scenes_t *scenes = game->scenes;
 
+    for (; scenes->prev; scenes = scenes->prev);
+    for (; scenes->scene != FIRST_SCENE; scenes = scenes->next);
+    button = game->scenes->buttons;
     for (; button->type != STATUS_MENU; button = button->next);
     if (button->display == false)
         return;
-    display_progress_bar(game);
-    display_player_stats(game);
+    display_progress_bar(game, scenes->stats->level_bar, scenes->objs->player);
+    display_player_stats(game, scenes->stats->player_stats, \
+    scenes->objs->player);
 }

@@ -10,12 +10,24 @@
 buttons_t *init_buttons_house_player(void)
 {
     buttons_t *buttons = malloc(sizeof(buttons_t));
+    buttons_t *(*fill_buttons[])() = {init_box_dialog, \
+        init_button_status_menu, init_status_menu};
 
     if (!buttons)
         return (NULL);
     buttons->prev = NULL;
-    if (!(buttons = init_box_dialog(buttons)))
-        return (NULL);
+    for (int i = 0; i < 3; i++) {
+        buttons = fill_buttons[i](buttons);
+        if (!buttons)
+            return (NULL);
+        if (i == 2)
+            break;
+        if (!(buttons->next = malloc(sizeof(buttons_t))))
+            return (NULL);
+        buttons->next->prev = buttons;
+        buttons = buttons->next;
+    }
     buttons->next = NULL;
+    for (; buttons->prev; buttons = buttons->prev);
     return (buttons);
 }

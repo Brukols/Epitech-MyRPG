@@ -39,6 +39,7 @@ game_t *display_zoro_house(game_t *game)
     display_inventory(game);
     display_quests(game, sfRed);
     display_buttons(game);
+    display_status_menu(game);
     display_texts_house_player(game);
     game = events_house_zoro(game);
     return (game);

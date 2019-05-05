@@ -9,18 +9,17 @@
 
 void calcul_basic_attack(int attack_status, game_t *game)
 {
-    if (attack_status == 0)
+    if (attack_status == 1)
         game->scenes->objs->enemy->hp -= game->scenes->objs->player->attack;
-    else if (attack_status == 1)
+    else if (attack_status == 2)
         game->scenes->objs->enemy->hp -= game->scenes->objs->player->attack * 2;
     if (game->scenes->objs->enemy->hp < 0)
         game->scenes->objs->enemy->hp = 0;
 }
 
-void calcul_magic_attack(int attack_status, game_t *game)
+void calcul_magic_attack(game_t *game)
 {
-    if (attack_status == 1 || attack_status == 0)
-        game->scenes->objs->enemy->hp -= game->scenes->objs->player->power;
+    game->scenes->objs->enemy->hp -= game->scenes->objs->player->power;
     if (game->scenes->objs->enemy->hp < 0)
         game->scenes->objs->enemy->hp = 0;
 }

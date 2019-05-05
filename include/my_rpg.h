@@ -59,7 +59,7 @@ void move_player_on_the_house(game_t *);
 void display_dialog(game_t *, texts_t *);
 int gameplay(game_t *);
 void display_status_menu(game_t *);
-void display_player_stats(game_t *);
+void display_player_stats(game_t *, player_stats_t *, player_t *);
 
 // GENERAL_EVENTS //
 
@@ -71,7 +71,7 @@ int change_dialog(game_t *);
 int interactions(game_t *game, sfKeyCode);
 bool click(sfVector2f pos, sfVector2f size, sfVector2f mouse);
 void manage_mouse_button_event(game_t *);
-void touch_a_button(game_t *, sfVector2f);
+int touch_a_button(game_t *, sfVector2f);
 bool interaction_with_chest(game_t *);
 bool player_have_the_key(player_t *);
 bool there_is_an_interaction(game_t *);
@@ -92,6 +92,8 @@ int go_to_fight_scene(game_t *game);
 void pause_the_game(game_t *);
 void pause_all_musics(musics_t *);
 void play_all_musics(musics_t *);
+void actualize_stats_player(game_t *, int, float);
+void delete_stats_player(game_t *, int);
 
 // GENERAL INIT //
 
@@ -138,5 +140,6 @@ game_t *init_all_game(void);
 sfRenderWindow *create_window(unsigned int, unsigned int, unsigned int);
 int launch_game(void);
 void make_connection_between_scenes(game_t *);
+void destroy_musics(game_t *game);
 
 #endif

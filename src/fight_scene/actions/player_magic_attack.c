@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2019
-** player_attack.c
+** player_magic_attack.c
 ** File description:
 ** my_rpg
 */
@@ -9,22 +9,23 @@
 
 int player_magic_attack(game_t *game)
 {
-    texts_t *txt = game->scenes->texts;
-    int attack_status = rand_action(2, 1);
-    char *msg = "PLAYER attack with MAGIC: ";
+    int attack_status = rand_action(100);
+    char *msg = "PLAYER attacks with MAGIC: ";
 
-    if (attack_status == 1 || attack_status == 0) {
+    if (attack_status >= 50) {
         msg = make_magic_attack_msg(game, msg);
-        if (msg == NULL)
-            return (NULL);
-    } else {
+        calcul_magic_attack(game);
+    } else
         msg = make_failed_attack_msg(game, msg);
-        if (msg == NULL)
-            return (NULL);
-    }
-    calcul_magic_attack(attack_status, game);
-    sfText_setString(txt->text, msg);
-    //animation;
+    if (msg == NULL)
+        return (ERROR);
+    sfText_setString(game->scenes->texts->text, msg);
+    display_fight_scene(game);
+    sfRenderWindow_display(game->window);
+    sfRenderWindow_clear(game->window, sfBlack);
+    if (wait_n_seconds(2.5) == ERROR)
+        return (ERROR);
+    enemy_attack(game);
     return (0);
 }
 
@@ -32,7 +33,7 @@ char *make_magic_attack_msg(game_t *game, char *msg)
 {
     char *power = nbr_to_str(game->scenes->objs->player->power);
 
-    msg = my_strdupcat(msg, "success!\n ENEMY take ");
+    msg = my_strdupcat(msg, "success!\n ENEMY takes ");
     if (msg == NULL)
         return (NULL);
     msg = my_strdupcat(msg, power);

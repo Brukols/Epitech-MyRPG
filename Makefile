@@ -97,6 +97,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_EVENTS)/stop_music_scene.c				\
 		$(GENERAL_EVENTS)/music_play.c					\
 		$(GENERAL_EVENTS)/pause_the_game.c					\
+		$(GENERAL_EVENTS)/actualize_stats_player.c					\
 		$(GENERAL_INIT)/init_color.c					\
 		$(GENERAL_INIT)/init_house.c					\
 		$(GENERAL_INIT)/init_map.c					\
@@ -202,17 +203,20 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FIGHT_SCENE)/init/init_fight_scene_objs.c			\
 		$(FIGHT_SCENE)/init/init_fight_scene_game_objs.c		\
 		$(FIGHT_SCENE)/manage_fight_scene.c				\
+		$(FIGHT_SCENE)/get_player_stats.c				\
 		$(FIGHT_SCENE)/display_fight_scene.c				\
+		$(FIGHT_SCENE)/wait_n_seconds.c					\
 		$(FIGHT_SCENE)/actions/player_basic_attack.c			\
 		$(FIGHT_SCENE)/actions/player_magic_attack.c			\
+		$(FIGHT_SCENE)/actions/enemy_attack.c				\
 		$(FIGHT_SCENE)/actions/escape_fight_scene.c			\
 		$(FIGHT_SCENE)/actions/rand_action.c				\
 		$(FIGHT_SCENE)/actions/calcul_attack.c				\
 		$(FIGHT_SCENE)/actions/display_info.c				\
-		$(FIGHT_SCENE)/animations/player_attack_animation.c		\
 		$(FIGHT_SCENE)/events/fight_events.c				\
 		$(FIGHT_SCENE)/events/manage_fight_scene_buttons_events.c	\
 		$(SRC)/make_connection_between_scenes.c				\
+		$(SRC)/destroy_musics.c				\
 		$(SRC)/init_all_game.c						\
 		$(SRC)/launch_game.c						\
 		$(SRC)/create_window.c						\

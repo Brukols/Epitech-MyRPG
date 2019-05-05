@@ -25,11 +25,17 @@
 #define FIGHT_FONT  "ressources/font/fight_font.ttf"
 #define FIGHT_MUSIC "ressources/music/pokemon_fight_music.ogg"
 
+//*******************
+// MANAGE_FIGHT_SCENE
+//*******************
 game_t *manage_fight_scene(game_t *game);
 int check_hp(game_t *game);
 int defeated(game_t *game, char *str);
 scenes_t *init_fight_scene(scenes_t *scenes);
 void end_fight_scene(game_t *game);
+void next_quest(game_t *game, int status);
+int wait_n_seconds(float n);
+void get_player_stats(game_t *game);
 
 //**********
 // BUTTONS
@@ -49,14 +55,19 @@ char *make_normal_attack_msg(game_t *game, char *msg);
 char *make_powerful_attack_msg(game_t *game, char *msg);
 char *make_failed_attack_msg(game_t *game, char *msg);
 char *make_magic_attack_msg(game_t *game, char *msg);
-int rand_action(int max, int limit);
+int rand_action(int max);
+int rand_basic_attack(int nb);
 void calcul_basic_attack(int attack_status, game_t *game);
-void calcul_magic_attack(int attack_status, game_t *game);
+void calcul_magic_attack(game_t *game);
 int escape_fight_scene(game_t *game);
+int escape_exit(game_t *game);
+int enemy_attack(game_t *game);
+char *make_enemy_attack_msg(game_t *game, char *msg);
 
 //**********
 // ANIMATIONS
 //**********
+void fight_animation(game_t *game);
 void player_attack_animation(game_t *game);
 void update_enemy_pos(game_t *game);
 
@@ -107,7 +118,7 @@ int display_info(game_t *game);
 //**********
 // EVENTS
 //**********
-void fight_events(game_t *game);
-void manage_fight_scene_buttons_events(game_t *game);
+int fight_events(game_t *game);
+int manage_fight_scene_buttons_events(game_t *game);
 
 #endif

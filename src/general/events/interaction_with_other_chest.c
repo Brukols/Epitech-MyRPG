@@ -15,6 +15,7 @@ bool manage_other_chest(game_t *game, game_object_t *go)
 
     music_play(music, OPEN_CHEST_SOUND, sfFalse);
     add_item(inventory, go->item);
+    actualize_stats_player(game, go->item, 1.3);
     go->open = true;
     go->rect.top += 108;
     if (go->type == SECOND_CHEST) {
