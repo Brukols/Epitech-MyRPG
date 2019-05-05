@@ -20,6 +20,7 @@
 #include <stdio.h>
 
 #include "macros.h"
+#include "stats.h"
 #include "musics.h"
 #include "quests.h"
 #include "inventory.h"
@@ -57,6 +58,8 @@ int display_wind(particle_t *);
 void move_player_on_the_house(game_t *);
 void display_dialog(game_t *, texts_t *);
 int gameplay(game_t *);
+void display_status_menu(game_t *);
+void display_player_stats(game_t *);
 
 // GENERAL_EVENTS //
 
@@ -88,6 +91,8 @@ void stop_music_voice(game_t *game, pnj_t *pnj);
 
 // GENERAL INIT //
 
+stats_t *init_stats(void);
+player_stats_t *init_player_stats(void);
 char **init_map(char *);
 char **str_to_word_array_for_map(char *);
 sfVector2f init_vec2f(float x, float y);

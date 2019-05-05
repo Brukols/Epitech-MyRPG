@@ -71,6 +71,8 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/move_player_in_house.c			\
 		$(GENERAL_DISPLAY)/gameplay.c					\
 		$(GENERAL_DISPLAY)/music_voice.c				\
+		$(GENERAL_DISPLAY)/display_status_menu.c			\
+		$(GENERAL_DISPLAY)/display_player_stats.c			\
 		$(GENERAL_EVENTS)/player_touch_smth.c				\
 		$(GENERAL_EVENTS)/will_touch_smth.c				\
 		$(GENERAL_EVENTS)/change_dialog.c				\
@@ -116,6 +118,8 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/init_wind_particle.c				\
 		$(GENERAL_INIT)/init_status_menu.c				\
 		$(GENERAL_INIT)/init_button_status_menu.c			\
+		$(GENERAL_INIT)/init_stats.c					\
+		$(GENERAL_INIT)/init_player_stats.c				\
 		$(GENERAL_INIT_ITEMS)/create_amulet.c				\
 		$(GENERAL_INIT_ITEMS)/create_banana.c				\
 		$(GENERAL_INIT_ITEMS)/create_chaos.c				\
@@ -234,4 +238,4 @@ re	: 	fclean all
 debug	: 	CFLAGS += -g
 debug	: 	re
 
-.PHONY	:	all clean fclean re
+.PHONY	:	all clean fclean re debug

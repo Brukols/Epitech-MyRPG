@@ -31,5 +31,7 @@ buttons_t *init_status_menu(buttons_t *button)
     button->rect = init_intrect(0, 0, 376, 531);
     button->hitbox_pos = init_vec2f(70, 10);
     button->callback = &display_button_status;
+    if (!button->sprite || !button->texture)
+        return (NULL);
     return (button);
 }

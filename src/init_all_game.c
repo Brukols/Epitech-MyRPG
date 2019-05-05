@@ -11,7 +11,7 @@ scenes_t *init_scenes(void)
 {
     scenes_t *scenes = malloc(sizeof(scenes_t));
     scenes_t *(*init_every_scene[6])() = {init_scene_menu, init_intro, \
-                                          init_first_scene, init_player_house, init_fight_scene, init_zoro_house};
+    init_first_scene, init_player_house, init_fight_scene, init_zoro_house};
 
     if (scenes == NULL)
         return NULL;

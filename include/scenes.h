@@ -25,6 +25,7 @@ typedef struct scenes_s {
     struct buttons_s *buttons;
     struct texts_s *texts;
     struct musics_s *musics;
+    struct stats_s *stats;
     struct scenes_s *next;
     struct scenes_s *prev;
 } scenes_t;

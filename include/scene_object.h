@@ -87,6 +87,8 @@ typedef struct player_s {
     int attack;
     int power;
     int hp;
+    int current_level;
+    float level;
     bool attacking;
     inventory_t *inventory;
     game_object_t *game_object;
