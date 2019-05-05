@@ -67,8 +67,8 @@ bool player_touch_smth(game_t *);
 bool will_touch_the_border(background_t *, sfVector2f);
 bool will_touch_up_and_down(background_t *, game_object_t *, sfVector2f);
 bool will_touch_side(background_t *, game_object_t *, sfVector2f);
-bool change_dialog(game_t *);
-void interactions(game_t *game, sfKeyCode);
+int change_dialog(game_t *);
+int interactions(game_t *game, sfKeyCode);
 bool click(sfVector2f pos, sfVector2f size, sfVector2f mouse);
 void manage_mouse_button_event(game_t *);
 void touch_a_button(game_t *, sfVector2f);
@@ -88,6 +88,7 @@ void music_pause(musics_t *music, enum music_e type);
 void music_stop(musics_t *music, enum music_e type);
 void play_music_voice(game_t *game, pnj_t *pnj);
 void stop_music_voice(game_t *game, pnj_t *pnj);
+int go_to_fight_scene(game_t *game);
 
 // GENERAL INIT //
 

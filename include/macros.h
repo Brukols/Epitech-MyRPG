@@ -22,6 +22,7 @@
 #define RIGHT 0
 #define LEFT 1
 #define TOP 2
+#define GO_TO_FIGHT_SCENE 3
 #define ABS(value) (value < 0 ? value * -1 : value)
 
 #endif

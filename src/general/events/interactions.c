@@ -56,18 +56,20 @@ bool new_dialog(game_t *game, sfVector2f pos_player)
     return (false);
 }
 
-void interactions(game_t *game, sfKeyCode code)
+int interactions(game_t *game, sfKeyCode code)
 {
+    int verif;
     player_t *player = game->scenes->objs->player;
 
     if (code == sfKeyReturn) {
-        if (change_dialog(game) == true)
-            return;
+        if ((verif = change_dialog(game)) != FAILURE)
+            return (verif);
         if (new_dialog(game, player->game_object->pos) == true)
-            return;
+            return (SUCCESS);
         if (interaction_with_chest(game) == true)
-            return;
+            return (SUCCESS);
         if (interaction_with_other_chest(game) == true)
-            return;
+            return (SUCCESS);
     }
+    return (SUCCESS);
 }

@@ -43,7 +43,6 @@ void move_the_master(game_t *game, pnj_t *pnj)
     if (i == 1)
         first_move_master(pnj, &i);
     if (i == 2) {
-        pnj->next_dialog = 2;
         pnj->speak = true;
         i++;
     }

@@ -79,6 +79,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_EVENTS)/interactions.c				\
 		$(GENERAL_EVENTS)/button_is_clicked.c				\
 		$(GENERAL_EVENTS)/manage_mouse_button_event.c			\
+		$(GENERAL_EVENTS)/go_to_fight_scene.c				\
 		$(GENERAL_EVENTS)/interaction_with_chest.c			\
 		$(GENERAL_EVENTS)/player_have_the_key.c				\
 		$(GENERAL_EVENTS)/there_is_an_interaction.c			\

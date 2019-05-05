@@ -9,6 +9,7 @@
 
 game_t *events_fs_scene(game_t *game)
 {
+    int verif;
     sfEvent event;
 
     while (sfRenderWindow_pollEvent(game->window, &event)) {
@@ -21,8 +22,10 @@ game_t *events_fs_scene(game_t *game)
         }
         if (event.type == sfEvtKeyReleased) {
             move_the_scene(game, event.key.code, false);
-            interactions(game, event.key.code);
+            verif = interactions(game, event.key.code);
         }
+        if (verif = GO_TO_FIGHT_SCENE)
+            return (game);
     }
     return (game);
 }
