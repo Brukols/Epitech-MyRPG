@@ -37,6 +37,7 @@
 
 // GENERAL_DISPLAY //
 
+void re_init_movement(game_t *);
 void end_game(game_t *);
 void re_init_pnj_dialog(pnj_t *pnj);
 void manage_story(game_t *game);

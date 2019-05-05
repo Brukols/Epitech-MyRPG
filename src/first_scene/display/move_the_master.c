@@ -38,6 +38,8 @@ void move_the_master(game_t *game, pnj_t *pnj)
 {
     static int i = 0;
 
+    if (i <= 3)
+        re_init_movement(game);
     if (i == 0)
         re_init_the_master(pnj, &i);
     if (i == 1)

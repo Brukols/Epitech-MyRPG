@@ -30,7 +30,7 @@ void move_zoro2(game_t *game, pnj_t *pnj, int *i)
 {
     if (pnj->speak == false && *i == 4)
         (*i)++;
-    if (*i == 5) {
+    if (*i == 5 && game->quests->all_quests == TALK_TO_ARIANA) {
         music_play(game->scenes->musics, RUN_SOUND_2, sfTrue);
         second_move_zoro(pnj, i);
     }
