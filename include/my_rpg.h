@@ -20,6 +20,7 @@
 #include <stdio.h>
 
 #include "macros.h"
+#include "stats.h"
 #include "musics.h"
 #include "quests.h"
 #include "inventory.h"
@@ -57,6 +58,8 @@ int display_wind(particle_t *);
 void move_player_on_the_house(game_t *);
 void display_dialog(game_t *, texts_t *);
 int gameplay(game_t *);
+void display_status_menu(game_t *);
+void display_player_stats(game_t *);
 
 // GENERAL_EVENTS //
 
@@ -64,8 +67,8 @@ bool player_touch_smth(game_t *);
 bool will_touch_the_border(background_t *, sfVector2f);
 bool will_touch_up_and_down(background_t *, game_object_t *, sfVector2f);
 bool will_touch_side(background_t *, game_object_t *, sfVector2f);
-bool change_dialog(game_t *);
-void interactions(game_t *game, sfKeyCode);
+int change_dialog(game_t *);
+int interactions(game_t *game, sfKeyCode);
 bool click(sfVector2f pos, sfVector2f size, sfVector2f mouse);
 void manage_mouse_button_event(game_t *);
 void touch_a_button(game_t *, sfVector2f);
@@ -85,9 +88,15 @@ void music_pause(musics_t *music, enum music_e type);
 void music_stop(musics_t *music, enum music_e type);
 void play_music_voice(game_t *game, pnj_t *pnj);
 void stop_music_voice(game_t *game, pnj_t *pnj);
+int go_to_fight_scene(game_t *game);
+void pause_the_game(game_t *);
+void pause_all_musics(musics_t *);
+void play_all_musics(musics_t *);
 
 // GENERAL INIT //
 
+stats_t *init_stats(void);
+player_stats_t *init_player_stats(void);
 char **init_map(char *);
 char **str_to_word_array_for_map(char *);
 sfVector2f init_vec2f(float x, float y);
@@ -120,6 +129,10 @@ game_object_t *init_second_chest(game_object_t *, int, int);
 musics_t *run_sound_2(musics_t *);
 buttons_t *init_button_status_menu(buttons_t *button);
 buttons_t *init_status_menu(buttons_t *button);
+musics_t *leader_sound(musics_t *music);
+musics_t *joker_sound(musics_t *music);
+musics_t *dark_sound(musics_t *music);
+musics_t *alien_sound(musics_t *music);
 
 game_t *init_all_game(void);
 sfRenderWindow *create_window(unsigned int, unsigned int, unsigned int);

@@ -71,12 +71,16 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/move_player_in_house.c			\
 		$(GENERAL_DISPLAY)/gameplay.c					\
 		$(GENERAL_DISPLAY)/music_voice.c				\
+		$(GENERAL_DISPLAY)/display_status_menu.c			\
+		$(GENERAL_DISPLAY)/display_player_stats.c			\
 		$(GENERAL_EVENTS)/player_touch_smth.c				\
 		$(GENERAL_EVENTS)/will_touch_smth.c				\
+		$(GENERAL_EVENTS)/manage_all_music.c				\
 		$(GENERAL_EVENTS)/change_dialog.c				\
 		$(GENERAL_EVENTS)/interactions.c				\
 		$(GENERAL_EVENTS)/button_is_clicked.c				\
 		$(GENERAL_EVENTS)/manage_mouse_button_event.c			\
+		$(GENERAL_EVENTS)/go_to_fight_scene.c				\
 		$(GENERAL_EVENTS)/interaction_with_chest.c			\
 		$(GENERAL_EVENTS)/player_have_the_key.c				\
 		$(GENERAL_EVENTS)/there_is_an_interaction.c			\
@@ -90,6 +94,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_EVENTS)/interaction_with_other_chest.c		\
 		$(GENERAL_EVENTS)/stop_music_scene.c				\
 		$(GENERAL_EVENTS)/music_play.c					\
+		$(GENERAL_EVENTS)/pause_the_game.c					\
 		$(GENERAL_INIT)/init_color.c					\
 		$(GENERAL_INIT)/init_house.c					\
 		$(GENERAL_INIT)/init_map.c					\
@@ -116,6 +121,9 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/init_wind_particle.c				\
 		$(GENERAL_INIT)/init_status_menu.c				\
 		$(GENERAL_INIT)/init_button_status_menu.c			\
+		$(GENERAL_INIT)/init_stats.c					\
+		$(GENERAL_INIT)/init_player_stats.c				\
+		$(GENERAL_INIT)/init_special_voice.c				\
 		$(GENERAL_INIT_ITEMS)/create_amulet.c				\
 		$(GENERAL_INIT_ITEMS)/create_banana.c				\
 		$(GENERAL_INIT_ITEMS)/create_chaos.c				\
@@ -234,4 +242,4 @@ re	: 	fclean all
 debug	: 	CFLAGS += -g
 debug	: 	re
 
-.PHONY	:	all clean fclean re
+.PHONY	:	all clean fclean re debug

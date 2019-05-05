@@ -64,7 +64,5 @@ void move_the_scene(game_t *game, sfKeyCode code, bool move)
     }
     if (there_is_an_interaction(game) == true)
         return;
-    if (code == sfKeyEscape)
-        sfRenderWindow_close(game->window);
     change_position_scene(player, bg, code, move);
 }

@@ -18,5 +18,7 @@ scenes_t *init_first_scene(scenes_t *scenes)
         return (NULL);
     if (!(scenes->musics = init_musics_fs_scene()))
         return (NULL);
+    if (!(scenes->stats = init_stats()))
+        return (NULL);
     return (scenes);
 }

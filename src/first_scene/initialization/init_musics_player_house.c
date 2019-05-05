@@ -10,6 +10,8 @@
 musics_t *voice_m_sound(musics_t *music)
 {
     music->type = VOICE_M;
+    music->pause = false;
+    music->stop = true;
     music->music = sfMusic_createFromFile("ressources/music/voice_m.ogg");
     if (!music->music)
         return (NULL);
@@ -19,6 +21,8 @@ musics_t *voice_m_sound(musics_t *music)
 musics_t *voice_f_sound(musics_t *music)
 {
     music->type = VOICE_F;
+    music->pause = false;
+    music->stop = true;
     music->music = sfMusic_createFromFile("ressources/music/voice_f.ogg");
     if (!music->music)
         return (NULL);

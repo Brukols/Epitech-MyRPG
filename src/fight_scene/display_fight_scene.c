@@ -48,6 +48,6 @@ void display_enemies(game_t *game)
 {
     enemy_t *enemy = game->scenes->objs->enemy;
 
-    sfRenderWindow_drawSprite(game->window,  \
+    sfRenderWindow_drawSprite(game->window, \
     enemy->obj->sprite, NULL);
 }
