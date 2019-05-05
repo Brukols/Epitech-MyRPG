@@ -9,17 +9,10 @@
 
 game_t *scene_managing(game_t *game)
 {
-<<<<<<< HEAD
-    enum scene_e type[] = {INTRO, MENU, FIRST_SCENE, PLAYER_HOUSE, FIGHT, ZORO_HOUSE, SETTINGS};
-    game_t *(*display_scenes[])() = {display_intro, display_menu, \
-                                     display_fs_scene, display_player_house, manage_fight_scene, display_zoro_house, display_settings_scene};
-=======
     enum scene_e type[] = {INTRO, MENU, FIRST_SCENE, PLAYER_HOUSE, FIGHT, \
-        ZORO_HOUSE};
-    game_t *(*display_scenes[])() = {display_intro, display_menu, \
-        display_fs_scene, display_player_house, manage_fight_scene, \
-        display_zoro_house};
->>>>>>> d96de1f4e7605f2215c8bb03209492d7f2f2f66e
+ZORO_HOUSE, SETTINGS};
+    game_t *(*display_scenes[])() = {display_intro, display_menu,       \
+display_fs_scene, display_player_house, manage_fight_scene, display_zoro_house, display_settings_scene};
 
     for (int i = 0; i < 7; i++) {
         if (game->scenes->scene == type[i])
