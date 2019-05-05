@@ -51,14 +51,14 @@ background_t *init_fight_scene_background(void)
 player_t *init_fight_scene_player(scenes_t *scene)
 {
     player_t *player = malloc(sizeof(player_t));
-    inventory_t *inventory = scene->prev->prev->objs->player->inventory;
+    player_t *prev_p = scene->prev->prev->objs->player;
 
     if (player == NULL)
         return (NULL);
-    player->inventory = inventory;
-    player->hp = 10;
-    player->attack = 50;
-    player->power = 50;
+    player->inventory = prev_p->inventory;
+    player->hp = prev_p->hp;
+    player->attack = prev_p->attack;
+    player->power = prev_p->power;
     player->attacking = false;
     player->game_object = init_fight_scene_player_object();
     if (player->game_object == NULL) {

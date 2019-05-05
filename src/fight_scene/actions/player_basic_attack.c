@@ -21,11 +21,12 @@ int player_basic_attack(game_t *game)
         display_fight_scene(game);
         sfRenderWindow_display(game->window);
         sfRenderWindow_clear(game->window, sfBlack);
-        if (wait_n_seconds(1.5) == ERROR)
+        if (wait_n_seconds(2.5) == ERROR)
             return (ERROR);
         if (game->scenes->objs->player->attacking)
             calcul_basic_attack(attack_status, game);
         enemy_attack(game);
+        game->scenes->objs->player->attacking = false;
     }
     return (0);
 }

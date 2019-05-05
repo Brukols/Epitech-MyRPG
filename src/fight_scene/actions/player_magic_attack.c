@@ -23,7 +23,7 @@ int player_magic_attack(game_t *game)
     display_fight_scene(game);
     sfRenderWindow_display(game->window);
     sfRenderWindow_clear(game->window, sfBlack);
-    if (wait_n_seconds(1.5) == ERROR)
+    if (wait_n_seconds(2.5) == ERROR)
         return (ERROR);
     enemy_attack(game);
     return (0);
