@@ -49,6 +49,8 @@ MENU_INIT_BUTTONS	=	src/menu/init/buttons
 
 MENU_INIT_INTRO	=	src/menu/init/intro
 
+SETTINGS	=	src/settings
+
 FIGHT_SCENE = src/fight_scene
 
 SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
@@ -138,7 +140,12 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT_ITEMS)/create_vulcan.c				\
 		$(GENERAL_INIT_ITEMS)/create_wand.c				\
 		$(GENERAL_INIT_ITEMS)/create_key.c				\
+		$(SETTINGS)/init_button.c			\
 		$(MENU_EVENTS)/events_menu.c			\
+		$(SETTINGS)/display_settings.c			\
+		$(SETTINGS)/init_settings_buttons.c		\
+		$(SETTINGS)/init_scene_settings.c		\
+		$(SETTINGS)/swap_scenes.c			\
 		$(MENU_DISPLAY)/display.c			\
 		$(MENU_DISPLAY)/display_buttons_menu.c		\
 		$(MENU_DISPLAY_INTRO)/display_intro.c		\

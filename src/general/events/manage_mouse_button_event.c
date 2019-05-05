@@ -28,6 +28,7 @@ void touch_a_button(game_t *game, sfVector2f mouse)
         buttons = buttons->prev;
     for (; buttons; buttons = buttons->next) {
         if (click(buttons->hitbox_pos, buttons->size, mouse) == true) {
+            my_put_nbr(buttons->type);
             buttons->callback(game);
             return;
         }
@@ -39,6 +40,10 @@ void manage_mouse_button_event(game_t *game)
     sfVector2i tmp_mouse = sfMouse_getPositionRenderWindow(game->window);
     sfVector2f mouse = init_vec2f(tmp_mouse.x, tmp_mouse.y);
 
+    if (game->scenes->scene == SETTINGS) {
+        touch_a_button(game, mouse);
+        return;
+    }
     if (touch_an_items(game, mouse) == true)
         return;
     if (delete_an_item(game, mouse) == true)

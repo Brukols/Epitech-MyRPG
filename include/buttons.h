@@ -21,7 +21,10 @@ enum button_e {
     ENEMY,
     INFO,
     STATUS_MENU,
-    BUTTON_STATUS_MENU
+    BUTTON_STATUS_MENU,
+    BUTTON_SETTINGS,
+    BUTTON_SETTINGS_MUSIC,
+    BUTTON_SETTINGS_EXIT
 };
 
 typedef struct buttons_s {
@@ -35,6 +38,7 @@ typedef struct buttons_s {
     sfClock *clock;
     sfVector2f hitbox_pos;
     bool display;
+    bool display_hover;
     int (*callback)();
     struct buttons_s *next;
     struct buttons_s *prev;

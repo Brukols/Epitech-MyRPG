@@ -16,7 +16,8 @@ enum scene_e {
     FIRST_SCENE,
     PLAYER_HOUSE,
     FIGHT,
-    ZORO_HOUSE
+    ZORO_HOUSE,
+    SETTINGS
 };
 
 typedef struct scenes_s {

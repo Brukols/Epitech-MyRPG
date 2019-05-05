@@ -15,6 +15,8 @@ int leave_the_game(game_t *game)
 
 int show_setting(game_t *game)
 {
+    for (; game->scenes->prev; game->scenes = game->scenes->prev);
+    for (; game->scenes->scene != SETTINGS; game->scenes = game->scenes->next);
     return (SUCCESS);
 }
 

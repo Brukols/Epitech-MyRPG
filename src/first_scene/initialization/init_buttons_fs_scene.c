@@ -11,16 +11,16 @@ buttons_t *init_buttons_fs_scene(void)
 {
     buttons_t *buttons = malloc(sizeof(buttons_t));
     buttons_t *(*fill_buttons[])() = {init_box_dialog, \
-        init_button_status_menu, init_status_menu};
+                                      init_button_status_menu, init_status_menu, init_settings_button};
 
     if (!buttons)
         return (NULL);
     buttons->prev = NULL;
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 4; i++) {
         buttons = fill_buttons[i](buttons);
         if (!buttons)
             return (NULL);
-        if (i == 2)
+        if (i == 3)
             break;
         if (!(buttons->next = malloc(sizeof(buttons_t))))
             return (NULL);

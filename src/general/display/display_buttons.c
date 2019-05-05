@@ -32,6 +32,18 @@ sfVector2i mouse)
     sfRenderWindow_drawSprite(game->window, buttons->sprite, NULL);
 }
 
+void manage_music_button(game_t *game, buttons_t *buttons)
+{
+    sfSprite_setTexture(buttons->sprite, buttons->texture, sfFalse);
+    sfSprite_setPosition(buttons->sprite, buttons->pos);
+    sfRenderWindow_drawSprite(game->window, buttons->sprite, NULL);
+    if (buttons->display_hover == true) {
+        sfSprite_setTexture(buttons->sprite, buttons->hover, sfFalse);
+        sfSprite_setPosition(buttons->sprite, buttons->pos);
+        sfRenderWindow_drawSprite(game->window, buttons->sprite, NULL);
+    }
+}
+
 void display_buttons(game_t *game)
 {
     buttons_t *buttons = game->scenes->buttons;
@@ -47,6 +59,10 @@ void display_buttons(game_t *game)
         }
         if (buttons->type == BOX_DIALOG) {
             display_box_dialog(game, buttons);
+            continue;
+        }
+        if (buttons->type == BUTTON_SETTINGS_MUSIC) {
+            manage_music_button(game, buttons);
             continue;
         }
         sfSprite_setPosition(buttons->sprite, buttons->pos);
