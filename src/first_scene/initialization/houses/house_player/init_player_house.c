@@ -36,5 +36,7 @@ scenes_t *init_player_house(scenes_t *scene)
         return (NULL);
     if (!(scene->musics = init_musics_player_house()))
         return (NULL);
+    if (!(scene->stats = init_stats()))
+        return (NULL);
     return (scene);
 }

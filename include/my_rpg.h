@@ -59,7 +59,7 @@ void move_player_on_the_house(game_t *);
 void display_dialog(game_t *, texts_t *);
 int gameplay(game_t *);
 void display_status_menu(game_t *);
-void display_player_stats(game_t *);
+void display_player_stats(game_t *, player_stats_t *, player_t *);
 
 // GENERAL_EVENTS //
 
@@ -92,6 +92,8 @@ int go_to_fight_scene(game_t *game);
 void pause_the_game(game_t *);
 void pause_all_musics(musics_t *);
 void play_all_musics(musics_t *);
+void actualize_stats_player(game_t *, int, float);
+void delete_stats_player(game_t *, int);
 
 // GENERAL INIT //
 

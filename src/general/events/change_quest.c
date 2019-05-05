@@ -13,10 +13,14 @@ void action_at_the_end(game_t *game, enum all_quests_e actual_quest)
 
     if (actual_quest == FIND_THE_KEY)
         add_item(player->inventory, 2);
-    if (actual_quest == TALK_TO_ARIANA)
+    if (actual_quest == TALK_TO_ARIANA) {
         add_item(player->inventory, 13);
-    if (actual_quest == TALK_TO_THE_GUARD)
+        actualize_stats_player(game, 13, 1.35);
+    }
+    if (actual_quest == TALK_TO_THE_GUARD) {
         add_item(player->inventory, 7);
+        actualize_stats_player(game, 7, 2.4);
+    }
 }
 
 void change_quest(game_t *game, enum all_quests_e actual_quest)

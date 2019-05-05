@@ -95,6 +95,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_EVENTS)/stop_music_scene.c				\
 		$(GENERAL_EVENTS)/music_play.c					\
 		$(GENERAL_EVENTS)/pause_the_game.c					\
+		$(GENERAL_EVENTS)/actualize_stats_player.c					\
 		$(GENERAL_INIT)/init_color.c					\
 		$(GENERAL_INIT)/init_house.c					\
 		$(GENERAL_INIT)/init_map.c					\
