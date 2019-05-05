@@ -75,6 +75,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_DISPLAY)/display_player_stats.c			\
 		$(GENERAL_EVENTS)/player_touch_smth.c				\
 		$(GENERAL_EVENTS)/will_touch_smth.c				\
+		$(GENERAL_EVENTS)/manage_all_music.c				\
 		$(GENERAL_EVENTS)/change_dialog.c				\
 		$(GENERAL_EVENTS)/interactions.c				\
 		$(GENERAL_EVENTS)/button_is_clicked.c				\
@@ -93,6 +94,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_EVENTS)/interaction_with_other_chest.c		\
 		$(GENERAL_EVENTS)/stop_music_scene.c				\
 		$(GENERAL_EVENTS)/music_play.c					\
+		$(GENERAL_EVENTS)/pause_the_game.c					\
 		$(GENERAL_INIT)/init_color.c					\
 		$(GENERAL_INIT)/init_house.c					\
 		$(GENERAL_INIT)/init_map.c					\

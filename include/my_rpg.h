@@ -89,6 +89,9 @@ void music_stop(musics_t *music, enum music_e type);
 void play_music_voice(game_t *game, pnj_t *pnj);
 void stop_music_voice(game_t *game, pnj_t *pnj);
 int go_to_fight_scene(game_t *game);
+void pause_the_game(game_t *);
+void pause_all_musics(musics_t *);
+void play_all_musics(musics_t *);
 
 // GENERAL INIT //
 

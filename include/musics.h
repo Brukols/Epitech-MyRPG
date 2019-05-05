@@ -22,6 +22,8 @@ enum music_e {
 typedef struct musics_s {
     enum music_e type;
     sfMusic *music;
+    bool pause;
+    bool stop;
     struct musics_s *next;
     struct musics_s *prev;
 } musics_t;

@@ -10,6 +10,8 @@
 musics_t *wind_sound(musics_t *music)
 {
     music->type = WIND_SOUND;
+    music->pause = false;
+    music->stop = true;
     music->music = sfMusic_createFromFile("ressources/music/wind_rpg.ogg");
     if (!music->music)
         return (NULL);
@@ -20,6 +22,8 @@ musics_t *wind_sound(musics_t *music)
 musics_t *run_sound(musics_t *music)
 {
     music->type = RUN_SOUND;
+    music->pause = false;
+    music->stop = true;
     music->music = sfMusic_createFromFile("ressources/music/run_rpg.ogg");
     if (!music->music)
         return (NULL);
@@ -29,6 +33,8 @@ musics_t *run_sound(musics_t *music)
 musics_t *run_sound_2(musics_t *music)
 {
     music->type = RUN_SOUND_2;
+    music->pause = false;
+    music->stop = true;
     music->music = sfMusic_createFromFile("ressources/music/run_rpg.ogg");
     if (!music->music)
         return (NULL);
@@ -38,6 +44,8 @@ musics_t *run_sound_2(musics_t *music)
 musics_t *open_chest_sound(musics_t *music)
 {
     music->type = OPEN_CHEST_SOUND;
+    music->pause = false;
+    music->stop = true;
     music->music = sfMusic_createFromFile("ressources/music/open.ogg");
     if (!music->music)
         return (NULL);
