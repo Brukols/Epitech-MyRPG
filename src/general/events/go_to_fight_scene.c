@@ -9,6 +9,7 @@
 
 int go_to_fight_scene(game_t *game)
 {
+    stop_music_scene(game->scenes->musics);
     for (; game->scenes->prev; game->scenes = game->scenes->prev);
     for (; game->scenes->scene != FIGHT; game->scenes = \
     game->scenes->next);

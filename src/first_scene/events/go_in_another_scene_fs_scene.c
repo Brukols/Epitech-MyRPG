@@ -42,7 +42,7 @@ bool go_to_other_scene(game_t *game, game_object_t *player, game_object_t *go)
         return (true);
     }
     if (click(player->pos, size_player, pos_zoro) == true && go->type == \
-        BROWN_HOUSE_FS_SCENE) {
+        BROWN_HOUSE_FS_SCENE && game->quests->all_quests == FIND_THE_LEADER) {
         stop_music_scene(game->scenes->musics);
         re_initialize_value(game);
         select_zoro_house(game);
