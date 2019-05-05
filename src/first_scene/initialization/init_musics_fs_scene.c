@@ -56,16 +56,16 @@ musics_t *init_musics_fs_scene(void)
 {
     musics_t *musics = malloc(sizeof(musics_t));
     musics_t *(*fill_musics_fs_scene[])() = {wind_sound, run_sound, \
-        open_chest_sound, voice_f_sound, voice_m_sound, run_sound_2};
+        open_chest_sound, voice_f_sound, voice_m_sound, run_sound_2, \
+        alien_sound, joker_sound, dark_sound, leader_sound};
 
     if (!musics)
         return (NULL);
     musics->prev = NULL;
-    for (int i = 0; i < 6; i++) {
-        musics = fill_musics_fs_scene[i](musics);
-        if (!musics)
+    for (int i = 0; i < 10; i++) {
+        if (!(musics = fill_musics_fs_scene[i](musics)))
             return (NULL);
-        if (i == 5)
+        if (i == 9)
             break;
         if (!(musics->next = malloc(sizeof(musics_t))))
             return (NULL);

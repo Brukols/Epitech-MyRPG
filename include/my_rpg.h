@@ -129,6 +129,10 @@ game_object_t *init_second_chest(game_object_t *, int, int);
 musics_t *run_sound_2(musics_t *);
 buttons_t *init_button_status_menu(buttons_t *button);
 buttons_t *init_status_menu(buttons_t *button);
+musics_t *leader_sound(musics_t *music);
+musics_t *joker_sound(musics_t *music);
+musics_t *dark_sound(musics_t *music);
+musics_t *alien_sound(musics_t *music);
 
 game_t *init_all_game(void);
 sfRenderWindow *create_window(unsigned int, unsigned int, unsigned int);

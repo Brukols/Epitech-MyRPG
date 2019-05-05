@@ -123,6 +123,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(GENERAL_INIT)/init_button_status_menu.c			\
 		$(GENERAL_INIT)/init_stats.c					\
 		$(GENERAL_INIT)/init_player_stats.c				\
+		$(GENERAL_INIT)/init_special_voice.c				\
 		$(GENERAL_INIT_ITEMS)/create_amulet.c				\
 		$(GENERAL_INIT_ITEMS)/create_banana.c				\
 		$(GENERAL_INIT_ITEMS)/create_chaos.c				\
