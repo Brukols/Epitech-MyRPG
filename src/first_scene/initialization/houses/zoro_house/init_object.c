@@ -21,7 +21,8 @@ game_object_t *init_table(game_object_t *go, int x, int y)
     go->hitbox_pos = init_vec2f(x * 4.3, y * 4.3);
     go->hitbox_size = init_vec2f(24 * 4.3, 31 * 4.3);
     go->scale = init_vec2f(4.3, 4.3);
-    go->type = BED_HOUSE;
+    go->type = TABLE;
+    go->interaction = false;
     return (go);
 }
 

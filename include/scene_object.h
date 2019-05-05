@@ -36,6 +36,7 @@ enum game_object_e {
     BACKGROUND_HOUSE_1,
     ENEMY_TRAINER,
     CONE,
+    TABLE,
 };
 
 enum particle_e {

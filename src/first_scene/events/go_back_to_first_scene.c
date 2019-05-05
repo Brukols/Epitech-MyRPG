@@ -16,6 +16,14 @@ void re_initialize_value_house(game_t *game)
     player->pos.y -= 6;
 }
 
+scenes_t *select_first_scene(game_t *game)
+{
+    for (;game->scenes->prev; game->scenes = game->scenes->prev);
+    for (;game->scenes->scene != FIRST_SCENE; \
+         game->scenes = game->scenes->next);
+    return game->scenes;
+}
+
 bool go_back_to_first_scene(game_t *game)
 {
     game_object_t *player = game->scenes->objs->player->game_object;
@@ -24,7 +32,7 @@ bool go_back_to_first_scene(game_t *game)
     player->pos.x > 940 && player->pos.x < 1000) {
         re_initialize_value_house(game);
         stop_music_scene(game->scenes->musics);
-        game->scenes = game->scenes->prev;
+        game->scenes = select_first_scene(game);
         sfMusic_play(game->scenes->musics->music);
         return (true);
     }
