@@ -43,6 +43,8 @@ void move_on_the_house(game_t *game, sfKeyCode code, bool move)
     game_object_t *go = game->scenes->objs->game_object;
 
     for (; go; go = go->next) {
+        if (go->type != FIRST_CHEST)
+            continue;
         if (go->interaction == true) {
             player->game_object->move_x = 0;
             player->game_object->move_y = 0;

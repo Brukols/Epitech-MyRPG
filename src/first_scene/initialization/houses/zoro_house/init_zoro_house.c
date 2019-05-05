@@ -18,7 +18,7 @@ background_t *init_background_house_zoro(void)
         return (NULL);
     if (!(bg->sprite = sfSprite_create()))
         return (NULL);
-    bg->pos = init_vec2f(350, 0);
+    bg->pos = init_vec2f(330, 0);
     bg->scale = init_vec2f(1.63, 1.63);
     bg->move_x = 0;
     bg->move_y = 0;

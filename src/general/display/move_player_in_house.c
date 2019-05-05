@@ -65,7 +65,7 @@ bool player_touch_smth_in_house(game_t *game)
 
     for (; go->prev; go = go->prev);
     for (; go; go = go->next) {
-        if (go->display == false)
+        if (go->display == false || go->type == PLAYER)
             continue;
         if (will_touch_house_up_and_down(player, go, pos_pla) == true || \
         will_touch_house_side(player, go, pos_pla) == true) {
