@@ -11,9 +11,7 @@ int rand_action(int max)
 {
     int nb = 0;
 
-    srand(time(NULL));
     nb = rand() % max + 1;
-    printf("%d", nb);
     return (nb);
 }
 
