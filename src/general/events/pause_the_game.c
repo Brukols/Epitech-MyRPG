@@ -22,6 +22,19 @@ void event_pause(game_t *game, bool *quit)
     }
 }
 
+void re_init_movement(game_t *game)
+{
+    background_t *bg = game->scenes->objs->background;
+    player_t *player = game->scenes->objs->player;
+
+    bg->move_x = 0;
+    bg->move_y = 0;
+    player->move_x = 0;
+    player->move_y = 0;
+    player->game_object->move_x = 0;
+    player->game_object->move_y = 0;
+}
+
 void pause_the_game(game_t *game)
 {
     bool quit = false;
@@ -30,6 +43,7 @@ void pause_the_game(game_t *game)
     sfSprite *sprite = sfSprite_create();
     sfVector2f pos = init_vec2f(500, 70);
 
+    re_init_movement(game);
     if (!sprite || !texture)
         return;
     pause_all_musics(game->scenes->musics);
