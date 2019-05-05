@@ -40,8 +40,7 @@ int escape_exit(game_t *game)
         return (ERROR);
     time = sfClock_getElapsedTime(clock);
     seconds = sfTime_asSeconds(time);
-    sfText_setString(game->scenes->texts->text, \
-    "PLAYER escape the fight!");
+    sfText_setString(game->scenes->texts->text, "PLAYER escape the fight!");
     display_fight_scene(game);
     sfRenderWindow_display(game->window);
     sfRenderWindow_clear(game->window, sfBlack);
@@ -49,6 +48,7 @@ int escape_exit(game_t *game)
         time = sfClock_getElapsedTime(clock);
         seconds = sfTime_asSeconds(time);
     }
+    sfText_setString(game->scenes->texts->text, " ");
     sfClock_destroy(clock);
     return (0);
 }

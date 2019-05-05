@@ -196,6 +196,7 @@ SRCS	=	$(GENERAL_DISPLAY)/display_bg.c					\
 		$(FIGHT_SCENE)/init/init_fight_scene_objs.c			\
 		$(FIGHT_SCENE)/init/init_fight_scene_game_objs.c		\
 		$(FIGHT_SCENE)/manage_fight_scene.c				\
+		$(FIGHT_SCENE)/get_player_stats.c				\
 		$(FIGHT_SCENE)/display_fight_scene.c				\
 		$(FIGHT_SCENE)/wait_n_seconds.c					\
 		$(FIGHT_SCENE)/actions/player_basic_attack.c			\

@@ -11,6 +11,7 @@ game_t *manage_fight_scene(game_t *game)
 {
     int status = 0;
 
+    get_player_stats(game);
     status = fight_events(game);
     if (status == ERROR)
         return (NULL);
@@ -33,10 +34,14 @@ game_t *manage_fight_scene(game_t *game)
 int check_hp(game_t *game)
 {
     if (game->scenes->objs->player->hp == 0) {
+        game->scenes->objs->player->hp = \
+        game->scenes->prev->prev->objs->player->hp;
         if (defeated(game, "You died!") == ERROR)
             return (ERROR);
         return (2);
     } else if (game->scenes->objs->enemy->hp == 0) {
+        game->scenes->objs->player->hp = \
+        game->scenes->prev->prev->objs->player->hp;
         if (defeated(game, "ENEMY is defeated.\nYou WON!") == ERROR)
             return (ERROR);
         if (game->scenes->objs->enemy->next != NULL)

@@ -35,6 +35,7 @@ scenes_t *init_fight_scene(scenes_t *scenes);
 void end_fight_scene(game_t *game);
 void next_quest(game_t *game, int status);
 int wait_n_seconds(float n);
+void get_player_stats(game_t *game);
 
 //**********
 // BUTTONS
