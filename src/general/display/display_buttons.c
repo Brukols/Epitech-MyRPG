@@ -36,10 +36,12 @@ void manage_music_button(game_t *game, buttons_t *buttons)
 {
     sfSprite_setTexture(buttons->sprite, buttons->texture, sfFalse);
     sfSprite_setPosition(buttons->sprite, buttons->pos);
+    sfSprite_setTextureRect(buttons->sprite, buttons->rect);
     sfRenderWindow_drawSprite(game->window, buttons->sprite, NULL);
     if (buttons->display_hover == true) {
         sfSprite_setTexture(buttons->sprite, buttons->hover, sfFalse);
         sfSprite_setPosition(buttons->sprite, buttons->pos);
+        sfSprite_setTextureRect(buttons->sprite, buttons->rect);
         sfRenderWindow_drawSprite(game->window, buttons->sprite, NULL);
     }
 }
