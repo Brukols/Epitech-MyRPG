@@ -1,10 +1,26 @@
-<h1 align="center">my_rpg</h1>
-<h3 align="center">A simple RPG</h3>
+# RPG - Epitech project
 
-| Name | Langage | Compatibility | Compilation | Library |
-|------|---------|---------------|-------------|---------|
-| my_rpg | C | Linux | gcc | CSFML |
+## Description
 
-"make" to compile.
+RPG game made in C. You will be teleported in the Polypoppy's world in order to save the princess.
 
-You must have the CSFML library.
+## Compilation
+
+You must to have the CSFML library to compile the project.
+
+```bash
+make # Compile the project
+```
+
+## Usage
+
+```bash
+./my_rpg # To launch the game
+```
+
+## Contributors
+
+This project has been made with :
+- Paul Van Kerckvoorde
+- Guillaume Vacelet
+- Mai Ly Lehoux
